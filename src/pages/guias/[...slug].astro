@@ -1,0 +1,46 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => data.status !== 'draft');
+
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const statusLabels = {
+  draft: 'Borrador',
+  verified: 'Verificado',
+  review: 'En revisión',
+};
+---
+
+<BaseLayout title={guide.data.title} description={guide.data.description}>
+  <PageHero eyebrow={guide.data.eyebrow} title={guide.data.title} description={guide.data.description} />
+  <article class="article shell narrow">
+    <div class="article-meta" aria-label="Estado editorial">
+      <span class={`editorial-status editorial-${guide.data.status}`}>{statusLabels[guide.data.status]}</span>
+      <span>Versión {guide.data.gameVersion}</span>
+      <span>Revisado: {guide.data.updatedAt}</span>
+    </div>
+    <div class="prose">
+      <Content />
+    </div>
+    <section class="sources" aria-labelledby="fuentes-titulo">
+      <h2 id="fuentes-titulo">Fuentes</h2>
+      <ul>
+        {guide.data.sources.map((source) => <li><a href={source.url} rel="external">{source.label}</a></li>)}
+      </ul>
+    </section>
+  </article>
+</BaseLayout>

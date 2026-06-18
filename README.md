@@ -22,3 +22,5 @@ npm run build
 - Version recomendada de Node: `22`
 
 URL de produccion: `https://duck-survival.pages.dev`.
+
+Consulta `docs/GUIA_DE_CONTENIDO.md` para editar o crear guias desde GitHub.
