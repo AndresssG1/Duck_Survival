@@ -1,0 +1,19 @@
+---
+import { navigation } from '../data/navigation';
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Duck Survival Guia, inicio">
+      <span class="brand-mark" aria-hidden="true">DS</span>
+      <span><strong>Duck Survival</strong><small>Guia en espanol</small></span>
+    </a>
+    <nav aria-label="Navegacion principal">
+      <ul>
+        {navigation.map((item) => (
+          <li><a class={Astro.url.pathname === item.href ? 'active' : ''} href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

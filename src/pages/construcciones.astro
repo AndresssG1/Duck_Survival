@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+const buildings = ['Gold Mine', 'Survivor Camp', 'Machine Gun Turret', 'Infantry Camp', 'EMP Tower'];
+---
+<BaseLayout title="Construcciones" description="Edificios y estructuras conocidas de Duck Survival.">
+  <PageHero eyebrow="Base y defensa" title="Construcciones" description="Identifica la funcion de cada estructura y prepara el orden de mejoras de tu base." />
+  <section class="section shell"><div class="card-grid compact">{buildings.map((name, index) => <article class="guide-card"><span>{String(index + 1).padStart(2, '0')}</span><h2>{name}</h2><p>Ficha detallada pendiente de verificacion.</p></article>)}</div></section>
+</BaseLayout>

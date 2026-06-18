@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatusPill from '../components/StatusPill.astro';
+import { gameCodes } from '../data/codes';
+
+const sections = [
+  { icon: '01', title: 'Primeros pasos', text: 'Aprende el ciclo de juego y evita los errores mas comunes.', href: '/guias/principiantes/' },
+  { icon: '02', title: 'Construcciones', text: 'Conoce la funcion de cada edificio y como priorizar mejoras.', href: '/construcciones/' },
+  { icon: '03', title: 'Habilidades', text: 'Consulta tipos de dano, elementos y habilidades conocidas.', href: '/habilidades/' },
+];
+---
+
+<BaseLayout title="Duck Survival Guia" description="Guias, codigos y estrategias de Duck Survival en espanol, con informacion verificada y actualizada.">
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">La guia en espanol de la comunidad</p>
+        <h1>Sobrevive. Construye.<br /><span>Domina la invasion.</span></h1>
+        <p class="lead">Todo lo que necesitas para progresar en Duck Survival, explicado sin rodeos y con fuentes verificadas.</p>
+        <div class="actions">
+          <a class="button primary" href="/guias/principiantes/">Empezar la guia</a>
+          <a class="button secondary" href="/codigos/">Ver codigos</a>
+        </div>
+      </div>
+      <div class="survival-card" aria-label="Indicadores de la guia">
+        <div class="radar"><span>DS</span></div>
+        <p class="signal">SENAL ACTIVA</p>
+        <strong>La supervivencia empieza con buena informacion.</strong>
+        <div class="meter"><span></span></div>
+        <small>Base de conocimiento en construccion</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-heading">
+      <div><p class="eyebrow">Centro de mando</p><h2>Elige tu siguiente objetivo</h2></div>
+      <a href="/guias/principiantes/">Explorar guias <span aria-hidden="true">-&gt;</span></a>
+    </div>
+    <div class="card-grid">
+      {sections.map((section) => (
+        <a class="guide-card" href={section.href}>
+          <span>{section.icon}</span><h3>{section.title}</h3><p>{section.text}</p><b>Consultar</b>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section panel-section">
+    <div class="shell two-columns">
+      <div>
+        <p class="eyebrow">Canal de suministros</p>
+        <h2>Codigos recientes</h2>
+        <p>Solo marcamos un codigo como activo despues de comprobarlo. Evitamos promesas y listas desactualizadas.</p>
+      </div>
+      <div class="codes-list">
+        {gameCodes.map((item) => (
+          <div class="code-row">
+            <div><code>{item.code}</code><small>{item.reward}</small></div>
+            <StatusPill status={item.status} />
+          </div>
+        ))}
+        <a class="text-link" href="/codigos/">Consultar todos los codigos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell mission">
+    <p class="eyebrow">Nuestra mision</p>
+    <h2>Informacion clara, original y mantenida por jugadores.</h2>
+    <p>Esta wiki nace para reunir conocimiento disperso, citar sus fuentes y ayudarte a tomar mejores decisiones dentro del juego.</p>
+    <a class="button secondary" href="/acerca-de/">Conocer el proyecto</a>
+  </section>
+</BaseLayout>

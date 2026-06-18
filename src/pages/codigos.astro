@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import StatusPill from '../components/StatusPill.astro';
+import { gameCodes } from '../data/codes';
+---
+<BaseLayout title="Codigos" description="Codigos de Duck Survival, estado y fecha de verificacion.">
+  <PageHero eyebrow="Recompensas" title="Codigos de Duck Survival" description="Un registro transparente: cada codigo muestra su estado y fecha de comprobacion." />
+  <section class="section shell narrow">
+    <div class="notice"><strong>No hay codigos activos confirmados</strong><p>DUCK777 aparece en el plan inicial, pero permanece sin verificar para no publicar informacion dudosa.</p></div>
+    <div class="codes-list full">{gameCodes.map((item) => <div class="code-row"><div><code>{item.code}</code><small>{item.reward}</small></div><StatusPill status={item.status} /></div>)}</div>
+    <h2>Como canjearlos</h2><p>Las instrucciones se publicaran despues de comprobar el flujo exacto dentro de la version actual del juego.</p>
+  </section>
+</BaseLayout>
