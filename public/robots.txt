@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ducksurvival.guide/sitemap-index.xml
+Sitemap: https://duck-survival.pages.dev/sitemap-index.xml

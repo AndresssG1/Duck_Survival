@@ -21,4 +21,4 @@ npm run build
 - Directorio de salida: `dist`
 - Version recomendada de Node: `22`
 
-Antes del lanzamiento se debe reemplazar `https://ducksurvival.guide` en `astro.config.mjs` y `public/robots.txt` si se utiliza otro dominio.
+URL de produccion: `https://duck-survival.pages.dev`.
