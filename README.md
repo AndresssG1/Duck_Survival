@@ -24,3 +24,5 @@ npm run build
 URL de produccion: `https://duck-survival.pages.dev`.
 
 Consulta `docs/GUIA_DE_CONTENIDO.md` para editar o crear guias desde GitHub.
+
+Las fichas de personajes se cargan desde `src/data/characters.ts` y sus imagenes se guardan en `public/images/personajes`.

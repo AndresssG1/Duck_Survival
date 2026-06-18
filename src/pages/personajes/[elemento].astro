@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CharacterRow from '../../components/CharacterRow.astro';
+import { characters } from '../../data/characters';
+import { gameElements, type GameElement } from '../../data/elements';
+
+export function getStaticPaths() {
+  return gameElements.map((element) => ({ params: { elemento: element.id }, props: { element } }));
+}
+
+interface Props { element: GameElement }
+const { element } = Astro.props;
+const elementCharacters = characters.filter((character) => character.element === element.id);
+---
+
+<BaseLayout title={`Personajes de ${element.name}`} description={`Personajes, habilidades y sinergias del elemento ${element.name} en Duck Survival.`}>
+  <div class="element-page" style={`--element-color:${element.color}`}>
+    <PageHero eyebrow="Personajes por elemento" title={element.name} description={element.description} />
+    <section class="section shell character-list">
+      <a class="back-link" href="/personajes/">&lt;- Todos los elementos</a>
+      {elementCharacters.length > 0 ? (
+        elementCharacters.map((character, index) => <CharacterRow character={character} reverse={index % 2 === 1} elementColor={element.color} />)
+      ) : (
+        <div class="empty-roster">
+          <span class="element-mark" aria-hidden="true">{element.shortName}</span>
+          <div><p class="eyebrow">Catalogo en construccion</p><h2>El primer personaje de {element.name} sera agregado contigo.</h2><p>La estructura ya esta lista. El siguiente paso es elegir un personaje, cargar su imagen y verificar sus habilidades.</p></div>
+        </div>
+      )}
+    </section>
+  </div>
+</BaseLayout>

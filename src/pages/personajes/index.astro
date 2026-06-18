@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { gameElements } from '../../data/elements';
+---
+
+<BaseLayout title="Personajes" description="Explora los personajes de Duck Survival organizados por elemento.">
+  <PageHero eyebrow="Heroes y equipos" title="Personajes" description="Descubre personajes, habilidades y sinergias organizados por sus cinco elementos." />
+  <section class="section shell">
+    <div class="element-intro">
+      <p class="eyebrow">Elige un elemento</p>
+      <h2>Cinco caminos para formar tu equipo</h2>
+      <p>Las fichas se publicaran poco a poco, con imagenes y datos comprobados dentro del juego.</p>
+    </div>
+    <div class="element-grid">
+      {gameElements.map((element) => (
+        <a class="element-card" href={`/personajes/${element.id}/`} style={`--element-color:${element.color}`}>
+          <span class="element-mark" aria-hidden="true">{element.shortName}</span>
+          <div><h2>{element.name}</h2><p>{element.description}</p><b>Ver personajes <span aria-hidden="true">-&gt;</span></b></div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

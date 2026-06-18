@@ -1,0 +1,35 @@
+---
+import type { Character } from '../data/characters';
+
+interface Props {
+  character: Character;
+  reverse?: boolean;
+  elementColor: string;
+}
+
+const { character, reverse = false, elementColor } = Astro.props;
+---
+
+<article class:list={['character-row', { reverse }]} style={`--element-color:${elementColor}`}>
+  <div class="character-portrait">
+    {character.image ? (
+      <img src={character.image} alt={character.imageAlt} loading="lazy" width="620" height="620" />
+    ) : (
+      <div class="portrait-placeholder" role="img" aria-label={`Imagen pendiente de ${character.name}`}>
+        <span>Imagen pendiente</span>
+      </div>
+    )}
+  </div>
+  <div class="character-info">
+    <div class="character-tags">
+      <span>{character.element}</span><span>{character.rarity}</span><span>{character.role}</span>
+    </div>
+    <h2>{character.name}</h2>
+    <p>{character.description}</p>
+    <div class="character-columns">
+      <div><h3>Habilidades</h3><ul>{character.abilities.map((ability) => <li>{ability}</li>)}</ul></div>
+      <div><h3>Sinergias</h3><ul>{character.synergies.map((synergy) => <li>{synergy}</li>)}</ul></div>
+    </div>
+    <small>{character.verifiedAt ? `Verificado: ${character.verifiedAt}` : 'Ficha pendiente de verificacion'}</small>
+  </div>
+</article>
