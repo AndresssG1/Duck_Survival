@@ -15,7 +15,7 @@ import { gameElements } from '../../data/elements';
     <div class="element-grid">
       {gameElements.map((element) => (
         <a class="element-card" href={`/personajes/${element.id}/`} style={`--element-color:${element.color}`}>
-          <span class="element-mark" aria-hidden="true">{element.shortName}</span>
+          <span class="element-mark"><img src={element.icon} alt={`Icono del elemento ${element.name}`} width="96" height="96" loading="lazy" /></span>
           <div><h2>{element.name}</h2><p>{element.description}</p><b>Ver personajes <span aria-hidden="true">-&gt;</span></b></div>
         </a>
       ))}

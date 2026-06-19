@@ -23,7 +23,7 @@ const elementCharacters = characters.filter((character) => character.element ===
         elementCharacters.map((character, index) => <CharacterRow character={character} reverse={index % 2 === 1} elementColor={element.color} />)
       ) : (
         <div class="empty-roster">
-          <span class="element-mark" aria-hidden="true">{element.shortName}</span>
+          <span class="element-mark"><img src={element.icon} alt={`Icono del elemento ${element.name}`} width="96" height="96" /></span>
           <div><p class="eyebrow">Catalogo en construccion</p><h2>El primer personaje de {element.name} sera agregado contigo.</h2><p>La estructura ya esta lista. El siguiente paso es elegir un personaje, cargar su imagen y verificar sus habilidades.</p></div>
         </div>
       )}
