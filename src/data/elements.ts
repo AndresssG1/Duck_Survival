@@ -9,8 +9,8 @@ export interface GameElement {
 
 export const gameElements: GameElement[] = [
   { id: 'quemadura', name: 'Quemadura', shortName: 'QU', icon: '/images/elementos/quemadura.png', description: 'Personajes asociados al elemento Quemadura.', color: '#ff6b35' },
-  { id: 'rayo', name: 'Rayo', shortName: 'RA', icon: '/images/elementos/rayo.png', description: 'Personajes asociados al elemento Rayo.', color: '#ffd84d' },
+  { id: 'rayo', name: 'Rayo', shortName: 'RA', icon: '/images/elementos/rayo.png', description: 'Personajes asociados al elemento Rayo.', color: '#3978e8' },
   { id: 'escarcha', name: 'Escarcha', shortName: 'ES', icon: '/images/elementos/escarcha.png', description: 'Personajes asociados al elemento Escarcha.', color: '#69d5f5' },
-  { id: 'energia', name: 'Energia', shortName: 'EN', icon: '/images/elementos/energia.png', description: 'Personajes asociados al elemento Energia.', color: '#a987ff' },
+  { id: 'energia', name: 'Energia', shortName: 'EN', icon: '/images/elementos/energia.png', description: 'Personajes asociados al elemento Energia.', color: '#f3a52b' },
   { id: 'fisico', name: 'Fisico', shortName: 'FI', icon: '/images/elementos/fisico.png', description: 'Personajes asociados al elemento Fisico.', color: '#aeb7c4' },
 ];
