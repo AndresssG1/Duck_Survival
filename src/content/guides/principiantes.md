@@ -1,9 +1,9 @@
 ---
 title: Guía para principiantes
-description: Comprende el ciclo básico de Duck Survival sin depender de consejos sin verificar.
-eyebrow: Primeros pasos
+description: Aprende los fundamentos de Duck Survival desde el inicio hasta la noche 5.
+eyebrow: Tomo I · Noches 1 a 5
 publishedAt: '2026-06-18'
-updatedAt: '2026-06-18'
+updatedAt: '2026-06-19'
 gameVersion: '1.4.1'
 status: review
 sources:
@@ -11,7 +11,7 @@ sources:
     url: https://play.google.com/store/apps/details?id=com.mrtgd2us.google&hl=es_419
 ---
 
-Esta guía explica los sistemas básicos confirmados de **Duck Survival**. Las prioridades de mejora y estrategias concretas permanecen en revisión hasta comprobarlas directamente en la versión 1.4.1.
+Esta guía cubre el progreso desde el inicio hasta la **noche 5**. Explica los sistemas básicos confirmados de **Duck Survival**; las prioridades de mejora y estrategias concretas permanecen en revisión hasta comprobarlas directamente en la versión 1.4.1.
 
 ## Entiende la preparación diurna
 
@@ -48,3 +48,7 @@ Para completar esta guía documentaremos dentro del juego:
 5. Los errores que realmente frenan el progreso de una cuenta nueva.
 
 Hasta entonces evitaremos presentar opiniones como si fueran reglas del juego.
+
+## Meta de este tomo
+
+Al terminar esta guía, el jugador debería comprender el ciclo día/noche, reconocer los sistemas iniciales y saber qué información debe observar antes de preparar cada defensa hasta la noche 5.

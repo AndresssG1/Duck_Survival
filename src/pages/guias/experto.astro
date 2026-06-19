@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<BaseLayout title="Guía experta" description="Espacio comunitario para proponer estrategias avanzadas de Duck Survival.">
+  <PageHero eyebrow="Tomo III · Comunidad" title="Guía experta" description="Un espacio para convertir experiencia de jugadores en estrategias verificadas y útiles para todos." />
+  <section class="section shell narrow expert-intro">
+    <div class="notice"><strong>Formulario en preparación</strong><p>Los envíos se habilitarán cuando la moderación, Turnstile y el almacenamiento seguro estén configurados. Ningún dato se envía todavía.</p></div>
+    <h2>Comparte una estrategia</h2>
+    <p>No necesitas una cuenta. El nombre será opcional y cada aporte pasará por revisión antes de aparecer en la wiki.</p>
+    <form class="expert-form" aria-describedby="form-status">
+      <label>Nombre o alias <span>Opcional</span><input type="text" name="displayName" maxlength="40" disabled /></label>
+      <label>Versión del juego <input type="text" name="gameVersion" value="1.4.1" disabled /></label>
+      <label>Título de la estrategia <input type="text" name="title" maxlength="100" disabled /></label>
+      <label>Explica tu estrategia <textarea name="strategy" rows="8" maxlength="5000" disabled></textarea></label>
+      <label>Fuente, vídeo o captura <span>Opcional</span><input type="url" name="sourceUrl" disabled /></label>
+      <label class="form-consent"><input type="checkbox" disabled /> Acepto que el aporte sea revisado, editado y publicado en la wiki.</label>
+      <button class="button primary" type="submit" disabled>Envíos próximamente</button>
+      <p id="form-status">El tablero público mostrará solamente aportes aprobados.</p>
+    </form>
+  </section>
+</BaseLayout>

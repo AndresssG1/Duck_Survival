@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const volumes = [
+  {
+    number: 'Tomo I',
+    title: 'Principiantes',
+    range: 'Noches 1 a 5',
+    description: 'Aprende el ciclo de juego, prepara tu base y comprende los primeros sistemas.',
+    status: 'En desarrollo',
+    href: '/guias/principiantes/',
+    className: 'guide-beginner',
+  },
+  {
+    number: 'Tomo II',
+    title: 'Intermedio',
+    range: 'Noches 6 a 10',
+    description: 'Profundiza en progresion, formaciones y decisiones para las siguientes noches.',
+    status: 'En investigacion',
+    href: '/guias/intermedio/',
+    className: 'guide-intermediate',
+  },
+  {
+    number: 'Tomo III',
+    title: 'Experto',
+    range: 'Despues de la noche 10',
+    description: 'Comparte estrategias avanzadas para que puedan verificarse y convertirse en nuevas guias.',
+    status: 'Comunidad',
+    href: '/guias/experto/',
+    className: 'guide-expert',
+  },
+];
+---
+
+<BaseLayout title="Guías" description="Guías de Duck Survival organizadas desde las primeras noches hasta estrategias avanzadas.">
+  <PageHero eyebrow="Ruta de supervivencia" title="Guías" description="Tres tomos para avanzar a tu ritmo, con información verificada y aportes de la comunidad." />
+  <section class="section shell">
+    <div class="guide-volume-grid">
+      {volumes.map((volume) => (
+        <a class={`guide-volume ${volume.className}`} href={volume.href}>
+          <div class="volume-top"><span>{volume.number}</span><b>{volume.status}</b></div>
+          <h2>{volume.title}</h2>
+          <p class="volume-range">{volume.range}</p>
+          <p>{volume.description}</p>
+          <strong>Entrar al tomo <span aria-hidden="true">-&gt;</span></strong>
+        </a>
+      ))}
+    </div>
+    <a class="game-intro-link" href="/guias/que-es-duck-survival/">
+      <span>Antes de comenzar</span>
+      <div><h2>Qué es Duck Survival</h2><p>Conoce el ciclo día/noche, los elementos y los modos confirmados.</p></div>
+      <b aria-hidden="true">-&gt;</b>
+    </a>
+  </section>
+</BaseLayout>
