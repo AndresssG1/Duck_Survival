@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const menuItems = [
+  { label: 'Rutina', href: '#rutina' },
+  { label: 'Bloqueos', href: '#bloqueos' },
+  { label: 'Héroes', href: '#heroes' },
+  { label: 'Desafío', href: '#desafio' },
+  { label: 'Equipo', href: '#equipo' },
+  { label: 'Gemas', href: '#gemas' },
+  { label: 'Recursos', href: '#recursos' },
+  { label: 'Revisión', href: '#revision' },
+];
+
+const routine = [
+  { title: 'Recompensas', detail: 'Limpia los indicadores rojos y revisa el correo.' },
+  { title: 'Códigos', detail: 'Canjea los códigos activos antes de planificar gastos.', href: '/codigos/' },
+  { title: 'Actividades', detail: 'Comprueba desafíos, eventos y recompensas disponibles.', href: '/eventos/' },
+  { title: 'Patrullas', detail: 'Revisa el progreso pasivo y Fast Patrol si está desbloqueado.' },
+];
+
+const diagnostics = [
+  { signal: 'La oleada no cae', answer: 'Daño', action: 'Revisa skills, héroes y equipo.' },
+  { signal: 'La base cae pronto', answer: 'Defensa', action: 'Refuerza supervivencia y estructuras.' },
+  { signal: 'Te rodean muy rápido', answer: 'Control', action: 'Busca ralentización, empuje o congelación.' },
+  { signal: 'Todo parece insuficiente', answer: 'Progreso', action: 'Usa patrullas y mejora la cuenta.' },
+];
+
+const equipmentSteps = [
+  ['01', 'Elige la ranura', 'Identifica la pieza que limita tu progreso.'],
+  ['02', 'Invierte con intención', 'Evita repartir materiales sin un objetivo.'],
+  ['03', 'Busca el umbral', 'La comunidad recomienda avanzar en bloques de 10 niveles.'],
+  ['04', 'Revisa estadísticas', 'Compara crítico, daño de skill y enfriamiento.'],
+];
+
+const researchItems = [
+  ['Necesita captura', 'Formación de cuatro héroes y posiciones.'],
+  ['Sin comprobar', 'Bonificaciones por elemento y porcentajes.'],
+  ['Probando en 1.4.1', 'Niveles heredados por las ranuras.'],
+  ['Necesita captura', 'Costes y límites de Fast Patrol.'],
+  ['Sin comprobar', 'Probabilidades y contador garantizado.'],
+  ['Necesita captura', 'Rarezas y refinamiento de gemas.'],
+];
+---
+
+<BaseLayout title="Guía intermedia" description="Progresión de cuenta, patrullas, desafíos, héroes, equipo y recursos de Duck Survival.">
+  <PageHero eyebrow="Tomo II · Progresión de cuenta" title="Guía intermedia" description="Un panel para decidir qué revisar, dónde invertir y cómo avanzar cuando la historia empieza a exigir más." />
+
+  <nav class="guide-jump-nav" aria-label="Secciones de la guía intermedia">
+    <div class="shell">
+      {menuItems.map((item, index) => <a href={item.href}><span>{String(index + 1).padStart(2, '0')}</span>{item.label}</a>)}
+    </div>
+  </nav>
+
+  <aside class="research-disclosure shell" aria-labelledby="estado-intermedio">
+    <div><p class="eyebrow">Cómo leer este tomo</p><h2 id="estado-intermedio">Experiencia comunitaria, no reglas absolutas</h2><p>La guía reúne recomendaciones compartidas por jugadores. Los comportamientos y cifras específicos permanecen en revisión para la versión 1.4.1.</p></div>
+    <div class="evidence-legend"><span class="evidence-badge community">Consejo comunitario</span><span class="evidence-badge pending">Pendiente de verificar</span></div>
+  </aside>
+
+  <section class="intermediate-section shell" id="rutina">
+    <div class="intermediate-heading"><div><p class="eyebrow">Antes de gastar</p><h2>Tu rutina de progreso</h2><p>Reúne primero todo lo disponible para conocer tus recursos reales.</p></div><span>01</span></div>
+    <div class="routine-board">
+      {routine.map((item, index) => (
+        <article class="routine-card">
+          <input id={`routine-${index}`} type="checkbox" />
+          <label for={`routine-${index}`}>
+            <span class="routine-check" aria-hidden="true">✓</span>
+            <span><strong>{item.title}</strong><small>{item.detail}</small></span>
+          </label>
+          {item.href && <a href={item.href}>Abrir sección →</a>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="intermediate-section decision-section" id="bloqueos">
+    <div class="shell">
+      <div class="intermediate-heading light"><div><p class="eyebrow">Árbol de decisión</p><h2>¿Por qué estás bloqueado?</h2><p>Corrige una causa, vuelve a intentarlo y observa qué falla después.</p></div><span>02</span></div>
+      <div class="decision-grid">
+        {diagnostics.map((item) => <article><small>Si ocurre esto</small><h3>{item.signal}</h3><b aria-hidden="true">↓</b><strong>{item.answer}</strong><p>{item.action}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="intermediate-section shell" id="heroes">
+    <div class="intermediate-heading"><div><p class="eyebrow">Formación visual</p><h2>Héroes y habilidades enlazadas</h2><p>Evalúa al héroe junto con la skill que modifica, no solo por rareza.</p></div><span>03</span></div>
+    <div class="formation-layout">
+      <div class="formation-board" aria-label="Formación comunitaria pendiente de verificar">
+        <div class="formation-line front"><span>Frente</span><article><b>01</b><small>Delantero</small></article><article><b>02</b><small>Delantero</small></article></div>
+        <div class="formation-line back"><span>Apoyo</span><article><b>03</b><small>Trasero</small></article><article><b>04</b><small>Trasero</small></article></div>
+      </div>
+      <div class="formation-notes">
+        <span class="evidence-badge pending">Pendiente de verificar</span>
+        <h3>La formación descrita por la comunidad</h3>
+        <p>Askoy describe cuatro espacios y niveles asociados a la ranura. Necesitamos capturas antes de presentarlo como una regla general.</p>
+        <div><strong>Héroe</strong><b>+</b><strong>Habilidad enlazada</strong><b>=</b><strong>Valor del equipo</strong></div>
+        <a class="text-link" href="/personajes/">Explorar personajes →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intermediate-section challenge-section" id="desafio">
+    <div class="shell challenge-layout">
+      <div class="challenge-copy"><p class="eyebrow">Misión comunitaria</p><h2>Challenge Mode Extreme</h2><p>Se describe como un modo sin coste de energía, con varias noches y objetivos para conseguir estrellas.</p><div class="star-display" aria-label="Tres estrellas pendientes de documentar"><span>★</span><span>★</span><span>★</span></div><a class="button secondary" href="/eventos/desafios/">Ir a desafíos</a></div>
+      <article class="mission-card">
+        <div><span>Estado</span><b>En investigación</b></div>
+        <h3>Antes de publicar estrategias</h3>
+        <ul><li>Confirmar su desbloqueo.</li><li>Contar noches y objetivos.</li><li>Verificar intentos separados.</li><li>Registrar recompensas por estrellas.</li></ul>
+        <small>Los trucos concretos no se publicarán hasta comprobarlos.</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="intermediate-section shell" id="equipo">
+    <div class="intermediate-heading"><div><p class="eyebrow">Ruta de mejora</p><h2>Equipo sin desperdiciar materiales</h2><p>Una secuencia para tomar decisiones con intención.</p></div><span>05</span></div>
+    <div class="equipment-flow">{equipmentSteps.map(([number, title, detail], index) => <article><span>{number}</span><h3>{title}</h3><p>{detail}</p>{index < equipmentSteps.length - 1 && <b aria-hidden="true">→</b>}</article>)}</div>
+  </section>
+
+  <section class="intermediate-section gem-section" id="gemas">
+    <div class="shell gem-layout">
+      <div><p class="eyebrow">Capa de progresión</p><h2>Escalera de gemas</h2><p>La fuente describe una progresión por rarezas y refinamiento. Los nombres, colores, costes y probabilidades todavía necesitan capturas en español.</p><span class="evidence-badge pending">Nomenclatura en revisión</span></div>
+      <div class="gem-ladder" aria-label="Rarezas comunitarias de gemas">
+        {['Común','Verde','Azul','Morada','Amarilla','Roja','Mítica'].map((name, index) => <span style={`--gem-step:${index}`}>{name}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="intermediate-section shell" id="recursos">
+    <div class="intermediate-heading"><div><p class="eyebrow">Decisiones de valor</p><h2>Cupones y diamantes</h2><p>Consulta siempre lo que muestra tu servidor antes de gastar.</p></div><span>07</span></div>
+    <div class="resource-columns">
+      <article class="resource-do"><span>Conviene revisar</span><h3>Antes de usar recursos</h3><ul><li>Calendario de invocación.</li><li>Recompensas adicionales.</li><li>Contador garantizado visible.</li><li>Coste real de energía.</li></ul></article>
+      <article class="resource-avoid"><span>Evita asumir</span><h3>No son reglas universales</h3><ul><li>Que diez tiradas mejoren las probabilidades.</li><li>Que comprar energía siempre compense.</li><li>Que una oferta sea necesaria para avanzar.</li><li>Que el mismo gasto sirva para todas las cuentas.</li></ul></article>
+    </div>
+  </section>
+
+  <section class="intermediate-section research-section" id="revision">
+    <div class="shell">
+      <div class="intermediate-heading light"><div><p class="eyebrow">Tablero de investigación</p><h2>Lo que seguimos comprobando</h2><p>Cada ficha cambiará de estado cuando tengamos capturas o pruebas suficientes.</p></div><span>08</span></div>
+      <div class="research-grid">{researchItems.map(([status, item]) => <article><span>{status}</span><p>{item}</p></article>)}</div>
+      <aside class="guide-credit"><div><p class="eyebrow">Crédito comunitario</p><h3>Guía original de Askoy</h3><p>Compartida en el Discord de Duck Survival. Contenido resumido, reorganizado y adaptado al español por Duck Survival Guía.</p></div><div><strong>Versión revisada</strong><span>1.4.1</span><a href="https://discord.gg/QgXS5vtmvr" rel="external">Discord de Duck Survival →</a></div></aside>
+    </div>
+  </section>
+</BaseLayout>

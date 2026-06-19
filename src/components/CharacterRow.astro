@@ -20,7 +20,7 @@ const rarityClass = rarityClasses[character.rarity] ?? 'rarity-default';
 <article class:list={['character-row', rarityClass, { reverse }]} style={`--element-color:${elementColor}`}>
   <div class="character-portrait">
     {character.image ? (
-      <img src={character.image} alt={character.imageAlt} loading="lazy" width="620" height="620" />
+      <img class="character-image" src={character.image} alt={character.imageAlt} loading="lazy" decoding="async" />
     ) : (
       <div class="portrait-placeholder" role="img" aria-label={`Imagen pendiente de ${character.name}`}>
         <span>Imagen pendiente</span>
