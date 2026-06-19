@@ -5,9 +5,10 @@ interface Props {
   character: Character;
   reverse?: boolean;
   elementColor: string;
+  elementName: string;
 }
 
-const { character, reverse = false, elementColor } = Astro.props;
+const { character, reverse = false, elementColor, elementName } = Astro.props;
 ---
 
 <article class:list={['character-row', { reverse }]} style={`--element-color:${elementColor}`}>
@@ -22,14 +23,35 @@ const { character, reverse = false, elementColor } = Astro.props;
   </div>
   <div class="character-info">
     <div class="character-tags">
-      <span>{character.element}</span><span>{character.rarity}</span><span>{character.role}</span>
+      <span>{elementName}</span><span>{character.rarity}</span>
     </div>
     <h2>{character.name}</h2>
     <p>{character.description}</p>
-    <div class="character-columns">
-      <div><h3>Habilidades</h3><ul>{character.abilities.map((ability) => <li>{ability}</li>)}</ul></div>
-      <div><h3>Sinergias</h3><ul>{character.synergies.map((synergy) => <li>{synergy}</li>)}</ul></div>
+    <div class="character-acquisition">
+      <h3>Cómo se obtiene</h3>
+      <p>{character.acquisition}</p>
     </div>
-    <small>{character.verifiedAt ? `Verificado: ${character.verifiedAt}` : 'Ficha pendiente de verificacion'}</small>
+    <div class="ability-list">
+      {character.abilities.map((ability) => (
+        <section class="ability-card">
+          <img src={ability.image} alt={`Icono de ${ability.name}`} width="76" height="76" loading="lazy" />
+          <div>
+            <span>{ability.type}</span>
+            <h3>{ability.name}</h3>
+            <p>{ability.description}</p>
+            {ability.unlock && <small>{ability.unlock}</small>}
+          </div>
+        </section>
+      ))}
+    </div>
+    {character.linkedAbility && (
+      <section class="linked-ability">
+        <span>Habilidad enlazada: {character.linkedAbility.name}</span>
+        <h3>{character.linkedAbility.passiveName} <small>(pasiva única)</small></h3>
+        <p>{character.linkedAbility.description}</p>
+      </section>
+    )}
+    <p class="progression-note">{character.progressionNote}</p>
+    <small>{character.verifiedAt ? `Verificado: ${character.verifiedAt} | Versión ${character.gameVersion}` : 'Ficha pendiente de verificación'}</small>
   </div>
 </article>

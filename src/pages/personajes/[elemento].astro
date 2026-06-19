@@ -20,7 +20,7 @@ const elementCharacters = characters.filter((character) => character.element ===
     <section class="section shell character-list">
       <a class="back-link" href="/personajes/">&lt;- Todos los elementos</a>
       {elementCharacters.length > 0 ? (
-        elementCharacters.map((character, index) => <CharacterRow character={character} reverse={index % 2 === 1} elementColor={element.color} />)
+        elementCharacters.map((character, index) => <CharacterRow character={character} reverse={index % 2 === 1} elementColor={element.color} elementName={element.name} />)
       ) : (
         <div class="empty-roster">
           <span class="element-mark"><img src={element.icon} alt={`Icono del elemento ${element.name}`} width="96" height="96" /></span>
