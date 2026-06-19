@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { dailyChallenges } from '../../data/events';
+---
+
+<BaseLayout title="Desafíos diarios" description="Arena PvP, mazmorras, Guild Boss y desafíos diarios de Duck Survival.">
+  <PageHero eyebrow="Actividad recurrente" title="Desafíos diarios" description="Actividades que se desbloquean con el progreso y pueden realizarse de forma recurrente desde el apartado Desafío." />
+  <section class="section shell">
+    <a class="back-link" href="/eventos/">&lt;- Eventos y desafíos</a>
+    <div class="challenge-grid">
+      {dailyChallenges.map((challenge) => (
+        <article class="challenge-card">
+          <div class="challenge-top"><span>{challenge.audience === 'guild' ? 'Gremio' : 'Individual'}</span><b>Diario</b></div>
+          <h2>{challenge.name}</h2><p>{challenge.description}</p>
+          <dl><div><dt>Desbloqueo</dt><dd>{challenge.unlockRequirement}</dd></div><div><dt>Reinicio</dt><dd>{challenge.resetSchedule}</dd></div></dl>
+          <small>Verificado: {challenge.verifiedAt} · Mecánicas en documentación</small>
+        </article>
+      ))}
+    </div>
+    <div class="notice activity-note"><strong>Documentación pendiente</strong><p>Las reglas, intentos y recompensas se añadirán con capturas de cada pantalla del juego.</p></div>
+  </section>
+</BaseLayout>

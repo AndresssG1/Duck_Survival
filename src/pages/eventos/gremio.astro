@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { gameEvents } from '../../data/events';
+const events = gameEvents.filter((event) => event.audience === 'guild');
+---
+
+<BaseLayout title="Eventos de gremio" description="Eventos temporales de gremio de Duck Survival.">
+  <PageHero eyebrow="Calendario temporal" title="Eventos de gremio" description="Actividades con fecha limitada cuyo progreso o recompensas dependen del gremio." />
+  <section class="section shell narrow"><a class="back-link" href="/eventos/">&lt;- Eventos y desafíos</a>{events.length === 0 && <div class="event-empty"><p class="eyebrow">Sin eventos registrados</p><h2>Esperando el próximo calendario de gremio.</h2><p>Publicaremos aquí sus reglas y recompensas cuando puedan verificarse dentro del juego.</p></div>}</section>
+</BaseLayout>
