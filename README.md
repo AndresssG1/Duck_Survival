@@ -26,3 +26,14 @@ URL de produccion: `https://duck-survival.pages.dev`.
 Consulta `docs/GUIA_DE_CONTENIDO.md` para editar o crear guias desde GitHub.
 
 Las fichas de personajes se cargan desde `src/data/characters.ts` y sus imagenes se guardan en `public/images/personajes`.
+
+## Estandar de imagenes de personajes
+
+- Ruta: `public/images/personajes/<elemento>/<slug-del-personaje>/`.
+- Carpetas y archivos siempre en minusculas, sin tildes ni espacios.
+- Usa guiones para separar palabras.
+- La carpeta del personaje debe coincidir con su `slug` en `characters.ts`.
+- Imagen principal: `personaje.png` o un nombre estable ya publicado, como `gordon.png`.
+- Habilidades: usa su nombre en formato kebab-case, como `corte-giratorio.png`, o `habilidad-normal.png` y `habilidad-definitiva.png` cuando aun no haya un nombre definitivo.
+
+Ejemplo: `public/images/personajes/energia/ojo-de-laser-lux/habilidad-normal.png`.

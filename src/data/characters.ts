@@ -71,7 +71,7 @@ export const characters: Character[] = [
     'Descripción breve basada en sus habilidades confirmadas.',
 
   image:
-    '/images/personajes/energia/Lux/personaje.png',
+    '/images/personajes/energia/ojo-de-laser-lux/personaje.png',
 
   imageAlt:
     'Ojo de Láser - Lux, con cabello blanco con una armadura azul y negra completa',
@@ -88,7 +88,7 @@ export const characters: Character[] = [
       type: 'Habilidad normal',
       description: 'Lux lanza Misiles Nanómetricos con la palma, causando daño de energía equivalente a 100% de su ataque',
       image:
-        '/images/personajes/energia/Lux/habilidad-normal.png',
+        '/images/personajes/energia/ojo-de-laser-lux/habilidad-normal.png',
       unlock: 'Se desbloquea con 1 estrella.',
     },
     {
@@ -96,7 +96,7 @@ export const characters: Character[] = [
       type: 'Habilidad definitiva',
       description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico, infligiendo daño de energía a un solo objetivo cada segundo durante 6 segundos',
       image:
-        '/images/personajes/energia/Lux/habilidad-definitiva.png',
+        '/images/personajes/energia/ojo-de-laser-lux/habilidad-definitiva.png',
       unlock: null,
     },
   ],
