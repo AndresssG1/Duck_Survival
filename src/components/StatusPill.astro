@@ -1,6 +1,6 @@
 ---
 interface Props { status: 'active' | 'expired' | 'unverified' }
 const { status } = Astro.props;
-const labels = { active: 'Activo', expired: 'Expirado', unverified: 'Por verificar' };
+const labels = { active: 'Activo', expired: 'Inactivo', unverified: 'Por verificar' };
 ---
 <span class={`status status-${status}`}>{labels[status]}</span>

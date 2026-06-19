@@ -8,6 +8,7 @@ const sections = [
   { icon: '02', title: 'Construcciones', text: 'Conoce la funcion de cada edificio y como priorizar mejoras.', href: '/construcciones/' },
   { icon: '03', title: 'Habilidades', text: 'Consulta tipos de dano, elementos y habilidades conocidas.', href: '/habilidades/' },
 ];
+const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0, 3);
 ---
 
 <BaseLayout title="Duck Survival Guia" description="Guias, codigos y estrategias de Duck Survival en espanol, con informacion verificada y actualizada.">
@@ -54,7 +55,7 @@ const sections = [
         <p>Solo marcamos un codigo como activo despues de comprobarlo. Evitamos promesas y listas desactualizadas.</p>
       </div>
       <div class="codes-list">
-        {gameCodes.map((item) => (
+        {recentCodes.map((item) => (
           <div class="code-row">
             <div><code>{item.code}</code><small>{item.reward}</small></div>
             <StatusPill status={item.status} />
