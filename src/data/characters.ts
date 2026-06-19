@@ -308,4 +308,54 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'armadura-28-hank',
+
+    name: 'Armadura 28 - Hank',
+    element: 'quemadura',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/quemadura/armadura-28-hank/personaje.webp',
+
+    imageAlt:
+      'Armadura 28 - Hank, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe de Puño',
+        type: 'Habilidad normal',
+        description: 'Inflige daño de fuego equivalente a 25% del ataque a objetivos en área pequeña.',
+        image:
+          '/images/personajes/quemadura/armadura-28-hank/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Imparable',
+        type: 'Habilidad definitiva',
+        description: 'Embiste hacia adelante, empuja a los enemigos y causa daño de fuego equivalente a 50% de su ataque.',
+        image:
+          '/images/personajes/quemadura/armadura-28-hank/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Meteorito',
+      passiveName: 'Lluvia de meteoritos',
+      description: 'Al caer, los meteoritos añaden 2 meteoritos pequeños.',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
