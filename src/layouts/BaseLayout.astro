@@ -13,6 +13,7 @@ const { title, description, canonical = Astro.url.pathname } = Astro.props;
 const siteName = 'Duck Survival Guía';
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 const canonicalUrl = new URL(canonical, Astro.site);
+const socialImageUrl = new URL('/images/social/duck-survival-og.webp', Astro.site);
 ---
 
 <!doctype html>
@@ -32,7 +33,14 @@ const canonicalUrl = new URL(canonical, Astro.site);
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="2848" />
+    <meta property="og:image:height" content="1504" />
+    <meta property="og:image:alt" content="Duck Survival Guía: guías, códigos, héroes y estrategias" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Duck Survival Guía: guías, códigos, héroes y estrategias" />
     <title>{pageTitle}</title>
   </head>
   <body>

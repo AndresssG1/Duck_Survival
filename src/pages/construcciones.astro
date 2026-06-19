@@ -1,9 +1,93 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-const buildings = ['Gold Mine', 'Survivor Camp', 'Machine Gun Turret', 'Infantry Camp', 'EMP Tower'];
+
+const baseSystems = [
+  {
+    number: '01',
+    name: 'Archivo',
+    type: 'Catálogo',
+    description: 'Reúne la información de los monstruos encontrados durante el progreso.',
+    note: 'En el futuro enlazará con el catálogo de monstruos de esta wiki.',
+  },
+  {
+    number: '02',
+    name: 'Central eléctrica',
+    type: 'Energía',
+    description: 'Gestiona la energía necesaria para participar en distintos modos de juego, especialmente en la historia principal.',
+    note: 'La producción, capacidad y mejoras todavía deben documentarse.',
+  },
+  {
+    number: '03',
+    name: 'Logística del Yermo',
+    type: 'Cofres',
+    description: 'Permite conseguir cofres que requieren un tiempo de desbloqueo antes de poder reclamarse.',
+    note: 'Mientras se desbloquean, otros jugadores pueden intentar robarlos.',
+  },
+  {
+    number: '04',
+    name: 'Mina de sobrevivientes',
+    type: 'Mineral',
+    description: 'Produce un mineral utilizado para realizar compras dentro de su sistema correspondiente.',
+    note: 'Los jugadores conquistados actúan como mineros; la cantidad disponible depende del progreso en la historia y otros jugadores también pueden conquistarte.',
+  },
+  {
+    number: '05',
+    name: 'Departamento de Ingeniería',
+    type: 'Mejoras de partida',
+    description: 'Agrupa las construcciones que se utilizan y mejoran durante las partidas.',
+    note: 'Es el punto de entrada a las ocho categorías de construcción documentadas abajo.',
+    featured: true,
+  },
+];
+
+const engineeringTypes = [
+  { number: '01', name: 'La Base', purpose: 'Construcción central de la partida.' },
+  { number: '02', name: 'Cuartel cuerpo a cuerpo', purpose: 'Unidades destinadas al combate cercano.' },
+  { number: '03', name: 'Cuartel a distancia', purpose: 'Unidades que atacan desde una posición alejada.' },
+  { number: '04', name: 'Torre defensiva de área', purpose: 'Daño dirigido a varios enemigos.' },
+  { number: '05', name: 'Torre defensiva de apoyo', purpose: 'Efectos de soporte para la defensa.' },
+  { number: '06', name: 'Torre defensiva de objetivo único', purpose: 'Daño concentrado sobre un enemigo.' },
+  { number: '07', name: 'Muralla', purpose: 'Protección y contención del avance enemigo.' },
+  { number: '08', name: 'Taller', purpose: 'Categoría técnica con opciones todavía por documentar.' },
+];
 ---
-<BaseLayout title="Construcciones" description="Edificios y estructuras conocidas de Duck Survival.">
-  <PageHero eyebrow="Base y defensa" title="Construcciones" description="Identifica la función de cada estructura y prepara el orden de mejoras de tu base." />
-  <section class="section shell buildings-section"><div class="card-grid compact buildings-grid">{buildings.map((name, index) => <article class="guide-card"><span>{String(index + 1).padStart(2, '0')}</span><h2>{name}</h2><p>Ficha detallada pendiente de verificación.</p></article>)}</div></section>
+
+<BaseLayout title="Base y construcciones" description="Sistemas de la Base y categorías de construcción del Departamento de Ingeniería de Duck Survival.">
+  <PageHero eyebrow="Base, recursos y defensa" title="Base y construcciones" description="Conoce cómo se organiza la Base fuera de las partidas y qué tipos de construcción reúne el Departamento de Ingeniería." />
+
+  <section class="section shell base-introduction">
+    <div><p class="eyebrow">Vista general</p><h2>Dos niveles diferentes</h2><p>La <strong>Base</strong> funciona como centro principal y contiene cinco sistemas. Dentro de uno de ellos, el <strong>Departamento de Ingeniería</strong>, se encuentran las construcciones utilizadas durante las partidas.</p></div>
+    <div class="base-summary" aria-label="Resumen de la sección"><article><strong>5</strong><span>Sistemas de la Base</span></article><article><strong>8</strong><span>Tipos de construcción</span></article></div>
+  </section>
+
+  <section class="section base-systems-section">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Centro principal</p><h2>Sistemas de la Base</h2></div><span class="evidence-badge confirmed">Estructura identificada</span></div>
+      <div class="base-system-grid">
+        {baseSystems.map((system) => (
+          <article class:list={['base-system-card', { featured: system.featured }]}>
+            <div class="base-system-top"><span>{system.number}</span><b>{system.type}</b></div>
+            <h3>{system.name}</h3>
+            <p>{system.description}</p>
+            <small>{system.note}</small>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section engineering-section">
+    <div class="shell">
+      <div class="engineering-heading"><div><p class="eyebrow">Departamento de Ingeniería</p><h2>Ocho tipos de construcción</h2><p>Cada categoría contiene opciones y mejoras diferentes. Por ahora mostramos su función general; las estadísticas y fichas individuales se incorporarán cuando estén verificadas.</p></div><span>8</span></div>
+      <div class="engineering-grid">
+        {engineeringTypes.map((building) => <article><span>{building.number}</span><h3>{building.name}</h3><p>{building.purpose}</p><small>Ficha detallada pendiente</small></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell construction-roadmap">
+    <div><p class="eyebrow">Próxima etapa</p><h2>Qué tendrá cada ficha</h2><p>Esta estructura queda preparada para añadir una construcción a la vez sin rehacer la página general.</p></div>
+    <ol><li><span>01</span>Nombre e imagen</li><li><span>02</span>Función y categoría</li><li><span>03</span>Opciones disponibles</li><li><span>04</span>Desbloqueo y mejoras</li><li><span>05</span>Versión y verificación</li></ol>
+  </section>
 </BaseLayout>
