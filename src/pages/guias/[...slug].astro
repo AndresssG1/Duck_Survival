@@ -36,6 +36,14 @@ const statusLabels = {
     <div class="prose">
       <Content />
     </div>
+    {guide.data.communityCredit && (
+      <aside class="community-credit" aria-labelledby="credito-comunitario-titulo">
+        <p class="eyebrow">Crédito comunitario</p>
+        <h2 id="credito-comunitario-titulo">Guía original de {guide.data.communityCredit.author}</h2>
+        <p>{guide.data.communityCredit.context}</p>
+        <small>Contenido resumido, reorganizado y adaptado al español por Duck Survival Guía.</small>
+      </aside>
+    )}
     <section class="sources" aria-labelledby="fuentes-titulo">
       <h2 id="fuentes-titulo">Fuentes</h2>
       <ul>

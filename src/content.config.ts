@@ -12,6 +12,12 @@ const guides = defineCollection({
     updatedAt: z.string(),
     gameVersion: z.string(),
     status: z.enum(['draft', 'verified', 'review']),
+    communityCredit: z
+      .object({
+        author: z.string(),
+        context: z.string(),
+      })
+      .optional(),
     sources: z.array(
       z.object({
         label: z.string(),
