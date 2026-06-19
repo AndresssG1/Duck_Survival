@@ -200,9 +200,59 @@ export const characters: Character[] = [
     ],
 
     linkedAbility: {
-      name: 'Torre de Rayo Pulsante',
-      passiveName: 'Impacto de Energía',
-      description: 'Cada vez que el rayo de pulso ataque 3 veces, liberará una onda de choque de energía',
+      name: 'Cuchillas Giratorias',
+      passiveName: 'Rueda Explosiva',
+      description: 'El proyectil de la rueda tiene un 15% de probalidad de explotar una vez al impactar en el objetivo',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'vanguardia-del-hielo-luke',
+
+    name: 'Vanguardia del Hielo - Luke',
+    element: 'escarcha',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/escarcha/vanguardia-del-hielo-luke/personaje.webp',
+
+    imageAlt:
+      'Vanguardia del Hielo - Luke, con una espada de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Martillo Pesado',
+        type: 'Habilidad normal',
+        description: 'Blande un martillo que inflige daño de hielo equivalente a 50% del ataque en un área en forma de abanico frontal.',
+        image:
+          '/images/personajes/escarcha/vanguardia-del-hielo-luke/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Impacto de Escarcha',
+        type: 'Habilidad definitiva',
+        description: 'Golpea el suelo con un martillo, ralentizando a todos los enemigos en el área durante 2 segundos y causando daño de hielo equivalente a 100% de su ataque.',
+        image:
+          '/images/personajes/escarcha/vanguardia-del-hielo-luke/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Escudo de Hielo',
+      passiveName: 'Escarcha Dispersa',
+      description: 'Al finalizar el escudo de hielo, se emite hacia afuera',
     },
 
     verifiedAt: '2026-06-19',
