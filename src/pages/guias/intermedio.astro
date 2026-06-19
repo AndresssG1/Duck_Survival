@@ -6,7 +6,7 @@ const menuItems = [
   { label: 'Rutina', href: '#rutina' },
   { label: 'Bloqueos', href: '#bloqueos' },
   { label: 'Héroes', href: '#heroes' },
-  { label: 'Desafío', href: '#desafio' },
+  { label: 'Progreso', href: '#progreso' },
   { label: 'Equipo', href: '#equipo' },
   { label: 'Gemas', href: '#gemas' },
   { label: 'Recursos', href: '#recursos' },
@@ -14,10 +14,10 @@ const menuItems = [
 ];
 
 const routine = [
-  { title: 'Recompensas', detail: 'Limpia los indicadores rojos y revisa el correo.' },
-  { title: 'Códigos', detail: 'Canjea los códigos activos antes de planificar gastos.', href: '/codigos/' },
-  { title: 'Actividades', detail: 'Comprueba desafíos, eventos y recompensas disponibles.', href: '/eventos/' },
-  { title: 'Patrullas', detail: 'Revisa el progreso pasivo y Fast Patrol si está desbloqueado.' },
+  { title: 'Recompensas', detail: 'Revisa el correo y los indicadores rojos: pueden señalar materiales o recompensas pendientes.', reason: 'Así conoces tus recursos reales antes de mejorar.' },
+  { title: 'Códigos', detail: 'Comprueba la lista actual y canjea los códigos que todavía estén activos.', reason: 'Entregan recursos sin consumir progreso de la cuenta.', href: '/codigos/' },
+  { title: 'Actividades', detail: 'Consulta desafíos y eventos disponibles para tu cuenta o gremio.', reason: 'Algunas recompensas dependen del calendario.', href: '/eventos/' },
+  { title: 'Progreso pasivo', detail: 'Mira las patrullas y Fast Patrol únicamente cuando esos sistemas estén desbloqueados.', reason: 'Pueden aportar experiencia y materiales fuera del combate.' },
 ];
 
 const diagnostics = [
@@ -36,6 +36,7 @@ const equipmentSteps = [
 
 const researchItems = [
   ['Necesita captura', 'Formación de cuatro héroes y posiciones.'],
+  ['Necesita identificar', 'Nombre en español y reglas de Challenge Mode Extreme.'],
   ['Sin comprobar', 'Bonificaciones por elemento y porcentajes.'],
   ['Probando en 1.4.1', 'Niveles heredados por las ranuras.'],
   ['Necesita captura', 'Costes y límites de Fast Patrol.'],
@@ -63,12 +64,8 @@ const researchItems = [
     <div class="routine-board">
       {routine.map((item, index) => (
         <article class="routine-card">
-          <input id={`routine-${index}`} type="checkbox" />
-          <label for={`routine-${index}`}>
-            <span class="routine-check" aria-hidden="true">✓</span>
-            <span><strong>{item.title}</strong><small>{item.detail}</small></span>
-          </label>
-          {item.href && <a href={item.href}>Abrir sección →</a>}
+          <span class="routine-number">{String(index + 1).padStart(2, '0')}</span>
+          <div><strong>{item.title}</strong><p>{item.detail}</p><small><b>Por qué importa:</b> {item.reason}</small>{item.href && <a href={item.href}>Abrir sección →</a>}</div>
         </article>
       ))}
     </div>
@@ -84,31 +81,29 @@ const researchItems = [
   </section>
 
   <section class="intermediate-section shell" id="heroes">
-    <div class="intermediate-heading"><div><p class="eyebrow">Formación visual</p><h2>Héroes y habilidades enlazadas</h2><p>Evalúa al héroe junto con la skill que modifica, no solo por rareza.</p></div><span>03</span></div>
-    <div class="formation-layout">
-      <div class="formation-board" aria-label="Formación comunitaria pendiente de verificar">
-        <div class="formation-line front"><span>Frente</span><article><b>01</b><small>Delantero</small></article><article><b>02</b><small>Delantero</small></article></div>
-        <div class="formation-line back"><span>Apoyo</span><article><b>03</b><small>Trasero</small></article><article><b>04</b><small>Trasero</small></article></div>
-      </div>
-      <div class="formation-notes">
-        <span class="evidence-badge pending">Pendiente de verificar</span>
-        <h3>La formación descrita por la comunidad</h3>
-        <p>Askoy describe cuatro espacios y niveles asociados a la ranura. Necesitamos capturas antes de presentarlo como una regla general.</p>
-        <div><strong>Héroe</strong><b>+</b><strong>Habilidad enlazada</strong><b>=</b><strong>Valor del equipo</strong></div>
-        <a class="text-link" href="/personajes/">Explorar personajes →</a>
-      </div>
+    <div class="intermediate-heading"><div><p class="eyebrow">Ejemplo confirmado</p><h2>Héroes y habilidades enlazadas</h2><p>Son dos sistemas relacionados, pero no son la misma habilidad.</p></div><span>03</span></div>
+    <div class="linked-example" aria-label="Ejemplo de habilidad enlazada de Gordon">
+      <article><span>1 · El héroe</span><h3>Gordon</h3><p>Combate usando sus propias habilidades: <strong>Torbellino</strong> y <strong>Corte giratorio</strong>.</p></article>
+      <b aria-hidden="true">+</b>
+      <article><span>2 · Skill de la partida</span><h3>Cuchillas giratorias</h3><p>Es una skill independiente que puedes utilizar durante la partida.</p></article>
+      <b aria-hidden="true">→</b>
+      <article class="linked-result"><span>3 · Efecto enlazado</span><h3>Filo de la división</h3><p>Al usar a Gordon, las cuchillas se dividen adicionalmente en <strong>3 cuchillas pequeñas</strong>.</p></article>
+    </div>
+    <div class="linked-explanation">
+      <div><strong>La idea clave</strong><p>El héroe conserva sus ataques normales y definitiva. Además, mejora una skill concreta mediante su pasiva enlazada.</p></div>
+      <div><strong>Al elegir un héroe</strong><p>Revisa qué skill modifica y si realmente utilizas esa skill en tu estrategia. La rareza por sí sola no explica todo su valor.</p></div>
+      <a class="button secondary" href="/personajes/">Ver fichas de personajes</a>
     </div>
   </section>
 
-  <section class="intermediate-section challenge-section" id="desafio">
-    <div class="shell challenge-layout">
-      <div class="challenge-copy"><p class="eyebrow">Misión comunitaria</p><h2>Challenge Mode Extreme</h2><p>Se describe como un modo sin coste de energía, con varias noches y objetivos para conseguir estrellas.</p><div class="star-display" aria-label="Tres estrellas pendientes de documentar"><span>★</span><span>★</span><span>★</span></div><a class="button secondary" href="/eventos/desafios/">Ir a desafíos</a></div>
-      <article class="mission-card">
-        <div><span>Estado</span><b>En investigación</b></div>
-        <h3>Antes de publicar estrategias</h3>
-        <ul><li>Confirmar su desbloqueo.</li><li>Contar noches y objetivos.</li><li>Verificar intentos separados.</li><li>Registrar recompensas por estrellas.</li></ul>
-        <small>Los trucos concretos no se publicarán hasta comprobarlos.</small>
-      </article>
+  <section class="intermediate-section progress-section" id="progreso">
+    <div class="shell">
+      <div class="intermediate-heading"><div><p class="eyebrow">Fuera del combate</p><h2>Progreso pasivo y patrullas</h2><p>Cuando una fase te supera, también puedes fortalecer la cuenta sin repetirla inmediatamente.</p></div><span>04</span></div>
+      <div class="passive-progress-grid">
+        <article><span>Patrulla</span><h3>Convierte energía en progreso</h3><p>Según la guía comunitaria, las patrullas pueden entregar experiencia, oro y materiales de mejora. La recompensa exacta depende del sistema que muestre tu cuenta.</p><strong>Úsalo cuando el problema sea el progreso general, no una mala elección dentro de la partida.</strong></article>
+        <article><span>Fast Patrol</span><h3>Acelera la recolección</h3><p>Se presenta como una forma rápida de recibir recompensas de patrulla. Todavía estamos comprobando sus desbloqueos, límites diarios y costes.</p><strong>No recomendamos gastar diamantes hasta confirmar cuánto recibes a cambio.</strong></article>
+      </div>
+      <div class="pending-mode-note"><span class="evidence-badge pending">Apartado retirado de la guía</span><p><strong>Challenge Mode Extreme</strong> fue mencionado por Askoy, pero todavía no hemos identificado con seguridad su nombre en español ni sus reglas. Permanecerá en el tablero de investigación hasta contar con capturas.</p></div>
     </div>
   </section>
 
