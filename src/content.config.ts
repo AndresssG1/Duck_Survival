@@ -7,7 +7,7 @@ const guides = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    eyebrow: z.string().default('Guia'),
+    eyebrow: z.string().default('Guía'),
     publishedAt: z.string(),
     updatedAt: z.string(),
     gameVersion: z.string(),

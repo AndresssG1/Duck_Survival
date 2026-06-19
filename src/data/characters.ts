@@ -41,14 +41,14 @@ export const characters: Character[] = [
       {
         name: 'Torbellino',
         type: 'Habilidad normal',
-        description: 'Realiza un corte que inflige daño físico equivalente al 25% del ataque a los enemigos cercanos.',
+        description: 'Realiza un corte que inflige daño físico equivalente al 25 % del ataque a los enemigos cercanos.',
         image: '/images/personajes/fisico/hacha-de-hierro-gordon/torbellino.png',
         unlock: 'Se desbloquea con 1 estrella.',
       },
       {
         name: 'Corte giratorio',
         type: 'Habilidad definitiva',
-        description: 'Obtiene un escudo equivalente al 25% de su vida máxima y gira continuamente, causando cada segundo daño equivalente al 25% de su ataque.',
+        description: 'Obtiene un escudo equivalente al 25 % de su vida máxima y gira continuamente, causando cada segundo daño equivalente al 25 % de su ataque.',
         image: '/images/personajes/fisico/hacha-de-hierro-gordon/corte-giratorio.png',
         unlock: null,
       },
@@ -86,7 +86,7 @@ export const characters: Character[] = [
       {
         name: 'Misil Nanométrico',
         type: 'Habilidad normal',
-        description: 'Lux lanza Misiles Nanómetricos con la palma, causando daño de energía equivalente a 100% de su ataque',
+        description: 'Lux lanza misiles nanométricos con la palma y causa daño de energía equivalente al 100 % de su ataque.',
         image:
           '/images/personajes/energia/ojo-de-laser-lux/habilidad-normal.png',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -94,7 +94,7 @@ export const characters: Character[] = [
       {
         name: 'Rayo Concentrado Holográfico',
         type: 'Habilidad definitiva',
-        description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico, infligiendo daño de energía a un solo objetivo cada segundo durante 6 segundos',
+        description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico e inflige daño de energía a un solo objetivo cada segundo durante 6 segundos.',
         image:
           '/images/personajes/energia/ojo-de-laser-lux/habilidad-definitiva.png',
         unlock: null,
@@ -102,9 +102,9 @@ export const characters: Character[] = [
     ],
 
     linkedAbility: {
-      name: 'Lasér Concentrado',
+      name: 'Láser concentrado',
       passiveName: 'Misil de energía',
-      description: 'El láser enfocado dispara 6 misiles de energía cada 5 segundos',
+      description: 'El láser enfocado dispara 6 misiles de energía cada 5 segundos.',
     },
 
     verifiedAt: '2026-06-19',
@@ -135,7 +135,7 @@ export const characters: Character[] = [
       {
         name: 'Golpe de Llave Inglesa',
         type: 'Habilidad normal',
-        description: 'Causa daño de energía equivalente a 100% de su ataque a un solo objetivo',
+        description: 'Causa daño de energía equivalente al 100 % de su ataque a un solo objetivo.',
         image:
           '/images/personajes/energia/ingeniero-del-yermo-max/habilidad-normal.png',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -143,7 +143,7 @@ export const characters: Character[] = [
       {
         name: 'Llave Giratoria',
         type: 'Habilidad definitiva',
-        description: 'Una llave inglesa gira alrededor del usuario, causando daño de energía equivalente al 10% de su ataque a las unidades cercanos durante 6 segundos',
+        description: 'Una llave inglesa gira alrededor del usuario y causa daño de energía equivalente al 10 % de su ataque a las unidades cercanas durante 6 segundos.',
         image:
           '/images/personajes/energia/ingeniero-del-yermo-max/habilidad-definitiva.png',
         unlock: null,
@@ -153,7 +153,7 @@ export const characters: Character[] = [
     linkedAbility: {
       name: 'Torre de Rayo Pulsante',
       passiveName: 'Impacto de Energía',
-      description: 'Cada vez que el rayo de pulso ataque 3 veces, liberará una onda de choque de energía',
+      description: 'Cada vez que el rayo de pulso ataca 3 veces, libera una onda de choque de energía.',
     },
 
     verifiedAt: '2026-06-19',
@@ -184,7 +184,7 @@ export const characters: Character[] = [
       {
         name: 'Sanación Natural',
         type: 'Habilidad normal',
-        description: 'Cura al héroe o protagonista con menor vida por 50 + 20% de la fuerza de ataque como vida.',
+        description: 'Cura al héroe o protagonista con menor vida y restaura 50 + 20 % de la fuerza de ataque como vida.',
         image:
           '/images/personajes/fisico/enfermera-rachel/habilidad-normal.webp',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -192,7 +192,7 @@ export const characters: Character[] = [
       {
         name: 'Deseo Natural',
         type: 'Habilidad definitiva',
-        description: 'Reza por el héroe o protagonista con menor vida, restaura vida equivalente a 50% del Ataque.',
+        description: 'Reza por el héroe o protagonista con menor vida y restaura vida equivalente al 50 % del ataque.',
         image:
           '/images/personajes/fisico/enfermera-rachel/habilidad-definitiva.webp',
         unlock: null,
@@ -202,7 +202,7 @@ export const characters: Character[] = [
     linkedAbility: {
       name: 'Cuchillas Giratorias',
       passiveName: 'Rueda Explosiva',
-      description: 'El proyectil de la rueda tiene un 15% de probalidad de explotar una vez al impactar en el objetivo',
+      description: 'El proyectil de la rueda tiene un 15 % de probabilidad de explotar al impactar en el objetivo.',
     },
 
     verifiedAt: '2026-06-19',
@@ -234,7 +234,7 @@ export const characters: Character[] = [
       {
         name: 'Martillo Pesado',
         type: 'Habilidad normal',
-        description: 'Blande un martillo que inflige daño de hielo equivalente a 50% del ataque en un área en forma de abanico frontal.',
+        description: 'Blande un martillo que inflige daño de hielo equivalente al 50 % del ataque en un área con forma de abanico frontal.',
         image:
           '/images/personajes/escarcha/vanguardia-del-hielo-luke/habilidad-normal.webp',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -242,7 +242,7 @@ export const characters: Character[] = [
       {
         name: 'Impacto de Escarcha',
         type: 'Habilidad definitiva',
-        description: 'Golpea el suelo con un martillo, ralentizando a todos los enemigos en el área durante 2 segundos y causando daño de hielo equivalente a 100% de su ataque.',
+        description: 'Golpea el suelo con un martillo, ralentiza a todos los enemigos en el área durante 2 segundos y causa daño de hielo equivalente al 100 % de su ataque.',
         image:
           '/images/personajes/escarcha/vanguardia-del-hielo-luke/habilidad-definitiva.webp',
         unlock: null,
@@ -284,7 +284,7 @@ export const characters: Character[] = [
       {
         name: 'Flechas de Escarcha',
         type: 'Habilidad normal',
-        description: 'Dispara una flecha que inflige daño de hielo equivalente a 60% del ataque.',
+        description: 'Dispara una flecha que inflige daño de hielo equivalente al 60 % del ataque.',
         image:
           '/images/personajes/escarcha/cazadora-polar-lyra/habilidad-normal.webp',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -292,7 +292,7 @@ export const characters: Character[] = [
       {
         name: 'Lluvia de Flechas',
         type: 'Habilidad definitiva',
-        description: 'Dispara 3 filas consecutivas de Flechas Perforantes, empuja al objetivo y causa daño de hielo equivalente a 120% de su ataque.',
+        description: 'Dispara 3 filas consecutivas de flechas perforantes, empuja al objetivo y causa daño de hielo equivalente al 120 % de su ataque.',
         image:
           '/images/personajes/escarcha/cazadora-polar-lyra/habilidad-definitiva.webp',
         unlock: null,
@@ -334,7 +334,7 @@ export const characters: Character[] = [
       {
         name: 'Golpe de Puño',
         type: 'Habilidad normal',
-        description: 'Inflige daño de fuego equivalente a 25% del ataque a objetivos en área pequeña.',
+        description: 'Inflige daño de fuego equivalente al 25 % del ataque a objetivos en un área pequeña.',
         image:
           '/images/personajes/quemadura/armadura-28-hank/habilidad-normal.webp',
         unlock: 'Se desbloquea con 1 estrella.',
@@ -342,7 +342,7 @@ export const characters: Character[] = [
       {
         name: 'Imparable',
         type: 'Habilidad definitiva',
-        description: 'Embiste hacia adelante, empuja a los enemigos y causa daño de fuego equivalente a 50% de su ataque.',
+        description: 'Embiste hacia adelante, empuja a los enemigos y causa daño de fuego equivalente al 50 % de su ataque.',
         image:
           '/images/personajes/quemadura/armadura-28-hank/habilidad-definitiva.webp',
         unlock: null,

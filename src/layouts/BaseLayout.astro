@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { title, description, canonical = Astro.url.pathname } = Astro.props;
-const siteName = 'Duck Survival Guia';
+const siteName = 'Duck Survival Guía';
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 const canonicalUrl = new URL(canonical, Astro.site);
 ---

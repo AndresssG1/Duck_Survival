@@ -2,4 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 ---
-<BaseLayout title="Contacto" description="Contacto y correcciones para Duck Survival Guia."><PageHero title="Contacto" description="Queremos corregir rapido cualquier dato inexacto, pero el canal publico aun esta por definir." /><article class="article shell narrow"><div class="notice"><strong>Canal de contacto pendiente</strong><p>Publicaremos aqui el correo o perfil comunitario oficial del proyecto antes del lanzamiento publico.</p></div></article></BaseLayout>
+
+<BaseLayout title="Contacto" description="Contacto, correcciones y aportes para Duck Survival Guía.">
+  <PageHero title="Contacto" description="Ayúdanos a corregir datos, identificar cambios del juego y acreditar correctamente los aportes de la comunidad." />
+  <section class="section shell narrow contact-section">
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:andres20022011ggggg@gmail.com">
+        <span>Correo</span>
+        <h2>Escríbenos</h2>
+        <p>Ideal para correcciones detalladas, capturas, fuentes o solicitudes de crédito.</p>
+        <strong>andres20022011ggggg@gmail.com</strong>
+      </a>
+      <article class="contact-card discord-card">
+        <span>Discord</span>
+        <h2>Encuéntranos</h2>
+        <p>Para mensajes rápidos, dudas o avisos sobre información desactualizada.</p>
+        <strong>@andresssg1</strong>
+      </article>
+    </div>
+    <div class="contact-guidelines">
+      <div><p class="eyebrow">Para revisar más rápido</p><h2>Qué incluir en tu mensaje</h2></div>
+      <ul><li>Página o sección que necesita corrección.</li><li>Dato correcto y versión del juego.</li><li>Captura, vídeo o enlace de referencia, cuando exista.</li><li>Nombre o alias si deseas recibir crédito público.</li></ul>
+    </div>
+    <p class="contact-privacy">No envíes contraseñas, códigos de acceso ni información privada de tu cuenta. Esta wiki es independiente y no ofrece soporte oficial del juego.</p>
+  </section>
+</BaseLayout>

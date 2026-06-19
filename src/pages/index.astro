@@ -4,31 +4,31 @@ import StatusPill from '../components/StatusPill.astro';
 import { gameCodes } from '../data/codes';
 
 const sections = [
-  { icon: '01', title: 'Primeros pasos', text: 'Aprende el ciclo de juego y evita los errores mas comunes.', href: '/guias/principiantes/' },
-  { icon: '02', title: 'Construcciones', text: 'Conoce la funcion de cada edificio y como priorizar mejoras.', href: '/construcciones/' },
-  { icon: '03', title: 'Habilidades', text: 'Consulta tipos de dano, elementos y habilidades conocidas.', href: '/habilidades/' },
+  { icon: '01', title: 'Primeros pasos', text: 'Aprende el ciclo de juego y evita los errores más comunes.', href: '/guias/principiantes/' },
+  { icon: '02', title: 'Construcciones', text: 'Conoce la función de cada edificio y cómo priorizar mejoras.', href: '/construcciones/' },
+  { icon: '03', title: 'Habilidades', text: 'Consulta tipos de daño, elementos y habilidades conocidas.', href: '/habilidades/' },
 ];
 const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0, 3);
 ---
 
-<BaseLayout title="Duck Survival Guia" description="La guía más completa de Duck Survival en español. Códigos actualizados, héroes, estrategias, gremios, eventos y consejos para principiantes.">
+<BaseLayout title="Duck Survival Guía" description="La guía más completa de Duck Survival en español. Códigos actualizados, héroes, estrategias, gremios, eventos y consejos para principiantes.">
   <section class="hero">
     <div class="shell hero-grid">
       <div>
-        <p class="eyebrow">La guia en espanol de la comunidad</p>
-        <h1>Sobrevive. Construye.<br /><span>Domina la invasion.</span></h1>
+        <p class="eyebrow">La guía en español de la comunidad</p>
+        <h1>Sobrevive. Construye.<br /><span>Domina la invasión.</span></h1>
         <p class="lead">Todo lo que necesitas para progresar en Duck Survival, explicado sin rodeos y con fuentes verificadas.</p>
         <div class="actions">
-          <a class="button primary" href="/guias/principiantes/">Empezar la guia</a>
-          <a class="button secondary" href="/codigos/">Ver codigos</a>
+          <a class="button primary" href="/guias/principiantes/">Empezar la guía</a>
+          <a class="button secondary" href="/codigos/">Ver códigos</a>
         </div>
       </div>
-      <div class="survival-card" aria-label="Indicadores de la guia">
+      <div class="survival-card" aria-label="Indicadores de la guía">
         <div class="radar"><span>DS</span></div>
-        <p class="signal">SENAL ACTIVA</p>
-        <strong>La supervivencia empieza con buena informacion.</strong>
+        <p class="signal">SEÑAL ACTIVA</p>
+        <strong>La supervivencia empieza con buena información.</strong>
         <div class="meter"><span></span></div>
-        <small>Base de conocimiento en construccion</small>
+        <small>Base de conocimiento en construcción</small>
       </div>
     </div>
   </section>
@@ -36,7 +36,7 @@ const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0
   <section class="section shell">
     <div class="section-heading">
       <div><p class="eyebrow">Centro de mando</p><h2>Elige tu siguiente objetivo</h2></div>
-      <a href="/guias/">Explorar guias <span aria-hidden="true">-&gt;</span></a>
+      <a href="/guias/">Explorar guías <span aria-hidden="true">-&gt;</span></a>
     </div>
     <div class="card-grid">
       {sections.map((section) => (
@@ -51,8 +51,8 @@ const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0
     <div class="shell two-columns">
       <div>
         <p class="eyebrow">Canal de suministros</p>
-        <h2>Codigos recientes</h2>
-        <p>Solo marcamos un codigo como activo despues de comprobarlo. Evitamos promesas y listas desactualizadas.</p>
+        <h2>Códigos recientes</h2>
+        <p>Solo marcamos un código como activo después de comprobarlo. Evitamos promesas y listas desactualizadas.</p>
       </div>
       <div class="codes-list">
         {recentCodes.map((item) => (
@@ -61,14 +61,14 @@ const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0
             <StatusPill status={item.status} />
           </div>
         ))}
-        <a class="text-link" href="/codigos/">Consultar todos los codigos</a>
+        <a class="text-link" href="/codigos/">Consultar todos los códigos</a>
       </div>
     </div>
   </section>
 
   <section class="section shell mission">
-    <p class="eyebrow">Nuestra mision</p>
-    <h2>Informacion clara, original y mantenida por jugadores.</h2>
+    <p class="eyebrow">Nuestra misión</p>
+    <h2>Información clara, recopilada y mantenida por jugadores.</h2>
     <p>Esta wiki nace para reunir conocimiento disperso, citar sus fuentes y ayudarte a tomar mejores decisiones dentro del juego.</p>
     <a class="button secondary" href="/acerca-de/">Conocer el proyecto</a>
   </section>
