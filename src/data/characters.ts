@@ -62,52 +62,101 @@ export const characters: Character[] = [
     gameVersion: '1.4.1',
   },
   {
-  slug: 'ojo-de-laser-lux',
-  name: 'Ojo de Láser - Lux',
-  element: 'energia',
-  rarity: 'Épico',
+    slug: 'ojo-de-laser-lux',
+    name: 'Ojo de Láser - Lux',
+    element: 'energia',
+    rarity: 'Épico',
 
-  description:
-    'Descripción breve basada en sus habilidades confirmadas.',
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
 
-  image:
-    '/images/personajes/energia/ojo-de-laser-lux/personaje.png',
+    image:
+      '/images/personajes/energia/ojo-de-laser-lux/personaje.png',
 
-  imageAlt:
-    'Ojo de Láser - Lux, con cabello blanco con una armadura azul y negra completa',
+    imageAlt:
+      'Ojo de Láser - Lux, con cabello blanco con una armadura azul y negra completa',
 
-  acquisition:
-    'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
 
-  progressionNote:
-    'Los porcentajes mostrados corresponden al nivel 1.',
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
 
-  abilities: [
-    {
-      name: 'Misil Nanométrico',
-      type: 'Habilidad normal',
-      description: 'Lux lanza Misiles Nanómetricos con la palma, causando daño de energía equivalente a 100% de su ataque',
-      image:
-        '/images/personajes/energia/ojo-de-laser-lux/habilidad-normal.png',
-      unlock: 'Se desbloquea con 1 estrella.',
+    abilities: [
+      {
+        name: 'Misil Nanométrico',
+        type: 'Habilidad normal',
+        description: 'Lux lanza Misiles Nanómetricos con la palma, causando daño de energía equivalente a 100% de su ataque',
+        image:
+          '/images/personajes/energia/ojo-de-laser-lux/habilidad-normal.png',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Rayo Concentrado Holográfico',
+        type: 'Habilidad definitiva',
+        description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico, infligiendo daño de energía a un solo objetivo cada segundo durante 6 segundos',
+        image:
+          '/images/personajes/energia/ojo-de-laser-lux/habilidad-definitiva.png',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Lasér Concentrado',
+      passiveName: 'Misil de energía',
+      description: 'El láser enfocado dispara 6 misiles de energía cada 5 segundos',
     },
-    {
-      name: 'Rayo Concentrado Holográfico',
-      type: 'Habilidad definitiva',
-      description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico, infligiendo daño de energía a un solo objetivo cada segundo durante 6 segundos',
-      image:
-        '/images/personajes/energia/ojo-de-laser-lux/habilidad-definitiva.png',
-      unlock: null,
-    },
-  ],
 
-  linkedAbility: {
-    name: 'Lasér Concentrado',
-    passiveName: 'Misil de energía',
-    description: 'El láser enfocado dispara 6 misiles de energía cada 5 segundos',
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
   },
+  {
+    slug: 'ingeniero-del-yermo-max',
+    name: 'Ingeniero del Yermo - Max',
+    element: 'energia',
+    rarity: 'Épico',
 
-  verifiedAt: '2026-06-19',
-  gameVersion: '1.4.1',
-},
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/energia/ingeniero-del-yermo-max/personaje.png',
+
+    imageAlt:
+      'Ingeniero del Yermo - Max, con llantas en sus hombros y una llave de arma',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe de Llave Inglesa',
+        type: 'Habilidad normal',
+        description: 'Causa daño de energía equivalente a 100% de su ataque a un solo objetivo',
+        image:
+          '/images/personajes/energia/ingeniero-del-yermo-max/habilidad-normal.png',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Llave Giratoria',
+        type: 'Habilidad definitiva',
+        description: 'Una llave inglesa gira alrededor del usuario, causando daño de energía equivalente al 10% de su ataque a las unidades cercanos durante 6 segundos',
+        image:
+          '/images/personajes/energia/ingeniero-del-yermo-max/habilidad-definitiva.png',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Torre de Rayo Pulsante',
+      passiveName: 'Impacto de Energía',
+      description: 'Cada vez que el rayo de pulso ataque 3 veces, liberará una onda de choque de energía',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
