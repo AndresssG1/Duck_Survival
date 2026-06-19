@@ -61,4 +61,53 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-18',
     gameVersion: '1.4.1',
   },
+  {
+  slug: 'ojo-de-laser-lux',
+  name: 'Ojo de Láser - Lux',
+  element: 'energia',
+  rarity: 'Épico',
+
+  description:
+    'Descripción breve basada en sus habilidades confirmadas.',
+
+  image:
+    '/images/personajes/energia/Lux/personaje.png',
+
+  imageAlt:
+    'Ojo de Láser - Lux, con cabello blanco con una armadura azul y negra completa',
+
+  acquisition:
+    'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+  progressionNote:
+    'Los porcentajes mostrados corresponden al nivel 1.',
+
+  abilities: [
+    {
+      name: 'Misil Nanométrico',
+      type: 'Habilidad normal',
+      description: 'Lux lanza Misiles Nanómetricos con la palma, causando daño de energía equivalente a 100% de su ataque',
+      image:
+        '/images/personajes/energia/Lux/habilidad-normal.png',
+      unlock: 'Se desbloquea con 1 estrella.',
+    },
+    {
+      name: 'Rayo Concentrado Holográfico',
+      type: 'Habilidad definitiva',
+      description: 'Lux usa el Ojo de Láser del Rayo Concentrado Holográfico, infligiendo daño de energía a un solo objetivo cada segundo durante 6 segundos',
+      image:
+        '/images/personajes/energia/Lux/habilidad-definitiva.png',
+      unlock: null,
+    },
+  ],
+
+  linkedAbility: {
+    name: 'Lasér Concentrado',
+    passiveName: 'Misil de energía',
+    description: 'El láser enfocado dispara 6 misiles de energía cada 5 segundos',
+  },
+
+  verifiedAt: '2026-06-19',
+  gameVersion: '1.4.1',
+},
 ];
