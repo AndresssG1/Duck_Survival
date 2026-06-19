@@ -258,4 +258,54 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'cazadora-polar-lyra',
+
+    name: 'Cazadora Polar - Lyra',
+    element: 'escarcha',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/escarcha/cazadora-polar-lyra/personaje.webp',
+
+    imageAlt:
+      'Cazadora Polar - Lyra, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Flechas de Escarcha',
+        type: 'Habilidad normal',
+        description: 'Dispara una flecha que inflige daño de hielo equivalente a 60% del ataque.',
+        image:
+          '/images/personajes/escarcha/cazadora-polar-lyra/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Lluvia de Flechas',
+        type: 'Habilidad definitiva',
+        description: 'Dispara 3 filas consecutivas de Flechas Perforantes, empuja al objetivo y causa daño de hielo equivalente a 120% de su ataque.',
+        image:
+          '/images/personajes/escarcha/cazadora-polar-lyra/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cono de Hielo Extremo',
+      passiveName: 'Hielo Fragmentado',
+      description: 'El cono de hielo gélido termina de lanzar 3 fragmentos de hielo.',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
