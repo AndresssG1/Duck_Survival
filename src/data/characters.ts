@@ -159,4 +159,53 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'enfermera-rachel',
+    name: 'Enfermera - Rachel',
+    element: 'fisico',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/fisico/enfermera-rachel/personaje.png',
+
+    imageAlt:
+      'Enfermera - Rachel, con un estetoscopio y una bolsa de medicamentos',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Sanación Natural',
+        type: 'Habilidad normal',
+        description: 'Cura al héroe o protagonista con menor vida por 50 + 20% de la fuerza de ataque como vida.',
+        image:
+          '/images/personajes/fisico/enfermera-rachel/habilidad-normal.png',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Deseo Natural',
+        type: 'Habilidad definitiva',
+        description: 'Reza por el héroe o protagonista con menor vida, restaura vida equivalente a 50% del Ataque.',
+        image:
+          '/images/personajes/fisico/enfermera-rachel/habilidad-definitiva.png',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Torre de Rayo Pulsante',
+      passiveName: 'Impacto de Energía',
+      description: 'Cada vez que el rayo de pulso ataque 3 veces, liberará una onda de choque de energía',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
