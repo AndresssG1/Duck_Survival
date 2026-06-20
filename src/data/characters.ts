@@ -402,7 +402,57 @@ export const characters: Character[] = [
     linkedAbility: {
       name: 'Golpe Ígneo',
       passiveName: 'Chispa explosiva',
-      description: 'Chispa explosiva (Pasiva única): El golpe de llamas genera 2 chispas al impactar al objetivo.',
+      description: 'El golpe de llamas genera 2 chispas al impactar al objetivo.',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'ranger-definitivo-raine',
+
+    name: 'Ranger Definitivo - Raine',
+    element: 'rayo',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/rayo/ranger-definitivo-raine/personaje.webp',
+
+    imageAlt:
+      'Ranger Definitivo - Raine, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Dispersión',
+        type: 'Habilidad normal',
+        description: 'Dispara múltiples escopetazos hacia adelante, cada uno causando daño de rayo equivalente a 50% de su ataque.',
+        image:
+          '/images/personajes/rayo/ranger-definitivo-raine/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Bomba Explosiva',
+        type: 'Habilidad definitiva',
+        description: 'Lanza Bombas Explosivas hacia adelante, causando daño de área en forma de cono equivalente a 200% de su ataque.',
+        image:
+          '/images/personajes/rayo/ranger-definitivo-raine/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Pollo Furioso',
+      passiveName: 'Gatling Chick',
+      description: 'Invoca 1 Gatling Chick armado adicional.',
     },
 
     verifiedAt: '2026-06-19',
