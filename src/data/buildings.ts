@@ -40,7 +40,7 @@ export const buildingCategories: BuildingCategory[] = [
       description: 'Entrena 3 soldados de infantería, con alta capacidad de supervivencia, que infligen daño a un solo objetivo.',
       element: 'fisico',
       maxLevel: 30,
-      image: '/images/construcciones/departamento-de-ingenieria/categoria/cuartel-de-infanteria.webp',
+      image: '/images/construcciones/departamento-de-ingenieria/cuartel-cuerpo-a-cuerpo/cuartel-de-infanteria.webp',
       imageAlt: 'Cuartel de Infantería de Duck Survival',
       // upgradeEffect: 'Efecto general', // Elimina esta línea si el juego no muestra uno.
       levels: [
