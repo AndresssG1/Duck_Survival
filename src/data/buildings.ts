@@ -109,7 +109,7 @@ export const buildingCategories: BuildingCategory[] = [
       gameVersion: '1.4.1',
     }],
   },
-  { slug: 'torre-defensiva-de-apoyo', number: '05', name: 'Torre defensiva de apoyo', 
+  { slug: 'torre-defensiva-de-apoyo', number: '05', name: 'Torre defensiva de apoyo',
     description: 'Agrupa torres cuyos efectos ayudan a sostener o reforzar la defensa.', optionCount: 2, 
     options: [{
       slug: 'torre-de-aliento-de-dragon',
@@ -134,7 +134,7 @@ export const buildingCategories: BuildingCategory[] = [
       gameVersion: '1.4.1',
     }],
   },
-  { slug: 'torre-defensiva-de-objetivo-unico', number: '06', name: 'Torre defensiva de objetivo único', 
+  { slug: 'torre-defensiva-de-objetivo-unico', number: '06', name: 'Torre defensiva de objetivo único',
     description: 'Agrupa torres que concentran sus ataques sobre un enemigo cada vez.', optionCount: 4, 
     options: [{
       slug: 'torre-ametralladora',
