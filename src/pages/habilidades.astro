@@ -14,7 +14,7 @@ const getElement = (elementId: string) => gameElements.find((element) => element
   <PageHero eyebrow="Poder de combate" title="Habilidades" description="Consulta cómo se obtienen, mejoran y utilizan las habilidades durante el combate." />
 
   <section class="section shell skill-overview">
-    <div><p class="eyebrow">Descripción de función</p><h2>Dos formas de mejorar</h2><p>La calidad desbloquea y transforma la habilidad. Las estrellas mejoran sus atributos mediante fragmentos. Son progresiones relacionadas, pero independientes.</p></div>
+    <div><p class="eyebrow">Descripción de función</p><h2>Dos formas de mejorar</h2><p>La calidad desbloquea y transforma la habilidad. Dentro de cada calidad existe una progresión propia de cinco estrellas que mejora sus atributos mediante fragmentos.</p></div>
     <div class="skill-overview-stats"><article><strong>{totalObservedSkills}</strong><span>Habilidades observadas</span></article><article><strong>{skills.length}</strong><span>Ficha documentada</span></article></div>
   </section>
 
@@ -33,7 +33,7 @@ const getElement = (elementId: string) => gameElements.find((element) => element
 
   <section class="section shell skill-progression-explainer">
     <div class="quality-summary"><p class="eyebrow">Progresión de calidad</p><h2>Cinco calidades</h2><p>Una carta completa de mayor calidad permite avanzar la habilidad y desbloquear nuevos efectos.</p><div>{qualityTrack.map((quality, index) => <span><b>{index + 1}</b>{quality}</span>)}</div></div>
-    <div class="stars-summary"><p class="eyebrow">Ascenso de estrellas</p><h2>Cinco estrellas</h2><p>Las copias duplicadas se convierten en fragmentos que sirven para mejorar atributos.</p><div aria-label="Cinco estrellas">★★★★★</div></div>
+    <div class="stars-summary"><p class="eyebrow">Ascenso de estrellas</p><h2>Cinco por calidad</h2><p>Las copias duplicadas se convierten en fragmentos. Cada calidad tiene sus propias cinco bonificaciones de estrellas.</p><div aria-label="Cinco estrellas">★★★★★</div></div>
   </section>
 
   <section class="section skill-catalog-section">
@@ -44,7 +44,7 @@ const getElement = (elementId: string) => gameElements.find((element) => element
           const element = getElement(skill.element);
           return <a class="skill-catalog-card" href={`/habilidades/${skill.slug}/`} style={`--skill-element:${element.color}`}>
             <div class="skill-catalog-image"><img src={skill.image} alt={skill.imageAlt} width="180" height="180" loading="lazy" /></div>
-            <div><span>{element.name} · {skill.type}</span><h3>{skill.name}</h3><p>{skill.description}</p><strong>Ver ficha completa →</strong></div>
+            <div><div class="skill-card-tags"><span class="element-tag">{element.name}</span><span>{skill.type}</span></div><h3>{skill.name}</h3><p>{skill.description}</p><strong>Ver ficha completa →</strong></div>
           </a>;
         })}
       </div>

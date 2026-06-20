@@ -20,7 +20,7 @@ Usa minúsculas, sin tildes ni espacios, y separa las palabras con guiones.
 - Descripción.
 - Uso estratégico confirmado o claramente marcado como recomendación.
 - Efectos de calidad: Excelente, Élite, Épico, Legendario y Mítico.
-- Efectos de 1 a 5 estrellas.
+- Efectos de 1 a 5 estrellas para cada calidad.
 - Fecha y versión verificadas.
 
 ## Plantilla
@@ -38,22 +38,25 @@ Duplica el objeto de `Cuchillas giratorias` en `src/data/skills.ts` y cambia tod
   imageAlt: 'Icono de la habilidad Nombre de la habilidad',
   strategicUse: 'Uso recomendado o dato estratégico.',
   qualityEffects: [
-    { quality: 'Excelente', effect: '...' },
-    { quality: 'Élite', effect: '...' },
-    { quality: 'Épico', effect: '...' },
-    { quality: 'Legendario', effect: '...' },
-    { quality: 'Mítico', effect: '...' },
-  ],
-  starEffects: [
-    { stars: 1, effect: '...' },
-    { stars: 2, effect: '...' },
-    { stars: 3, effect: '...' },
-    { stars: 4, effect: '...' },
-    { stars: 5, effect: '...' },
+    {
+      quality: 'Excelente',
+      effect: '...',
+      starEffects: [
+        { stars: 1, effect: '...' },
+        { stars: 2, effect: '...' },
+        { stars: 3, effect: '...' },
+        { stars: 4, effect: '...' },
+        { stars: 5, effect: '...' },
+      ],
+    },
+    { quality: 'Élite', effect: '...', starEffects: null },
+    { quality: 'Épico', effect: '...', starEffects: null },
+    { quality: 'Legendario', effect: '...', starEffects: null },
+    { quality: 'Mítico', effect: '...', starEffects: null },
   ],
   verifiedAt: 'AAAA-MM-DD',
   gameVersion: '1.4.1',
 },
 ```
 
-No cambies los nombres de las propiedades ni elimines comas. Cloudflare publicará la nueva ficha después de que el cambio llegue a `main`.
+Usa `starEffects: null` cuando todavía no tengas los cinco efectos de una calidad. No cambies los nombres de las propiedades ni elimines comas. Cloudflare publicará la nueva ficha después de que el cambio llegue a `main`.

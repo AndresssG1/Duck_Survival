@@ -14,10 +14,10 @@ export interface Skill {
   qualityEffects: Array<{
     quality: SkillQuality;
     effect: string;
-  }>;
-  starEffects: Array<{
-    stars: number;
-    effect: string;
+    starEffects: Array<{
+      stars: number;
+      effect: string;
+    }> | null;
   }>;
   verifiedAt: string;
   gameVersion: string;
@@ -37,30 +37,34 @@ export const skills: Skill[] = [
       {
         quality: 'Excelente',
         effect: 'Desbloquea Cuchillas giratorias en combate.',
+        starEffects: null,
       },
       {
         quality: 'Élite',
         effect: 'Desbloquea la opción de despertar de Cuchillas giratorias: evoluciona a Cuchillas giratorias dorada.',
+        starEffects: [
+          { stars: 1, effect: 'Daño de Cuchillas giratorias +4,0 %.' },
+          { stars: 2, effect: 'Daño de Cuchillas giratorias +4,0 %.' },
+          { stars: 3, effect: 'Daño crítico +8,0 %.' },
+          { stars: 4, effect: 'Resistencia al daño crítico +8,0 %.' },
+          { stars: 5, effect: 'Daño físico +5,0 %.' },
+        ],
       },
       {
         quality: 'Épico',
         effect: 'Desbloquea la opción de despertar+ de Cuchillas giratorias: evoluciona a Torbellino dorado. Al finalizar, regresa al personaje; la probabilidad de crítico de ese daño aumenta un 50 %.',
+        starEffects: null,
       },
       {
         quality: 'Legendario',
         effect: 'Aumenta el área de daño de Cuchillas giratorias un 25 % y eleva el efecto adicional de Reducción de curación al 50 %.',
+        starEffects: null,
       },
       {
         quality: 'Mítico',
         effect: 'Mejora la opción de despertar+ de Cuchillas giratorias: cantidad de Torbellinos dorados +1.',
+        starEffects: null,
       },
-    ],
-    starEffects: [
-      { stars: 1, effect: 'Daño de Cuchillas giratorias +4,0 %.' },
-      { stars: 2, effect: 'Daño de Cuchillas giratorias +4,0 %.' },
-      { stars: 3, effect: 'Daño crítico +8,0 %.' },
-      { stars: 4, effect: 'Resistencia al daño crítico +8,0 %.' },
-      { stars: 5, effect: 'Daño físico +5,0 %.' },
     ],
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
