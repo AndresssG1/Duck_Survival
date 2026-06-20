@@ -209,4 +209,4 @@ export const buildingCategories: BuildingCategory[] = [
       gameVersion: '1.4.1',
     }],
   },
-  { slug: 'torre-defensiva-de-area', number: '04', name: 'Torre defensiva de área', description: 'Agrupa torres destinadas a causar daño a varios enemigos dentro de una zona.', optionCount: 3, options: [] },];
+];
