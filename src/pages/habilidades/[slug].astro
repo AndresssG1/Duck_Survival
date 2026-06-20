@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { gameElements } from '../../data/elements';
+import { skills, type Skill } from '../../data/skills';
+
+export function getStaticPaths() {
+  return skills.map((skill) => ({ params: { slug: skill.slug }, props: { skill } }));
+}
+
+interface Props { skill: Skill }
+const { skill } = Astro.props;
+const element = gameElements.find((item) => item.id === skill.element)!;
+---
+
+<BaseLayout title={skill.name} description={`${skill.description} Consulta sus efectos de calidad y ascenso de estrellas.`}>
+  <div class="skill-detail-page" style={`--skill-element:${element.color}`}>
+    <PageHero eyebrow={`${element.name} · ${skill.type}`} title={skill.name} description="Efectos de calidad, bonificaciones de estrellas y uso estratégico de la habilidad." />
+
+    <section class="section shell skill-detail-intro">
+      <div class="skill-detail-image"><img src={skill.image} alt={skill.imageAlt} width="420" height="420" /></div>
+      <div class="skill-detail-copy"><div class="skill-tags"><span>{element.name}</span><span>{skill.type}</span></div><h2>Cómo funciona</h2><p>{skill.description}</p><div class="strategy-callout"><span>Uso estratégico</span><strong>Contra enemigos con curación</strong><p>{skill.strategicUse}</p></div><small>Verificado: {skill.verifiedAt} · Versión {skill.gameVersion}</small></div>
+    </section>
+
+    <section class="section quality-effects-section">
+      <div class="shell"><div class="section-heading"><div><p class="eyebrow">Cartas completas</p><h2>Efectos de calidad</h2><p>Una carta de mayor calidad permite avanzar la habilidad y desbloquear el siguiente efecto.</p></div><span class="evidence-badge confirmed">5 niveles</span></div>
+        <div class="quality-effects-list">
+          {skill.qualityEffects.map((item, index) => <article style={`--quality-index:${index}`}><div><span>{String(index + 1).padStart(2, '0')}</span><b>{item.quality}</b></div><p>{item.effect}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell star-effects-section">
+      <div class="section-heading"><div><p class="eyebrow">Fragmentos duplicados</p><h2>Efectos de estrellas</h2><p>Esta progresión es única para la habilidad y no se repite dentro de cada calidad.</p></div><span class="evidence-badge confirmed">1 a 5 estrellas</span></div>
+      <div class="star-effects-grid">
+        {skill.starEffects.map((item) => <article><div aria-label={`${item.stars} estrellas`}>{'★'.repeat(item.stars)}<span>{'★'.repeat(5 - item.stars)}</span></div><strong>{item.effect}</strong></article>)}
+      </div>
+    </section>
+
+    <section class="section acquisition-section">
+      <div class="shell acquisition-layout"><div><p class="eyebrow">Resumen de progreso</p><h2>Cómo mejorarla</h2></div><ol><li><span>01</span><div><strong>Obtén la carta completa</strong><p>Activa la habilidad mediante el Suministro de Habilidades.</p></div></li><li><span>02</span><div><strong>Consigue una calidad superior</strong><p>Utiliza la nueva carta completa para avanzar su calidad.</p></div></li><li><span>03</span><div><strong>Reúne duplicados</strong><p>Las copias se convierten automáticamente en fragmentos.</p></div></li><li><span>04</span><div><strong>Asciende estrellas</strong><p>Invierte fragmentos para desbloquear las bonificaciones indicadas.</p></div></li></ol></div>
+    </section>
+
+    <div class="section shell"><a class="back-link" href="/habilidades/">← Volver a todas las habilidades</a></div>
+  </div>
+</BaseLayout>

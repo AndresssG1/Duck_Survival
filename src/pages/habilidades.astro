@@ -1,9 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-const skills = ['Meteor Strike', 'Frost Shield', 'Focused Laser'];
+import { gameElements } from '../data/elements';
+import { skills } from '../data/skills';
+
+const totalObservedSkills = 10;
+const pendingSkills = totalObservedSkills - skills.length;
+const qualityTrack = ['Excelente', 'Élite', 'Épico', 'Legendario', 'Mítico'];
+const getElement = (elementId: string) => gameElements.find((element) => element.id === elementId)!;
 ---
-<BaseLayout title="Habilidades" description="Habilidades y elementos conocidos de Duck Survival.">
-  <PageHero eyebrow="Poder de combate" title="Habilidades" description="Consulta habilidades conocidas y, próximamente, sus efectos, elementos y mejores usos." />
-  <section class="section shell"><div class="card-grid compact">{skills.map((name, index) => <article class="guide-card"><span>{String(index + 1).padStart(2, '0')}</span><h2>{name}</h2><p>Estadísticas pendientes de verificación.</p></article>)}</div></section>
+
+<BaseLayout title="Habilidades" description="Habilidades de Duck Survival, efectos de calidad, estrellas, elementos y usos estratégicos.">
+  <PageHero eyebrow="Poder de combate" title="Habilidades" description="Consulta cómo se obtienen, mejoran y utilizan las habilidades durante el combate." />
+
+  <section class="section shell skill-overview">
+    <div><p class="eyebrow">Descripción de función</p><h2>Dos formas de mejorar</h2><p>La calidad desbloquea y transforma la habilidad. Las estrellas mejoran sus atributos mediante fragmentos. Son progresiones relacionadas, pero independientes.</p></div>
+    <div class="skill-overview-stats"><article><strong>{totalObservedSkills}</strong><span>Habilidades observadas</span></article><article><strong>{skills.length}</strong><span>Ficha documentada</span></article></div>
+  </section>
+
+  <section class="section skill-flow-section">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Obtención y progreso</p><h2>Del suministro al combate</h2></div><span class="evidence-badge confirmed">Funcionamiento del juego</span></div>
+      <div class="skill-system-flow">
+        <article><span>01</span><h3>Suministro</h3><p>Invoca en la estación de suministros para obtener cartas de habilidad.</p></article><b aria-hidden="true">→</b>
+        <article><span>02</span><h3>Activación</h3><p>Una carta completa activa la habilidad de la calidad correspondiente.</p></article><b aria-hidden="true">→</b>
+        <article><span>03</span><h3>Duplicados</h3><p>Las cartas repetidas se convierten automáticamente en fragmentos.</p></article><b aria-hidden="true">→</b>
+        <article><span>04</span><h3>Estrellas</h3><p>Los fragmentos permiten ascender estrellas y conseguir nuevos atributos.</p></article>
+      </div>
+      <div class="skill-global-note"><strong>Atributos globales de colección</strong><p>El aumento de estrellas también puede otorgar atributos globales que se conservan como parte de la colección.</p></div>
+    </div>
+  </section>
+
+  <section class="section shell skill-progression-explainer">
+    <div class="quality-summary"><p class="eyebrow">Progresión de calidad</p><h2>Cinco calidades</h2><p>Una carta completa de mayor calidad permite avanzar la habilidad y desbloquear nuevos efectos.</p><div>{qualityTrack.map((quality, index) => <span><b>{index + 1}</b>{quality}</span>)}</div></div>
+    <div class="stars-summary"><p class="eyebrow">Ascenso de estrellas</p><h2>Cinco estrellas</h2><p>Las copias duplicadas se convierten en fragmentos que sirven para mejorar atributos.</p><div aria-label="Cinco estrellas">★★★★★</div></div>
+  </section>
+
+  <section class="section skill-catalog-section">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Catálogo verificado</p><h2>{skills.length} de {totalObservedSkills} habilidades</h2></div><span class="evidence-badge community">Cuenta revisada · Versión 1.4.1</span></div>
+      <div class="skill-catalog-grid">
+        {skills.map((skill) => {
+          const element = getElement(skill.element);
+          return <a class="skill-catalog-card" href={`/habilidades/${skill.slug}/`} style={`--skill-element:${element.color}`}>
+            <div class="skill-catalog-image"><img src={skill.image} alt={skill.imageAlt} width="180" height="180" loading="lazy" /></div>
+            <div><span>{element.name} · {skill.type}</span><h3>{skill.name}</h3><p>{skill.description}</p><strong>Ver ficha completa →</strong></div>
+          </a>;
+        })}
+      </div>
+      {pendingSkills > 0 && <div class="skills-pending"><strong>{pendingSkills} habilidades pendientes</strong><p>Se añadirán una por una cuando sus imágenes, efectos de calidad y bonificaciones de estrellas estén confirmados.</p></div>}
+    </div>
+  </section>
 </BaseLayout>

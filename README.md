@@ -27,6 +27,8 @@ Consulta `docs/GUIA_DE_CONTENIDO.md` para editar o crear guias desde GitHub.
 
 Las fichas de personajes se cargan desde `src/data/characters.ts` y sus imagenes se guardan en `public/images/personajes`.
 
+Las fichas de habilidades se cargan desde `src/data/skills.ts`. Consulta `docs/GUIA_DE_HABILIDADES.md` para añadir nuevas habilidades.
+
 ## Estandar de imagenes de personajes
 
 - Ruta: `public/images/personajes/<elemento>/<slug-del-personaje>/`.
