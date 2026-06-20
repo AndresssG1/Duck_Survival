@@ -458,4 +458,54 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'doctor-de-tormenta-rex',
+
+    name: 'Doctor de Tormenta - Rex',
+    element: 'rayo',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/rayo/doctor-de-tormenta-rex/personaje.webp',
+
+    imageAlt:
+      'Doctor de Tormenta - Rex, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe de Rayo',
+        type: 'Habilidad normal',
+        description: 'Libera una Cadena de Relámpagos que inflige daño de rayo equivalente a 40% del ataque a un máximo de 4 objetivos.',
+        image:
+          '/images/personajes/rayo/doctor-de-tormenta-rex/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Descarga de Alta Tensión',
+        type: 'Habilidad definitiva',
+        description: 'Lanza 6 ataques de relámpago, aturde a los enemigos durante 2 segundos y causa daño de rayo equivalente a 80% de ataque.',
+        image:
+          '/images/personajes/rayo/doctor-de-tormenta-rex/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cadena de Relámpagos',
+      passiveName: 'Tormenta magnética',
+      description: 'La cadena de relámpagos genera una pequeña tormenta magnética al golpear a un monstruo.',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
