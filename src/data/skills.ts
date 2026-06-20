@@ -10,6 +10,7 @@ export interface Skill {
   description: string;
   image: string;
   imageAlt: string;
+  strategicTitle: string;
   strategicUse: string;
   qualityEffects: Array<{
     quality: SkillQuality;
@@ -32,6 +33,7 @@ export const skills: Skill[] = [
     description: 'Lanza una cuchilla giratoria que inflige daño físico a los enemigos en el área y aplica un 30 % de Reducción de curación.',
     image: '/images/habilidades/cuchillas-giratorias.webp',
     imageAlt: 'Icono de la habilidad Cuchillas giratorias',
+    strategicTitle: 'Reduce la curación enemiga',
     strategicUse: 'La Reducción de curación puede resultar especialmente útil contra enemigos que recuperan vida durante el combate.',
     qualityEffects: [
       {
@@ -77,7 +79,8 @@ export const skills: Skill[] = [
     description: 'Invoca 1 soldado Pollo para combatir, causando daño de rayo.',
     image: '/images/habilidades/pollo-furioso.webp',
     imageAlt: 'Icono de la habilidad Pollo Furioso',
-    strategicUse: 'Combatiente extra, el soldado Pollo puede atacar a los enemigos de forma independiente, lo que permite al personaje principal concentrarse en otras tareas o atacar a diferentes objetivos.',
+    strategicTitle: 'Añade presión de forma independiente',
+    strategicUse: 'El soldado Pollo combate de forma independiente y aporta una fuente adicional de daño mientras el personaje principal ataca a otros objetivos.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -122,7 +125,8 @@ export const skills: Skill[] = [
     description: 'Dispara 2 Conos de Hielo Extremo que infligen daño de hielo y [Congelan] al enemigo durante 2 segundos.',
     image: '/images/habilidades/cono-de-hielo-extremo.webp',
     imageAlt: 'Icono de la habilidad Cono de Hielo Extremo',
-    strategicUse: 'Contról de masas, el efecto de congelación puede inmovilizar a los enemigos, lo que permite al personaje y a sus aliados atacar sin preocuparse por represalias inmediatas.',
+    strategicTitle: 'Detiene objetivos peligrosos',
+    strategicUse: 'La Congelación inmoviliza temporalmente al enemigo y ofrece tiempo para concentrar daño, reorganizar la defensa o frenar una amenaza cercana.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -167,7 +171,8 @@ export const skills: Skill[] = [
     description: 'Invoca 2 meteoritos que golpean objetivos aleatorios, causando daño de fuego.',
     image: '/images/habilidades/meteorito.webp',
     imageAlt: 'Icono de la habilidad Meteorito',
-    strategicUse: 'Daño de área, el efecto de explosión puede causar daño a múltiples enemigos al mismo tiempo, lo que permite al personaje y a sus aliados controlar mejor el campo de batalla.',
+    strategicTitle: 'Limpia grupos de enemigos',
+    strategicUse: 'Sus impactos y explosiones pueden dañar a varios enemigos, por lo que resulta más útil cuando la presión proviene de grupos numerosos.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -212,7 +217,8 @@ export const skills: Skill[] = [
     description: 'Dispara continuamente un láser de objetivo único que causa daño de energía, prioriza objetivos Élite.',
     image: '/images/habilidades/laser-concentrado.webp',
     imageAlt: 'Icono de la habilidad Láser Concentrado',
-    strategicUse: 'Daño sostenido, el láser de objetivo único puede ser especialmente efectivo contra enemigos con alta salud o jefes, ya que inflige daño continuo mientras se mantiene el ataque.',
+    strategicTitle: 'Concentra daño en élites y jefes',
+    strategicUse: 'El daño continuo a un solo objetivo y su prioridad sobre enemigos Élite lo convierten en una opción apropiada contra amenazas con mucha vida.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -257,7 +263,8 @@ export const skills: Skill[] = [
     description: 'Lanza 1 Golpes Ígneos contra 1 objetivos aleatorios, causando daño de fuego.',
     image: '/images/habilidades/golpe-igneo.webp',
     imageAlt: 'Icono de la habilidad Golpe Ígneo',
-    strategicUse: '',
+    strategicTitle: 'Presiona objetivos aleatorios',
+    strategicUse: 'Aporta daño puntual de fuego, aunque su selección aleatoria ofrece menos control sobre el enemigo que recibe cada impacto.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -302,7 +309,8 @@ export const skills: Skill[] = [
     description: 'Lanza 1 Cadenas de Relámpagos que pueden rebotar 3 veces, causando daño de relámpago.',
     image: '/images/habilidades/cadena-de-relampagos.webp',
     imageAlt: 'Icono de la habilidad Cadena de Relámpagos',
-    strategicUse: '',
+    strategicTitle: 'Encadena daño entre enemigos',
+    strategicUse: 'Sus rebotes aprovechan mejor los grupos cercanos, ya que una misma cadena puede alcanzar varios objetivos antes de desaparecer.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -347,7 +355,8 @@ export const skills: Skill[] = [
     description: 'Construye 1 Torre de Rayo Pulsante que inflige daño de energía a enemigos en línea recta.',
     image: '/images/habilidades/torre-de-rayo-pulsante.webp',
     imageAlt: 'Icono de la habilidad Torre de Rayo Pulsante',
-    strategicUse: '',
+    strategicTitle: 'Controla líneas de avance',
+    strategicUse: 'El ataque en línea recta puede alcanzar varios enemigos cuando avanzan por una misma trayectoria, aportando daño sostenido desde la torre.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -398,7 +407,8 @@ export const skills: Skill[] = [
     description: 'Invoca 3 Escudo de Hielo giratorios que causan daño de hielo, bloquean proyectiles y aplican 30% [ralentización].',
     image: '/images/habilidades/escudo-de-hielo.webp',
     imageAlt: 'Icono de la habilidad Escudo de Hielo',
-    strategicUse: '',
+    strategicTitle: 'Protege y ralentiza la presión cercana',
+    strategicUse: 'Combina daño, bloqueo de proyectiles y Ralentización, por lo que puede aportar supervivencia cuando enemigos y ataques a distancia se acercan.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -443,7 +453,8 @@ export const skills: Skill[] = [
     description: 'Lanza 1 Discos Voladores Rebotadores que duran 3 s; rebotan al chocar contra paredes.',
     image: '/images/habilidades/disco-volador-rebotador.webp',
     imageAlt: 'Icono de la habilidad Disco Volador Rebotador',
-    strategicUse: '',
+    strategicTitle: 'Aprovecha escenarios con paredes',
+    strategicUse: 'El rebote contra paredes puede prolongar su recorrido durante los 3 segundos de duración y generar nuevas oportunidades de impacto.',
     qualityEffects: [
       {
         quality: 'Excelente',

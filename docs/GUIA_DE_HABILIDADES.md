@@ -18,6 +18,7 @@ Usa minúsculas, sin tildes ni espacios, y separa las palabras con guiones.
 - Elemento: `quemadura`, `rayo`, `escarcha`, `energia` o `fisico`.
 - Tipo, por ejemplo `En área` u `Objetivo único`.
 - Descripción.
+- Título breve para el uso estratégico.
 - Uso estratégico confirmado o claramente marcado como recomendación.
 - Efectos de calidad: Excelente, Élite, Épico, Legendario y Mítico.
 - Efectos de 1 a 5 estrellas para cada calidad.
@@ -36,6 +37,7 @@ Duplica el objeto de `Cuchillas giratorias` en `src/data/skills.ts` y cambia tod
   description: 'Descripción confirmada.',
   image: '/images/habilidades/nombre-de-la-habilidad.webp',
   imageAlt: 'Icono de la habilidad Nombre de la habilidad',
+  strategicTitle: 'Título breve del uso estratégico',
   strategicUse: 'Uso recomendado o dato estratégico.',
   qualityEffects: [
     {
