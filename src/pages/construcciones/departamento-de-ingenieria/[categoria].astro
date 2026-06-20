@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import { buildingCategories, type BuildingCategory } from '../../../data/buildings';
+
+export function getStaticPaths() {
+  return buildingCategories.map((category) => ({ params: { categoria: category.slug }, props: { category } }));
+}
+const { category } = Astro.props as { category: BuildingCategory };
+const pendingOptions = category.optionCount ? Math.max(category.optionCount - category.options.length, 0) : undefined;
+---
+
+<BaseLayout title={category.name} description={`${category.description} Opciones y mejoras de ${category.name} en Duck Survival.`}>
+  <PageHero eyebrow="Departamento de Ingeniería" title={category.name} description={category.description} />
+  <section class="section shell building-category-intro">
+    <div><a class="back-link" href="/construcciones/departamento-de-ingenieria/">← Volver a Ingeniería</a><p class="eyebrow">Resumen de la wiki</p><h2>Opciones de construcción</h2><p>Las descripciones generales resumen la función de cada categoría a partir de los efectos verificados. No son una cita textual del juego.</p></div>
+    <div class="building-category-count"><strong>{category.options.length}</strong><span>Documentadas</span><b>{category.optionCount ?? '—'}</b><span>Opciones totales</span></div>
+  </section>
+  <section class="section building-options-section"><div class="shell">
+    <div class="section-heading"><div><p class="eyebrow">Catálogo</p><h2>Opciones disponibles</h2></div><span class="evidence-badge confirmed">Datos del juego</span></div>
+    {category.options.length ? <div class="building-option-grid">
+      {category.options.map((option) => <a class="building-option-card" href={`/construcciones/departamento-de-ingenieria/${category.slug}/${option.slug}/`}><div class="building-option-visual">{option.image ? <img src={option.image} alt={option.imageAlt ?? option.name} /> : <span>Imagen pendiente</span>}</div><div><span>{option.element} · Nivel máximo {option.maxLevel}</span><h3>{option.name}</h3><p>{option.description}</p><b>Ver niveles y efectos →</b></div></a>)}
+      {pendingOptions && pendingOptions > 0 ? <div class="building-options-pending"><strong>+{pendingOptions}</strong><p>Opciones pendientes de documentar.</p></div> : null}
+    </div> : <div class="event-empty"><h2>Primera opción pendiente</h2><p>La estructura ya está preparada. Añadiremos la primera ficha cuando sus datos e imagen estén confirmados.</p></div>}
+  </div></section>
+</BaseLayout>

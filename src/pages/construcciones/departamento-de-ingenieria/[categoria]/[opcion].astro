@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PageHero from '../../../../components/PageHero.astro';
+import { buildingCategories, type BuildingCategory, type BuildingOption } from '../../../../data/buildings';
+import { gameElements } from '../../../../data/elements';
+
+export function getStaticPaths() {
+  return buildingCategories.flatMap((category) => category.options.map((option) => ({ params: { categoria: category.slug, opcion: option.slug }, props: { category, option } })));
+}
+const { category, option } = Astro.props as { category: BuildingCategory; option: BuildingOption };
+const element = gameElements.find((item) => item.id === option.element)!;
+---
+
+<BaseLayout title={option.name} description={`${option.name}: niveles y efectos de mejora en Duck Survival.`}>
+  <div class="building-option-page" style={`--building-element:${element.color}`}>
+    <PageHero eyebrow={`${category.name} · ${element.name}`} title={option.name} description={option.description} />
+    <section class="section shell building-option-intro">
+      <div class="building-option-image">{option.image ? <img src={option.image} alt={option.imageAlt ?? option.name} /> : <div><span>Imagen pendiente</span><small>public/images/construcciones/departamento-de-ingenieria/{category.slug}/{option.slug}.webp</small></div>}</div>
+      <div><a class="back-link" href={`/construcciones/departamento-de-ingenieria/${category.slug}/`}>← Volver a {category.name}</a><div class="building-option-tags"><span>{element.name}</span><span>Nivel máximo {option.maxLevel}</span></div><p class="eyebrow">Descripción</p><h2>{option.description}</h2>{option.upgradeEffect && <div class="strategy-callout"><span>Efecto de mejora</span><strong>{option.upgradeEffect}</strong></div>}<small>Verificado: {option.verifiedAt} · Versión {option.gameVersion}</small></div>
+    </section>
+    <section class="section building-levels-section"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Efectos de mejora</p><h2>Progresión por nivel</h2><p>{option.maxLevel === 30 ? 'Los edificios de 30 niveles muestran mejoras en los niveles 1, 3, 6, 10, 15, 20, 25 y 30.' : 'Este edificio presenta una mejora en cada nivel del 1 al 10.'}</p></div><span class="evidence-badge confirmed">Verificado en el juego</span></div><div class="building-level-grid">{option.levels.map((item) => <article><span>Lv{item.level}</span><p>{item.effect}</p></article>)}</div></div></section>
+    <section class="section shell building-fragments-note"><div><p class="eyebrow">Cómo se mejora</p><h2>Fragmentos propios</h2><p>Cada opción utiliza sus propios fragmentos. Pueden aparecer en eventos específicos, pero todavía no tenemos documentada una fuente permanente para obtener los de {option.name}.</p></div></section>
+  </div>
+</BaseLayout>

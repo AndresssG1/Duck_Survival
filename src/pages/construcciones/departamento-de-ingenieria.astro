@@ -1,17 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-
-const engineeringTypes = [
-  { number: '01', name: 'La Base', purpose: 'Construcción central de la partida.' },
-  { number: '02', name: 'Cuartel cuerpo a cuerpo', purpose: 'Unidades destinadas al combate cercano.' },
-  { number: '03', name: 'Cuartel a distancia', purpose: 'Unidades que atacan desde una posición alejada.' },
-  { number: '04', name: 'Torre defensiva de área', purpose: 'Daño dirigido a varios enemigos.' },
-  { number: '05', name: 'Torre defensiva de apoyo', purpose: 'Efectos de soporte para la defensa.' },
-  { number: '06', name: 'Torre defensiva de objetivo único', purpose: 'Daño concentrado sobre un enemigo.' },
-  { number: '07', name: 'Muralla', purpose: 'Protección y contención del avance enemigo.' },
-  { number: '08', name: 'Taller', purpose: 'Categoría técnica con opciones todavía por documentar.' },
-];
+import { buildingCategories } from '../../data/buildings';
 ---
 
 <BaseLayout title="Departamento de Ingeniería" description="Los ocho tipos de construcción del Departamento de Ingeniería de Duck Survival.">
@@ -29,7 +19,7 @@ const engineeringTypes = [
       <a class="back-link engineering-back" href="/construcciones/">← Volver a Base y construcciones</a>
       <div class="engineering-heading"><div><p class="eyebrow">Estructura general</p><h2>Ocho tipos de construcción</h2><p>Cada categoría contiene opciones y mejoras diferentes. Por ahora mostramos su función general; las estadísticas y fichas individuales se incorporarán cuando estén verificadas.</p></div><span>8</span></div>
       <div class="engineering-grid">
-        {engineeringTypes.map((building) => <article><span>{building.number}</span><h3>{building.name}</h3><p>{building.purpose}</p><small>Ficha detallada pendiente</small></article>)}
+        {buildingCategories.map((building) => <a href={`/construcciones/departamento-de-ingenieria/${building.slug}/`}><span>{building.number}</span><h3>{building.name}</h3><p>{building.description}</p><small>{building.options.length ? `${building.options.length} opción documentada` : 'Documentación pendiente'} →</small></a>)}
       </div>
     </div>
   </section>
