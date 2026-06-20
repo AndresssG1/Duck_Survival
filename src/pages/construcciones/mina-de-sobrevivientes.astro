@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const mechanics = [
+  { number: '01', title: 'Minería automática', text: 'La mina genera beneficios automáticamente. Cuanto mayor sea el capítulo completado en la historia principal, mayor será la velocidad de obtención.' },
+  { number: '02', title: 'Ayuda de seguidores', text: 'Los mineros aceleran la producción. El aumento es mayor cuando el seguidor ha completado capítulos más avanzados de la historia principal.' },
+  { number: '03', title: 'Saqueo de mineros', text: 'Conseguir mineros de otros jugadores requiere un combate que utiliza directamente la formación configurada para la Arena.' },
+];
+---
+
+<BaseLayout title="Mina de sobrevivientes" description="Cómo funcionan la minería automática, los seguidores y el saqueo de mineros en Duck Survival.">
+  <PageHero eyebrow="Sistema de la Base" title="Mina de sobrevivientes" description="Genera recursos pasivamente y mejora la producción con seguidores de mayor progreso." />
+  <section class="section shell base-detail-intro">
+    <div><a class="back-link" href="/construcciones/">← Volver a Base y construcciones</a><p class="eyebrow">Explicación rápida</p><h2>Tu progreso aumenta la producción</h2><p>La mina trabaja de forma automática, pero no produce siempre al mismo ritmo. Tu avance en la historia principal y el progreso de los seguidores asignados determinan la velocidad de las ganancias.</p></div>
+    <aside class="official-info"><span>Antes de combatir</span><strong>Revisa tu formación de la Arena</strong><p>La mina reutiliza esa formación cuando intentas saquear mineros; no configura un equipo independiente para este sistema.</p></aside>
+  </section>
+  <section class="section base-rules-section">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Descripción de función</p><h2>Tres mecánicas principales</h2></div><span class="evidence-badge confirmed">Transcrito del juego</span></div>
+      <div class="base-rule-grid compact-rules">{mechanics.map((item) => <article><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+    </div>
+  </section>
+</BaseLayout>

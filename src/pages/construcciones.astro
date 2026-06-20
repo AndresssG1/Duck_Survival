@@ -4,9 +4,9 @@ import PageHero from '../components/PageHero.astro';
 
 const baseSystems = [
   { number: '01', name: 'Archivo', type: 'Catálogo', image: '/images/construcciones/base/archivo.jpg', description: 'Reúne la información de los monstruos encontrados durante el progreso.', note: 'Más adelante enlazará con el catálogo de monstruos de esta wiki.', action: 'Catálogo futuro', state: 'pending' },
-  { number: '02', name: 'Central eléctrica', type: 'Energía', image: '/images/construcciones/base/central-electrica.jpg', description: 'Produce la energía necesaria para jugar distintos modos, especialmente la historia principal.', note: 'Su función principal queda explicada aquí; no necesita una ficha adicional por ahora.', action: 'Función documentada', state: 'complete' },
-  { number: '03', name: 'Logística del Yermo', type: 'Cofres', image: '/images/construcciones/base/logistica-del-yermo.jpg', description: 'Permite conseguir cofres que requieren un tiempo de desbloqueo antes de reclamarse.', note: 'Mientras se desbloquean, otros jugadores pueden intentar robarlos.', action: 'Próximamente', state: 'pending' },
-  { number: '04', name: 'Mina de sobrevivientes', type: 'Mineral', image: '/images/construcciones/base/mina-de-sobrevivientes.jpg', description: 'Produce un mineral utilizado para realizar compras dentro de su sistema.', note: 'Los jugadores conquistados trabajan como mineros y la cantidad disponible depende del progreso en la historia.', action: 'Próximamente', state: 'pending' },
+  { number: '02', name: 'Central eléctrica', type: 'Energía', image: '/images/construcciones/base/central-electrica.jpg', description: 'Entrega suministros de energía todos los días a las 8:00, 12:00 y 18:00.', note: 'Los suministros almacenados tienen un límite: los que lo excedan se eliminan, así que conviene reclamarlos a tiempo.', action: 'Función documentada', state: 'complete' },
+  { number: '03', name: 'Logística del Yermo', type: 'Cofres', image: '/images/construcciones/base/logistica-del-yermo.jpg', description: 'Permite recolectar cajas de suministro o saquear las de otros jugadores mediante combate.', note: 'Incluye nivel logístico, tiempos de recolección, cierre semanal y reglas propias de combate.', action: 'Ver más detalles', state: 'active', href: '/construcciones/logistica-del-yermo/' },
+  { number: '04', name: 'Mina de sobrevivientes', type: 'Mineral', image: '/images/construcciones/base/mina-de-sobrevivientes.jpg', description: 'Genera recursos automáticamente y permite aumentar la producción con ayuda de seguidores.', note: 'La historia principal influye en la velocidad de minería; los mineros se disputan usando la formación de la Arena.', action: 'Ver más detalles', state: 'active', href: '/construcciones/mina-de-sobrevivientes/' },
   { number: '05', name: 'Departamento de Ingeniería', type: 'Construcciones', image: '/images/construcciones/base/departamento-de-ingenieria.jpg', description: 'Agrupa las construcciones que se utilizan y mejoran durante las partidas.', note: 'Entra para conocer sus ocho categorías y preparar las futuras fichas individuales.', action: 'Ver más detalles', state: 'active', href: '/construcciones/departamento-de-ingenieria/', featured: true },
 ];
 ---
@@ -15,7 +15,7 @@ const baseSystems = [
   <PageHero eyebrow="Recursos y progreso" title="Base y construcciones" description="Conoce los cinco sistemas de la Base, para qué sirve cada uno y cuáles tendrán una guía detallada." />
   <section class="section shell base-introduction">
     <div><p class="eyebrow">Vista general</p><h2>El centro de tu progreso</h2><p>La <strong>Base</strong> reúne cinco sistemas distintos. Algunos gestionan recursos fuera del combate y el <strong>Departamento de Ingeniería</strong> contiene las construcciones utilizadas durante las partidas.</p></div>
-    <div class="base-summary" aria-label="Resumen de la sección"><article><strong>5</strong><span>Sistemas de la Base</span></article><article><strong>1</strong><span>Sección en desarrollo</span></article></div>
+    <div class="base-summary" aria-label="Resumen de la sección"><article><strong>5</strong><span>Sistemas de la Base</span></article><article><strong>4</strong><span>Sistemas documentados</span></article></div>
   </section>
   <section class="section base-systems-section">
     <div class="shell">

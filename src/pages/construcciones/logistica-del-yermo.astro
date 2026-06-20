@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const rules = [
+  { number: '01', title: 'Recolectar cajas', text: 'Ocupa una caja de suministro hasta que termine la cuenta regresiva para recibir sus recompensas. Después de recogerla, aparecerá otra automáticamente tras un tiempo.' },
+  { number: '02', title: 'Saquear suministros', text: 'Si derrotas la formación defensiva de otro jugador, puedes apoderarte de su caja y conservar el tiempo de recolección que le quedaba.' },
+  { number: '03', title: 'Cierre semanal', text: 'Cada domingo a las 23:50 la estación cierra hasta el cambio de día. No se puede entrar ni saquear, pero las cajas ya recolectadas se conservan.' },
+  { number: '04', title: 'Nivel logístico', text: 'Recolectar suministros entrega experiencia logística. Al subir de nivel se desbloquean más intentos de recolección.' },
+  { number: '05', title: 'Combate logístico', text: 'Pierde el primer bando derrotado antes de acabar el tiempo. Si ambos siguen con vida al terminar la cuenta regresiva, pierde el atacante.' },
+];
+---
+
+<BaseLayout title="Logística del Yermo" description="Cómo funcionan las cajas, el saqueo y el combate de Logística del Yermo en Duck Survival.">
+  <PageHero eyebrow="Sistema de la Base" title="Logística del Yermo" description="Recolecta cajas de suministro, protege su cuenta regresiva y disputa recursos contra otros jugadores." />
+  <section class="section shell base-detail-intro">
+    <div><a class="back-link" href="/construcciones/">← Volver a Base y construcciones</a><p class="eyebrow">Explicación rápida</p><h2>Recolecta o saquea</h2><p>El objetivo es mantener una caja ocupada hasta completar su tiempo de recolección. También puedes atacar la caja de otro jugador, pero el combate utiliza directamente tu <strong>formación de la Arena</strong>.</p></div>
+    <aside class="official-info"><span>Dato importante</span><strong>El atacante pierde si se acaba el tiempo</strong><p>No basta con sobrevivir: si ambos bandos continúan con vida cuando termina la cuenta regresiva, la victoria corresponde al defensor.</p></aside>
+  </section>
+  <section class="section base-rules-section">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Reglas de la modalidad</p><h2>Cómo funciona</h2></div><span class="evidence-badge confirmed">Transcrito del juego</span></div>
+      <div class="base-rule-grid">{rules.map((rule) => <article><span>{rule.number}</span><h3>{rule.title}</h3><p>{rule.text}</p></article>)}</div>
+    </div>
+  </section>
+</BaseLayout>
