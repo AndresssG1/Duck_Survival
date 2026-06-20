@@ -19,7 +19,7 @@ import { buildingCategories } from '../../data/buildings';
       <a class="back-link engineering-back" href="/construcciones/">← Volver a Base y construcciones</a>
       <div class="engineering-heading"><div><p class="eyebrow">Estructura general</p><h2>Ocho tipos de construcción</h2><p>Cada categoría contiene opciones y mejoras diferentes. Por ahora mostramos su función general; las estadísticas y fichas individuales se incorporarán cuando estén verificadas.</p></div><span>8</span></div>
       <div class="engineering-grid">
-        {buildingCategories.map((building) => <a href={`/construcciones/departamento-de-ingenieria/${building.slug}/`}><span>{building.number}</span><h3>{building.name}</h3><p>{building.description}</p><small>{building.options.length ? `${building.options.length} opción documentada` : 'Documentación pendiente'} →</small></a>)}
+        {buildingCategories.map((building) => <a href={`/construcciones/departamento-de-ingenieria/${building.slug}/`}><span>{building.number}</span><h3>{building.name}</h3><p>{building.description}</p><small>{building.options.length} de {building.optionCount ?? '—'} opciones documentadas →</small></a>)}
       </div>
     </div>
   </section>

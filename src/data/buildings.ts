@@ -16,6 +16,8 @@ export const buildingCategories: BuildingCategory[] = [
     description: 'Es la construcción central que debes proteger. Sus opciones pueden reforzar la propia Base y conceder bonificaciones a las unidades durante el combate.',
     options: [{
       slug: 'campamento-de-supervivientes', name: 'Campamento de supervivientes', description: 'Oros diarios +9', element: 'fisico', maxLevel: 30,
+      image: '/images/construcciones/departamento-de-ingenieria/la-base/campamento-de-supervivientes.webp',
+      imageAlt: 'Campamento de supervivientes de Duck Survival',
       levels: [
         { level: 1, effect: 'Reducción de daño de la Base +3 %.' },
         { level: 3, effect: 'Cuando la Base alcanza nivel 2/3, todas las unidades obtienen +2 %/+4 % de daño.' },
@@ -30,10 +32,10 @@ export const buildingCategories: BuildingCategory[] = [
     }],
   },
   { slug: 'cuartel-cuerpo-a-cuerpo', number: '02', name: 'Cuartel cuerpo a cuerpo', description: 'Reúne edificios orientados a unidades que combaten cerca de los enemigos.', optionCount: 5, options: [] },
-  { slug: 'cuartel-a-distancia', number: '03', name: 'Cuartel a distancia', description: 'Reúne edificios orientados a unidades que atacan desde una posición alejada.', options: [] },
-  { slug: 'torre-defensiva-de-area', number: '04', name: 'Torre defensiva de área', description: 'Agrupa torres destinadas a causar daño a varios enemigos dentro de una zona.', options: [] },
-  { slug: 'torre-defensiva-de-apoyo', number: '05', name: 'Torre defensiva de apoyo', description: 'Agrupa torres cuyos efectos ayudan a sostener o reforzar la defensa.', options: [] },
-  { slug: 'torre-defensiva-de-objetivo-unico', number: '06', name: 'Torre defensiva de objetivo único', description: 'Agrupa torres que concentran sus ataques sobre un enemigo cada vez.', options: [] },
-  { slug: 'muralla', number: '07', name: 'Muralla', description: 'Reúne opciones destinadas a contener el avance enemigo y proteger la defensa.', options: [] },
-  { slug: 'taller', number: '08', name: 'Taller', description: 'Reúne edificios técnicos con efectos que documentaremos al confirmar cada opción.', options: [] },
+  { slug: 'cuartel-a-distancia', number: '03', name: 'Cuartel a distancia', description: 'Reúne edificios orientados a unidades que atacan desde una posición alejada.', optionCount: 4, options: [] },
+  { slug: 'torre-defensiva-de-area', number: '04', name: 'Torre defensiva de área', description: 'Agrupa torres destinadas a causar daño a varios enemigos dentro de una zona.', optionCount: 3, options: [] },
+  { slug: 'torre-defensiva-de-apoyo', number: '05', name: 'Torre defensiva de apoyo', description: 'Agrupa torres cuyos efectos ayudan a sostener o reforzar la defensa.', optionCount: 2, options: [] },
+  { slug: 'torre-defensiva-de-objetivo-unico', number: '06', name: 'Torre defensiva de objetivo único', description: 'Agrupa torres que concentran sus ataques sobre un enemigo cada vez.', optionCount: 4, options: [] },
+  { slug: 'muralla', number: '07', name: 'Muralla', description: 'Reúne opciones destinadas a contener el avance enemigo y proteger la defensa.', optionCount: 4, options: [] },
+  { slug: 'taller', number: '08', name: 'Taller', description: 'Reúne edificios técnicos con efectos que documentaremos al confirmar cada opción.', optionCount: 3, options: [] },
 ];
