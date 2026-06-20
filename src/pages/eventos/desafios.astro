@@ -1,23 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import { dailyChallenges } from '../../data/events';
+import { recurringChallenges } from '../../data/events';
+
+const sections = [
+  { id: 'difficulty', eyebrow: 'Progreso y supervivencia', title: 'Desafío de dificultad', description: 'Modalidades que ponen a prueba el progreso de la cuenta y se habilitan mediante capítulos o días de juego.' },
+  { id: 'enemy-cooperation', eyebrow: 'Competición y jefes', title: 'Cooperación contra enemigos', description: 'Nombre utilizado por el juego para reunir Arena y otras modalidades competitivas o cooperativas.' },
+] as const;
 ---
 
-<BaseLayout title="Desafíos diarios" description="Arena PvP, mazmorras, Guild Boss y desafíos diarios de Duck Survival.">
-  <PageHero eyebrow="Actividad recurrente" title="Desafíos diarios" description="Actividades que se desbloquean con el progreso y pueden realizarse de forma recurrente desde el apartado Desafío." />
-  <section class="section shell">
-    <a class="back-link" href="/eventos/">&lt;- Eventos y desafíos</a>
-    <div class="challenge-grid">
-      {dailyChallenges.map((challenge) => (
-        <article class="challenge-card">
-          <div class="challenge-top"><span>{challenge.audience === 'guild' ? 'Gremio' : 'Individual'}</span><b>Diario</b></div>
-          <h2>{challenge.name}</h2><p>{challenge.description}</p>
-          <dl><div><dt>Desbloqueo</dt><dd>{challenge.unlockRequirement}</dd></div><div><dt>Reinicio</dt><dd>{challenge.resetSchedule}</dd></div></dl>
-          <small>Verificado: {challenge.verifiedAt} · Mecánicas en documentación</small>
-        </article>
-      ))}
-    </div>
-    <div class="notice activity-note"><strong>Documentación pendiente</strong><p>Las reglas, intentos y recompensas se añadirán con capturas de cada pantalla del juego.</p></div>
-  </section>
+<BaseLayout title="Desafíos" description="Desafío de dificultad, Arena, Camino de Supervivencia, Jefe Mundial y Zona de guerra de Duck Survival.">
+  <PageHero eyebrow="Actividad recurrente" title="Desafíos" description="El juego organiza estas modalidades en dos apartados. Aquí documentamos sus desbloqueos, reglas y recompensas sin mezclarlas con los eventos temporales." />
+  <section class="section shell"><a class="back-link" href="/eventos/">← Eventos y desafíos</a><div class="challenge-section-nav">{sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}</div></section>
+  {sections.map((section) => (
+    <section class:list={['section', 'challenge-group-section', { alternate: section.id === 'enemy-cooperation' }]} id={section.id}>
+      <div class="shell">
+        <div class="section-heading"><div><p class="eyebrow">{section.eyebrow}</p><h2>{section.title}</h2><p>{section.description}</p></div><span class="evidence-badge confirmed">Estructura del juego</span></div>
+        <div class="challenge-grid">
+          {recurringChallenges.filter((challenge) => challenge.group === section.id).map((challenge) => (
+            <article class="challenge-card">
+              <div class="challenge-card-cover">{challenge.cover ? <img src={challenge.cover} alt={`Portada de ${challenge.name}`} /> : <span>Portada pendiente</span>}</div>
+              <div class="challenge-card-body"><div class="challenge-top"><span>{section.title}</span><b>{challenge.href ? 'Guía disponible' : 'En documentación'}</b></div><h3>{challenge.name}</h3><p>{challenge.description}</p><dl><div><dt>Desbloqueo</dt><dd>{challenge.unlockRequirement}</dd></div></dl>{challenge.href ? <a href={challenge.href}>Ver guía completa →</a> : <small>Verificado: {challenge.verifiedAt}</small>}</div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
 </BaseLayout>

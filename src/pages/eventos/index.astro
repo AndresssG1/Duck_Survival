@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import { dailyChallenges, gameEvents } from '../../data/events';
+import { recurringChallenges, gameEvents } from '../../data/events';
 
 const activeEvents = gameEvents.filter((event) => event.status === 'active');
 const upcomingEvents = gameEvents.filter((event) => event.status === 'upcoming');
@@ -12,8 +12,8 @@ const upcomingEvents = gameEvents.filter((event) => event.status === 'upcoming')
   <section class="section shell">
     <div class="activity-grid">
       <a class="activity-card daily" href="/eventos/desafios/">
-        <span>Actividad recurrente</span><strong>{dailyChallenges.length}</strong><h2>Desafíos diarios</h2>
-        <p>Arena PvP, Exploración de mazmorras, Guild Boss y futuros desafíos desbloqueables.</p><b>Ver desafíos -&gt;</b>
+        <span>Actividad recurrente</span><strong>{recurringChallenges.length}</strong><h2>Desafíos</h2>
+        <p>Desafío de dificultad y Cooperación contra enemigos, con modalidades que se desbloquean mediante el progreso.</p><b>Ver desafíos -&gt;</b>
       </a>
       <a class="activity-card individual" href="/eventos/individuales/">
         <span>Calendario temporal</span><strong>{gameEvents.filter((event) => event.audience === 'individual').length}</strong><h2>Individuales</h2>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+
+const ranks = [
+  { name: 'Arena Élite', capacity: '50 jugadores', promotion: 'Top 60 % asciende', stay: 'Último 40 % permanece', demotion: 'No aplica' },
+  { name: 'Arena Experto', capacity: '999 jugadores', promotion: 'Top 50 % asciende', stay: 'Puestos 50 %-80 % permanecen', demotion: 'Último 20 % desciende' },
+  { name: 'Arena Campeón', capacity: '999 jugadores', promotion: 'Rango máximo', stay: 'Top 30 % permanece', demotion: 'Último 70 % desciende' },
+];
+
+const coverPath = '/images/eventos/desafios/cooperacion-contra-enemigos/arena.webp';
+---
+
+<BaseLayout title="Arena PvP" description="Horarios, rangos, puntos, intentos, recompensas y Pase de Arena de Duck Survival.">
+  <PageHero eyebrow="Cooperación contra enemigos · PvP" title="Arena" description="Compite diariamente dentro de un grupo, acumula puntos y mantén una buena posición para ascender de rango y recibir recompensas." />
+  <nav class="guide-jump-nav" aria-label="Contenido de Arena"><div class="shell"><a href="#funcionamiento"><span>01</span> Funcionamiento</a><a href="#rangos"><span>02</span> Rangos</a><a href="#puntos"><span>03</span> Puntos</a><a href="#intentos"><span>04</span> Intentos</a><a href="#recompensas"><span>05</span> Recompensas</a></div></nav>
+
+  <section class="section shell arena-intro">
+    <div class="arena-cover-placeholder"><span>Portada de Arena</span><small>{coverPath}</small></div>
+    <div><a class="back-link" href="/eventos/desafios/">← Volver a Desafíos</a><p class="eyebrow">Resumen rápido</p><h2>Participa todos los días</h2><p>Arena abre diariamente de <strong>00:30 a 24:00</strong>. Al iniciar la semana se te asigna un grupo y solo compites contra jugadores de ese mismo grupo durante la temporada.</p><div class="arena-quick-stats"><article><strong>5</strong><span>Intentos gratuitos</span></article><article><strong>5</strong><span>Boletos comprables</span></article><article><strong>7</strong><span>Días por temporada</span></article></div></div>
+  </section>
+
+  <section class="section arena-operation-section" id="funcionamiento"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Ciclo semanal</p><h2>Cómo funciona</h2></div><span class="evidence-badge confirmed">Verificado en el juego</span></div><div class="arena-timeline"><article><span>Inicio semanal</span><h3>Asignación de grupo</h3><p>La primera vez que entras durante la semana, el juego te coloca en un grupo de tu rango.</p></article><article><span>Cada día · 24:00</span><h3>Cálculo de resultados</h3><p>Se calcula la clasificación y se reorganizan rangos y grupos según la posición alcanzada.</p></article><article><span>Fin de semana</span><h3>Cierre de temporada</h3><p>Una semana completa constituye una temporada de Arena.</p></article></div><div class="arena-warning"><strong>Consejo importante</strong><p>Participa todos los días. Si no participas durante una jornada, desciendes automáticamente de rango sin importar tu poder o clasificación anterior.</p></div></div></section>
+
+  <section class="section shell" id="rangos"><div class="section-heading"><div><p class="eyebrow">Ascensos y descensos</p><h2>Tres rangos</h2><p>La pantalla de reglas utiliza “Experto”, mientras que algunas recompensas muestran “Maestro”. Esta guía conserva Experto como nombre principal y señala la diferencia de traducción.</p></div></div><div class="arena-rank-grid">{ranks.map((rank, index) => <article><span>0{index + 1}</span><h3>{rank.name}</h3><dl><div><dt>Grupo</dt><dd>{rank.capacity}</dd></div><div><dt>Ascenso</dt><dd>{rank.promotion}</dd></div><div><dt>Permanece</dt><dd>{rank.stay}</dd></div><div><dt>Descenso</dt><dd>{rank.demotion}</dd></div></dl></article>)}</div></section>
+
+  <section class="section arena-points-section" id="puntos"><div class="shell arena-points-layout"><div><p class="eyebrow">Clasificación diaria</p><h2>Sistema de puntos</h2><p>Todos comienzan con <strong>1000 puntos</strong>. Cuanto mayor sea tu puntuación, menos puntos recibirás por cada victoria.</p><p>Después de la reorganización diaria se descuentan 100 puntos, pero la puntuación nunca baja de 1000.</p></div><div class="arena-score-flow"><span>1000</span><b>+</b><span>Victorias</span><b>−</b><span>100 diarios</span><strong>Mínimo: 1000</strong></div></div></section>
+
+  <section class="section shell" id="intentos"><div class="section-heading"><div><p class="eyebrow">Combates disponibles</p><h2>Intentos y defensa</h2></div></div><div class="arena-feature-grid"><article><span>Gratis</span><h3>5 intentos diarios</h3><p>Cada jornada comienza con cinco oportunidades para combatir.</p></article><article><span>Diamantes</span><h3>Hasta 5 boletos extra</h3><p>Puedes comprar diariamente hasta cinco intentos adicionales utilizando diamantes.</p></article><article><span>Defensa</span><h3>Formación automática</h3><p>Los ataques defensivos utilizan automáticamente tu configuración habitual de Arena.</p></article></div></section>
+
+  <section class="section arena-rewards-section" id="recompensas"><div class="shell"><div class="section-heading"><div><p class="eyebrow">Progreso y economía</p><h2>Pase, recompensas y tienda</h2></div><span class="evidence-badge confirmed">Precio observado</span></div><div class="arena-reward-grid"><article><span>01</span><h3>Pase de Arena</h3><p>Completa desafíos para obtener experiencia y avanzar hasta el nivel 15. Existe una ruta gratuita y un Pase avanzado.</p><strong>Pase avanzado: US$9.99</strong><small>El precio puede variar según país y plataforma.</small></article><article><span>02</span><h3>Recompensas</h3><p>Se entregan recompensas diarias y de temporada según la posición final y el rango alcanzado: Élite, Experto/Maestro o Campeón.</p></article><article><span>03</span><h3>Tienda</h3><p>Las recompensas incluyen una moneda propia que se utiliza para comprar objetos dentro de la Tienda de Arena.</p></article><article><span>04</span><h3>Registro</h3><p>Consulta el historial de ataques realizados y las defensas recibidas para revisar tus resultados.</p></article></div></div></section>
+</BaseLayout>
