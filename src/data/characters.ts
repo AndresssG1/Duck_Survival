@@ -358,4 +358,54 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'chica-chispa-phoebe',
+
+    name: 'Chica Chispa - Phoebe',
+    element: 'quemadura',
+    rarity: 'Épico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/quemadura/chica-chispa-phoebe/personaje.webp',
+
+    imageAlt:
+      'Chica Chispa - Phoebe, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Proyectil de fuego',
+        type: 'Habilidad normal',
+        description: 'Detona Fuegos Artificiales, causando daño de área de fuego equivalente a 50% de su ataque.',
+        image:
+          '/images/personajes/quemadura/chica-chispa-phoebe/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Festival de Fuegos Artificiales',
+        type: 'Habilidad definitiva',
+        description: 'Durante 3 segundos, lanza múltiples fuegos artificiales que causan daño de fuego en área equivalente a 100% del ataque.',
+        image:
+          '/images/personajes/quemadura/chica-chispa-phoebe/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Golpe Ígneo',
+      passiveName: 'Chispa explosiva',
+      description: 'Chispa explosiva (Pasiva única): El golpe de llamas genera 2 chispas al impactar al objetivo.',
+    },
+
+    verifiedAt: '2026-06-19',
+    gameVersion: '1.4.1',
+  },
 ];
