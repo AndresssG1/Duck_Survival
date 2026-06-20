@@ -69,4 +69,49 @@ export const skills: Skill[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'pollo-furioso',
+    name: 'Pollo Furioso',
+    element: 'rayo',
+    type: 'Objetivo único',
+    description: 'Invoca 1 soldado Pollo para combatir, causando daño de rayo.',
+    image: '/images/habilidades/pollo-furioso.webp',
+    imageAlt: 'Icono de la habilidad Pollo Furioso',
+    strategicUse: '',
+    qualityEffects: [
+      {
+        quality: 'Excelente',
+        effect: 'Desbloquea Pollo Furioso en combate.',
+        starEffects: null,
+      },
+      {
+        quality: 'Élite',
+        effect: 'Desbloquea la opción de despertar de [Pollo Furioso]: Evoluciona a soldado Gallo Furioso, el daño aumenta',
+        starEffects: [
+          { stars: 1, effect: 'Aumento de daño de Pollo Furioso +4.0%' },
+          { stars: 2, effect: 'Aumento de daño de Pollo Furioso +4.0%' },
+          { stars: 3, effect: 'Daño crítico +8.0%' },
+          { stars: 4, effect: 'Resistencia a daño crítico +8.0%' },
+          { stars: 5, effect: 'Daño de rayo +5.0%' },
+        ],
+      },
+      {
+        quality: 'Épico',
+        effect: 'Desbloquea la opción de despertar+ de [Pollo Furioso]: Cada 2 ataques, dispara 1 Minas Huevo.',
+        starEffects: null,
+      },
+      {
+        quality: 'Legendario',
+        effect: 'Velocidad de ataque del Pollo +25%, penetración de balas +1.',
+        starEffects: null,
+      },
+      {
+        quality: 'Mítico',
+        effect: 'Mejora de la opción de despertar+ de [Pollo Furioso]: Los disparos de Pollo Veloz tienen 25% de probabilidad de explotar al impactar.',
+        starEffects: null,
+      },
+    ],
+    verifiedAt: '2026-06-20',
+    gameVersion: '1.4.1',
+  },
 ];
