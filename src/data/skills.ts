@@ -77,7 +77,7 @@ export const skills: Skill[] = [
     description: 'Invoca 1 soldado Pollo para combatir, causando daño de rayo.',
     image: '/images/habilidades/pollo-furioso.webp',
     imageAlt: 'Icono de la habilidad Pollo Furioso',
-    strategicUse: '',
+    strategicUse: 'Combatiente extra, el soldado Pollo puede atacar a los enemigos de forma independiente, lo que permite al personaje principal concentrarse en otras tareas o atacar a diferentes objetivos.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -122,7 +122,7 @@ export const skills: Skill[] = [
     description: 'Dispara 2 Conos de Hielo Extremo que infligen daño de hielo y [Congelan] al enemigo durante 2 segundos.',
     image: '/images/habilidades/cono-de-hielo-extremo.webp',
     imageAlt: 'Icono de la habilidad Cono de Hielo Extremo',
-    strategicUse: '',
+    strategicUse: 'Contról de masas, el efecto de congelación puede inmovilizar a los enemigos, lo que permite al personaje y a sus aliados atacar sin preocuparse por represalias inmediatas.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -167,7 +167,7 @@ export const skills: Skill[] = [
     description: 'Invoca 2 meteoritos que golpean objetivos aleatorios, causando daño de fuego.',
     image: '/images/habilidades/meteorito.webp',
     imageAlt: 'Icono de la habilidad Meteorito',
-    strategicUse: '',
+    strategicUse: 'Daño de área, el efecto de explosión puede causar daño a múltiples enemigos al mismo tiempo, lo que permite al personaje y a sus aliados controlar mejor el campo de batalla.',
     qualityEffects: [
       {
         quality: 'Excelente',
@@ -212,7 +212,7 @@ export const skills: Skill[] = [
     description: 'Dispara continuamente un láser de objetivo único que causa daño de energía, prioriza objetivos Élite.',
     image: '/images/habilidades/laser-concentrado.webp',
     imageAlt: 'Icono de la habilidad Láser Concentrado',
-    strategicUse: '',
+    strategicUse: 'Daño sostenido, el láser de objetivo único puede ser especialmente efectivo contra enemigos con alta salud o jefes, ya que inflige daño continuo mientras se mantiene el ataque.',
     qualityEffects: [
       {
         quality: 'Excelente',
