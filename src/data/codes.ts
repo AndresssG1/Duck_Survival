@@ -20,6 +20,15 @@ export const gameCodes: GameCode[] = [
     sourceUrl: null,
     isNew: true,
   },
+  {
+    code: 'D7kP2x',
+    status: 'active',
+    reward: 'Recompensas del código de regalo por el día del padre',
+    verifiedAt: '2026-06-21',
+    expiresAt: '2026-07-01',
+    sourceUrl: null,
+    isNew: true,
+  },
   ...['BestDuck', 'FanGift', 'ThankYou', 'DUCK2M', 'HEARDUCK', 'DUCK777', 'DUCK2026', 'DUCKOP2026', 'DUCKIE', 'DUCKOP', 'DuckGo'].map((code) => ({
     code,
     status: 'active' as const,
