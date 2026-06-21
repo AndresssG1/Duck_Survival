@@ -5,5 +5,6 @@ export const navigation = [
   { label: 'Construcciones', href: '/construcciones/' },
   { label: 'Habilidades', href: '/habilidades/' },
   { label: 'Eventos', href: '/eventos/' },
+  { label: 'Novedades', href: '/novedades/' },
   { label: 'Códigos', href: '/codigos/' },
 ];

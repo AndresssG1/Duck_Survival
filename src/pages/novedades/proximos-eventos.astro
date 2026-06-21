@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { upcomingAnnouncements } from '../../data/updates';
+
+const statusLabels = { announced: 'Anunciado', 'coming-soon': 'Próximamente', active: 'Activo', ended: 'Finalizado' };
+---
+
+<BaseLayout title="Próximos eventos" description="Tablero de próximos eventos y contenido anunciado oficialmente para Duck Survival.">
+  <PageHero eyebrow="Contenido todavía no disponible" title="Próximos eventos" description="Un tablero breve para seguir anuncios oficiales antes de que aparezcan sus reglas completas dentro del juego." />
+  <section class="section shell"><a class="back-link" href="/novedades/">← Volver a Novedades</a><div class="upcoming-board">
+    {upcomingAnnouncements.map((item) => <article class="upcoming-announcement-card">
+      <div class="official-cover-slot">{item.cover ? <img src={item.cover} alt={`Portada oficial de ${item.title}`} /> : <div><span>Imagen oficial</span><strong>Pendiente de autorización</strong></div>}</div>
+      <div class="upcoming-announcement-content"><div class="update-card-meta"><span>{statusLabels[item.status]}</span><time datetime={item.announcedAt}>Anunciado: {item.announcedAt}</time></div><h2>{item.title}</h2><p>{item.summary}</p><div class="update-timing"><span>Calendario anunciado</span><strong>{item.timing}</strong></div><ul>{item.highlights.map((highlight) => <li>{highlight}</li>)}</ul><div class="update-source"><small>Verificado: {item.verifiedAt} · Resumen no oficial</small><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Ver anuncio oficial →</a></div></div>
+    </article>)}
+  </div></section>
+</BaseLayout>
