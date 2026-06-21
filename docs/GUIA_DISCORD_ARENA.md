@@ -12,6 +12,18 @@ En Arena no basta con avanzar muchos capítulos o acumular una cifra alta de pod
 
 Esta guía reúne dos tipos de información. Los horarios, rangos, porcentajes, puntos, intentos y recompensas fueron revisados directamente dentro del juego. Los apartados de composición, errores y diagnóstico son recomendaciones estratégicas: sirven para analizar una derrota, pero no garantizan resultados porque cada cuenta dispone de héroes, habilidades, equipamiento y progreso diferentes.
 
+## Resumen rápido
+
+Si solo quieres los puntos más importantes:
+
+- Participa todos los días para evitar descensos por inactividad.
+- Utiliza siempre los 5 intentos gratuitos.
+- No ataques únicamente por poder.
+- Mantén una alineación estable y evita mejorar demasiados héroes a la vez.
+- Prioriza daño principal, supervivencia, control y sinergia.
+- Revisa el registro después de cada derrota.
+- Las construcciones, habilidades y equipamiento también influyen en Arena.
+
 ## Horario y ciclo semanal
 
 Arena abre todos los días desde las **00:30 hasta las 24:00**. Cada jornada, a las 24:00, el juego calcula los resultados y reorganiza los grupos y rangos según la posición alcanzada.
@@ -156,6 +168,38 @@ Cambia una variable por vez. Si sustituyes simultáneamente héroes, habilidades
 5. Prioriza héroes, habilidades y equipamiento que ya utilizas.
 6. Revisa el registro y aprende de las derrotas.
 7. Compra boletos adicionales solo cuando el beneficio potencial justifique los diamantes.
+
+## Errores que retrasan tu progreso
+
+### Gastar diamantes diariamente en boletos
+
+Los boletos adicionales pueden ser útiles en momentos concretos, pero gastar diamantes todos los días suele ralentizar el progreso general de la cuenta.
+
+### Mejorar demasiados héroes
+
+Una cuenta con muchos héroes a medio desarrollar suele rendir peor que una cuenta con pocos héroes bien desarrollados.
+
+### Ignorar el equipamiento
+
+Un equipo correcto puede perder simplemente porque el equipamiento está muy por detrás del nivel esperado.
+
+### Copiar alineaciones sin entenderlas
+
+Dos jugadores pueden utilizar los mismos héroes y obtener resultados completamente distintos debido a diferencias de habilidades, construcciones, equipamiento y progresión.
+
+### No participar diariamente
+
+La participación diaria es uno de los factores más importantes de Arena. Perder una jornada puede provocar descensos incluso cuando la cuenta tiene suficiente poder para mantenerse.
+
+## Actualizaciones futuras
+
+Arena puede cambiar con futuras actualizaciones del juego.
+
+Los rangos, recompensas, porcentajes de ascenso, héroes más utilizados y estrategias populares pueden modificarse con nuevos contenidos o cambios de balance.
+
+Esta guía se actualizará cuando existan cambios verificables dentro del juego.
+
+Si detectas información desactualizada o encuentras nuevas estrategias, puedes compartirlas para ayudar a mantener esta guía útil para toda la comunidad.
 
 ## Conclusión
 
