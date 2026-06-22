@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { characters } from '../data/characters';
+import { skills } from '../data/skills';
+import { buildingCategories } from '../data/buildings';
+
+const documentedBuildings = buildingCategories.reduce((total, category) => total + category.options.length, 0);
+const databaseSections = [
+  { number: '01', title: 'Personajes', count: characters.length, unit: 'fichas', description: 'Elementos, rarezas, habilidades normales, definitivas y efectos enlazados.', href: '/personajes/', status: 'Disponible' },
+  { number: '02', title: 'Habilidades', count: skills.length, unit: 'habilidades', description: 'Funcionamiento, usos estratégicos, calidad y progresión por estrellas.', href: '/habilidades/', status: 'Catálogo completo' },
+  { number: '03', title: 'Construcciones', count: documentedBuildings, unit: 'opciones', description: 'Sistemas de la Base, categorías de Ingeniería y efectos por nivel.', href: '/construcciones/', status: 'En expansión' },
+  { number: '04', title: 'Gemas', count: '—', unit: 'guía', description: 'Rarezas y decisiones de mejora que todavía estamos verificando.', href: '/guias/intermedio/#gemas', status: 'Investigación comunitaria' },
+  { number: '05', title: 'Armas', count: '—', unit: 'próximamente', description: 'Progresión, funciones y recomendaciones según el tipo de cuenta.', href: null, status: 'Próxima guía' },
+  { number: '06', title: 'Titanes', count: '—', unit: 'próximamente', description: 'Efectos y progresión cuando exista información verificable suficiente.', href: null, status: 'Pendiente de verificar' },
+];
+---
+
+<BaseLayout title="Base de datos" description="Personajes, habilidades, construcciones, gemas, armas y Titanes de Duck Survival organizados en un solo catálogo.">
+  <PageHero eyebrow="Consulta profunda" title="Base de datos" description="Cuando ya sabes qué buscas, entra directamente al catálogo correspondiente y compara sus datos verificados." />
+  <section class="section shell database-hub-grid">
+    {databaseSections.map((item) => item.href ? (
+      <a class="database-hub-card" href={item.href}><div><span>{item.number}</span><b>{item.status}</b></div><strong>{item.count}</strong><small>{item.unit}</small><h2>{item.title}</h2><p>{item.description}</p><em>Consultar →</em></a>
+    ) : (
+      <article class="database-hub-card pending"><div><span>{item.number}</span><b>{item.status}</b></div><strong>{item.count}</strong><small>{item.unit}</small><h2>{item.title}</h2><p>{item.description}</p><em>En preparación</em></article>
+    ))}
+  </section>
+  <section class="section database-guidance-section"><div class="shell database-guidance"><div><p class="eyebrow">¿No sabes qué consultar?</p><h2>Empieza por el problema, no por el catálogo</h2><p>Las fichas muestran datos. Las guías conectan esos datos para ayudarte a decidir qué cambiar.</p></div><a class="button primary" href="/guias/">Ir a las guías</a></div></section>
+</BaseLayout>

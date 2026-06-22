@@ -1,10 +1,7 @@
 export const navigation = [
-  { label: 'Inicio', href: '/' },
-  { label: 'Guías', href: '/guias/' },
-  { label: 'Personajes', href: '/personajes/' },
-  { label: 'Construcciones', href: '/construcciones/' },
-  { label: 'Habilidades', href: '/habilidades/' },
-  { label: 'Eventos', href: '/eventos/' },
-  { label: 'Novedades', href: '/novedades/' },
-  { label: 'Códigos', href: '/codigos/' },
+  { label: 'Guías', href: '/guias/', activePrefixes: ['/guias/'] },
+  { label: 'Base de datos', href: '/base-de-datos/', activePrefixes: ['/base-de-datos/', '/personajes/', '/habilidades/', '/construcciones/'] },
+  { label: 'Modos y eventos', href: '/eventos/', activePrefixes: ['/eventos/'] },
+  { label: 'Novedades', href: '/novedades/', activePrefixes: ['/novedades/'] },
+  { label: 'Códigos', href: '/codigos/', activePrefixes: ['/codigos/'] },
 ];

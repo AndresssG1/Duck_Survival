@@ -31,11 +31,25 @@ const volumes = [
     className: 'guide-expert',
   },
 ];
+
+const guideNeeds = [
+  { number: '01', label: 'Empezar', title: 'Nunca he jugado', description: 'Aprende el ciclo del juego, qué revisar primero y cómo evitar errores básicos.', href: '/guias/principiantes/' },
+  { number: '02', label: 'Diagnóstico', title: 'No puedo avanzar', description: 'Distingue si te falta daño, defensa, control o progreso general.', href: '/guias/intermedio/#bloqueos' },
+  { number: '03', label: 'Competición', title: 'Quiero mejorar en Arena', description: 'Comprende rangos, intentos, composición y errores frecuentes de PvP.', href: '/eventos/desafios/arena/' },
+  { number: '04', label: 'Recursos', title: 'No quiero malgastar', description: 'Revisa prioridades antes de utilizar diamantes, cupones o materiales.', href: '/guias/intermedio/#recursos' },
+  { number: '05', label: 'Consulta', title: 'Busco un dato concreto', description: 'Abre los catálogos de personajes, habilidades, construcciones y gemas.', href: '/base-de-datos/' },
+  { number: '06', label: 'Comunidad', title: 'Quiero aportar información', description: 'Envíanos una corrección, captura o experiencia para que pueda revisarse.', href: '/contacto/' },
+];
 ---
 
 <BaseLayout title="Guías" description="Guías de Duck Survival organizadas desde los fundamentos hasta estrategias avanzadas.">
-  <PageHero eyebrow="Ruta de supervivencia" title="Guías" description="Tres tomos para avanzar a tu ritmo, con información verificada y aportes de la comunidad." />
-  <section class="section shell">
+  <PageHero eyebrow="Resuelve una necesidad" title="Guías" description="Empieza por tu objetivo actual o sigue la ruta completa desde los fundamentos hasta las estrategias comunitarias." />
+  <section class="section shell guide-needs-section">
+    <div class="section-heading"><div><p class="eyebrow">Encuentra tu ruta</p><h2>¿Qué necesitas resolver?</h2></div></div>
+    <div class="guide-needs-grid">{guideNeeds.map((item) => <a href={item.href}><span>{item.number} · {item.label}</span><h2>{item.title}</h2><p>{item.description}</p><b>Abrir guía →</b></a>)}</div>
+  </section>
+  <section class="section guide-volumes-section"><div class="shell">
+    <div class="section-heading"><div><p class="eyebrow">Ruta completa</p><h2>Aprende por etapas</h2></div></div>
     <div class="guide-volume-grid">
       {volumes.map((volume) => (
         <a class={`guide-volume ${volume.className}`} href={volume.href}>
@@ -52,5 +66,5 @@ const volumes = [
       <div><h2>Qué es Duck Survival</h2><p>Conoce el ciclo día/noche, los elementos y los modos confirmados.</p></div>
       <b aria-hidden="true">-&gt;</b>
     </a>
-  </section>
+  </div></section>
 </BaseLayout>
