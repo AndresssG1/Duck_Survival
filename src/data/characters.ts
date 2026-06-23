@@ -508,4 +508,554 @@ export const characters: Character[] = [
     verifiedAt: '2026-06-19',
     gameVersion: '1.4.1',
   },
+  {
+    slug: 'bruja-ignea-emily',
+
+    name: 'Bruja Ignea - Emily',
+    element: 'quemadura',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/quemadura/bruja-ignea-emily/personaje.webp',
+
+    imageAlt:
+      'Bruja Ignea - Emily, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Columna de Fuego',
+        type: 'Habilidad normal',
+        description: 'Libera una columna de fuego en el área objetivo que inflige daño de fuego equivalente a 100% del ataque.',
+        image:
+          '/images/personajes/quemadura/bruja-ignea-emily/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Bola de Fuego Ignea',
+        type: 'Habilidad definitiva',
+        description: 'Lanza una bola de fuego que crece continuamente y rueda hacia adeante, causando daño de fuego equivalente a 100$ de ataque a los enemigos en su trayectoria.',
+        image:
+          '/images/personajes/quemadura/bruja-ignea-emily/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Golpe Igneo',
+      passiveName: 'Chispa Explosiva',
+      description: 'El golpe de llamas genera 3 chispas al impactar al objetivo.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'sombra-de-nieve-karl',
+
+    name: 'Sombra de Nieve - Karl',
+    element: 'escarcha',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/escarcha/sombra-de-nieve-karl/personaje.webp',
+
+    imageAlt:
+      'Sombra de Nieve - Karl, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Orbe de Escarcha',
+        type: 'Habilidad normal',
+        description: 'Lanza un Orve de Escarcha que inflige daño de hielo en área equivalente al 50% del ataque.',
+        image:
+          '/images/personajes/escarcha/sombra-de-nieve-karl/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Lluvia de Hielo',
+        type: 'Habilidad definitiva',
+        description: 'Lanza una lluvia de hielo, causando cada segundo daño de hielo equivalente al 100% de su ataque a los enemigos en el área.',
+        image:
+          '/images/personajes/escarcha/sombra-de-nieve-karl/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Escudo de Hielo',
+      passiveName: 'Disperción de Escarcha',
+      description: 'Al tenerminar el escudo de hielo, se lanza hacia afuera y explota al llegar al punto final, infligiendo efecto (Congelación) durante 2 segundos.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'comandante-de-escarcha-mil',
+
+    name: 'Comandante de Escarcha - Mil',
+    element: 'escarcha',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/escarcha/comandante-de-escarcha-mil/personaje.webp',
+
+    imageAlt:
+      'Comandante de Escarcha - Mil, con un arco de hielo y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Escudo de Hielo',
+        type: 'Habilidad normal',
+        description: 'Cada 2s aplica a la unidad con menor vida un (Escudo de Hielo) durante 3s, si al recibir daño hay 15% de probabilidad de congelar al atacante durante 2s y además cura.',
+        image:
+          '/images/personajes/escarcha/comandante-de-escarcha-mil/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Torbellino de Hielo',
+        type: 'Habilidad definitiva',
+        description: 'Lanza un torbellino de Hielo, causando cada segundo daño de hielo equivalente a 125% de su ataque y con 25% de probabildiad de congelar a los enemigos durante 2 segundos.',
+        image:
+          '/images/personajes/escarcha/comandante-de-escarcha-mil/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cono de Hielo Extremo',
+      passiveName: 'Frozen Shards',
+      description: 'La gélida Púa de Hielo termina disparando 4 fragmentos de hielo, con un 10% de probabilidad de infligir el efecto de Congelación.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'cohete-cole',
+
+    name: 'Cohete Cole',
+    element: 'quemadura',
+    rarity: 'mítico',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/quemadura/cohete-cole/personaje.webp',
+
+    imageAlt:
+      'Cohete Cole, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Lanzallamas',
+        type: 'Habilidad normal',
+        description: 'Lanza llamas continuamente que queman al enemigo, causando cada segundo daño de fuego equivalente a 75% de su ataque.',
+        image:
+          '/images/personajes/quemadura/cohete-cole/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Misil Infernal',
+        type: 'Habilidad definitiva',
+        description: 'Lanza un misil infernal que inglige daño de fuego masivo en área equivalente a 500% del ataque.',
+        image:
+          '/images/personajes/quemadura/cohete-cole/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Meteorito',
+      passiveName: 'Sin nombre',
+      description: 'Al lanzar cualquier habilidad 5 veces, se lanza un meteorito adicional con 50% de daño.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'martillo-de-lava-lava',
+
+    name: 'Martillo de Lava - Lava',
+    element: 'quemadura',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/quemadura/martillo-de-lava-lava/personaje.webp',
+
+    imageAlt:
+      'Martillo de Lava - Lava, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Martillo de Llamas',
+        type: 'Habilidad normal',
+        description: 'Blande el martillo infligiendo daño de fuego equivalente a 50% del ataque en un área en forma de abanico frontal.',
+        image:
+          '/images/personajes/quemadura/martillo-de-lava-lava/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Meteorito de Lava',
+        type: 'Habilidad definitiva',
+        description: 'Durante 8 segundos el ataque básico se convierte en una ola de lava que inlige daño de fuego equivalente a 75% del ataque y empuja al objetivo',
+        image:
+          '/images/personajes/quemadura/martillo-de-lava-lava/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Meteorito',
+      passiveName: 'Lluvia de meteoritos',
+      description: 'Al caer, los meteoritos añaden 3 meteoritos pequeños.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'rayo-furioso-bell',
+
+    name: 'Rayo Furioso - Bell',
+    element: 'rayo',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/rayo/rayo-furioso-bell/personaje.webp',
+
+    imageAlt:
+      'Rayo Furioso - Bell, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe de Garras',
+        type: 'Habilidad normal',
+        description: 'Ataca con garras infligiendo daño de rayo equivalente a 50% del ataque.',
+        image:
+          '/images/personajes/rayo/rayo-furioso-bell/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Descenso del Rayo',
+        type: 'Habilidad definitiva',
+        description: 'Salta hacia el objetivo, provoca a todos los enemigos en el área y aumenta su propia vida; causando daño de rayo equivalente a 150% de su ataque.',
+        image:
+          '/images/personajes/rayo/rayo-furioso-bell/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Pollo Furioso',
+      passiveName: 'Gatling Chick',
+      description: 'Invova adicionalmente 1 Gatling Chick armado que dispara bolas penetrantes.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'trueno-de-tormenta-ora',
+
+    name: 'Trueno de Tormenta - Ora',
+    element: 'rayo',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/rayo/trueno-de-tormenta-ora/personaje.webp',
+
+    imageAlt:
+      'Trueno de Tormenta - Ora, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Electrocución Furiosa',
+        type: 'Habilidad normal',
+        description: 'Invoca 3 rayos consecutivos hacia la dirección objetivo, infligiendo daño de rayo equivalente a 100% del ataque.',
+        image:
+          '/images/personajes/rayo/trueno-de-tormenta-ora/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Orbe de Trueno',
+        type: 'Habilidad definitiva',
+        description: 'Inflige daño de rayo equivalente a 50% del ataque de los objetivos en área.',
+        image:
+          '/images/personajes/rayo/trueno-de-tormenta-ora/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cadena de Relámpagos',
+      passiveName: 'Tormenta Magnética',
+      description: 'La cadena de relámpagos genera una tormenta mágnetica de rango medio al golpear a un enemigo.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'baluarte-de-justicia-eric',
+
+    name: 'Baluarte de Justicia - Eric',
+    element: 'fisico',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/fisico/baluarte-de-justicia-eric/personaje.webp',
+
+    imageAlt:
+      'Baluarte de Justicia - Eric, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe de Escudo de Luz',
+        type: 'Habilidad normal',
+        description: 'Lanza un escudo hacia adelante, causando daño físico a los enemigos en la trayectoria equivalente a 60% de su ataque.',
+        image:
+          '/images/personajes/fisico/baluarte-de-justicia-eric/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Protección Sagrada',
+        type: 'Habilidad definitiva',
+        description: 'Aplica un escudo equivalente a 25% de la vida máxima a los 5 soldados cercanos con menor vida durante 6 segundos.',
+        image:
+          '/images/personajes/fisico/baluarte-de-justicia-eric/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cuchillas Giratorias',
+      passiveName: 'Rueda Explisiva',
+      description: 'El proyectil de la rueda tiene un 30% de probabilidad de explotar una vez al impactar en el objetivo.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'voluntad-indomable-bru',
+
+    name: 'Voluntad Indomable - Bru',
+    element: 'fisico',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/fisico/voluntad-indomable-bru/personaje.webp',
+
+    imageAlt:
+      'Voluntad Indomable - Bru, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Golpe Rápido',
+        type: 'Habilidad normal',
+        description: 'Golpea continuamente con los puños infligiendo daño físico equivalente a 75% del ataque en un área rectangular.',
+        image:
+          '/images/personajes/fisico/voluntad-indomable-bru/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Puño Furioso',
+        type: 'Habilidad definitiva',
+        description: 'Obtienes un escudo equivalente al 30% de su vida máxima, empuja a todos los enemigos den el área en forma de abanico y causa daño físico equivalente al 150% de su ataque.',
+        image:
+          '/images/personajes/fisico/voluntad-indomable-bru/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Cuchillas Giratorias',
+      passiveName: 'Cuchilla Dividida',
+      description: 'Las cuchillas giratorias se dividen adicionalmente en 3 cuchillas giratorias medianas.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'sombra-apocaliptica-linda',
+
+    name: 'Sombra Apocalíptica - Linda',
+    element: 'energia',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/energia/sombra-apocaliptica-linda/personaje.webp',
+
+    imageAlt:
+      'Sombra Apocalíptica - Linda, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Disparo de Energía',
+        type: 'Habilidad normal',
+        description: 'Inflige daño de energía equivalente al 50% de su ataque a los objetivos dentro de un área rectangular.',
+        image:
+          '/images/personajes/energia/sombra-apocaliptica-linda/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Cañon de Energía',
+        type: 'Habilidad definitiva',
+        description: 'Durante 5 segundos, dispara un cañón de energía que inflige daño de energía equivalente al 100% de su ataque a los enemigos en el área.',
+        image:
+          '/images/personajes/energia/sombra-apocaliptica-linda/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Torre de Rayo Pulsante',
+      passiveName: 'Impacto de Energía',
+      description: 'Cada 2 ataques del Rayo Pulsante libera una onda de choque de energía, con efecto de empuje.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
+  {
+    slug: 'joven-prodigio-brian',
+
+    name: 'Joven Prodigio - Brian',
+    element: 'energia',
+    rarity: 'legendario',
+
+    description:
+      'Descripción breve basada en sus habilidades confirmadas.',
+
+    image:
+      '/images/personajes/energia/joven-prodigio-brian/personaje.webp',
+
+    imageAlt:
+      'Joven Prodigio - Brian, con un traje de fuego y una armadura de placas',
+
+    acquisition:
+      'Puede obtenerse en el Suministro de Héroe o mediante packs disponibles por tiempo limitado.',
+
+    progressionNote:
+      'Los porcentajes mostrados corresponden al nivel 1.',
+
+    abilities: [
+      {
+        name: 'Reparar',
+        type: 'Habilidad normal',
+        description: 'Repara el edificio con menor vida, cada reparación restaura 100 + 30% de la fuerza de ataque como vida.',
+        image:
+          '/images/personajes/energia/joven-prodigio-brian/habilidad-normal.webp',
+        unlock: 'Se desbloquea con 1 estrella.',
+      },
+      {
+        name: 'Reparación Rápida',
+        type: 'Habilidad definitiva',
+        description: 'Aplica un efecto de reparación rápida durante 6 segundos a todos los edificios aliados, restaurando 200 + 30% de la fuerza de ataque como vida',
+        image:
+          '/images/personajes/energia/joven-prodigio-brian/habilidad-definitiva.webp',
+        unlock: null,
+      },
+    ],
+
+    linkedAbility: {
+      name: 'Láser Concentrado',
+      passiveName: 'Misil de Energía',
+      description: 'El láser enfocado dispara 8 misiles de energía cada 4 segundos.',
+    },
+
+    verifiedAt: '2026-06-22',
+    gameVersion: '1.4.1',
+  },
 ];
