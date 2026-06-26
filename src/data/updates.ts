@@ -44,7 +44,7 @@ export const upcomingAnnouncements: UpcomingAnnouncement[] = [
     announcedAt: '2026-06-26',
     timing: 'Del día 29 al día 35 después de la apertura del servidor.',
     highlights: ['Héroe mítico: Ángel de Luz Sagrada - Cain', 'Héroe mítico: Luchador Garra de Acero - Jack', 'Más recompensas ocultas y modos de juego anunciados'],
-    sourceUrl: 'https://www.facebook.com/hashtag/nuevoevento',
+    sourceUrl: 'https://discord.com/channels/1372452853934718976/1372452854727708704/1520007836623704064',
     verifiedAt: '2026-06-26',
     cover: '/images/oficial/eventos/hall-of-heroes.webp',
     coverAlt: 'Banner oficial del evento Hall of Heroes',
