@@ -4,11 +4,16 @@ import PageHero from '../../components/PageHero.astro';
 import { upcomingAnnouncements, officialNews } from '../../data/updates';
 ---
 
-<BaseLayout title="Novedades" description="Próximos eventos y noticias oficiales de Duck Survival resumidos en español y enlazados a sus fuentes.">
+<BaseLayout title="Novedades" description="Proximos eventos y noticias oficiales de Duck Survival resumidos en espanol y enlazados a sus fuentes.">
   <PageHero eyebrow="Anuncios oficiales resumidos" title="Novedades" description="Consulta adelantos de contenido y comunicados importantes sin confundirlos con los eventos ya disponibles dentro del juego." />
   <section class="section shell updates-hub">
-    <a class="updates-hub-card upcoming" href="/novedades/proximos-eventos/"><span>Tablero de anuncios</span><strong>{upcomingAnnouncements.length}</strong><h2>Próximos eventos</h2><p>Contenido mencionado oficialmente que todavía no dispone de reglas completas o no ha comenzado.</p><b>Abrir tablero →</b></a>
-    <a class="updates-hub-card news" href="/novedades/noticias/"><span>Comunicados</span><strong>{officialNews.length}</strong><h2>Noticias oficiales</h2><p>Resúmenes en español de avisos importantes publicados por el equipo de Duck Survival.</p><b>Consultar noticias →</b></a>
+    <a class="updates-hub-card upcoming" href="/novedades/proximos-eventos/"><span>Tablero de anuncios</span><strong>{upcomingAnnouncements.length}</strong><h2>Proximos eventos</h2><p>Contenido mencionado oficialmente que todavia no dispone de reglas completas o no ha comenzado.</p><b>Abrir tablero -&gt;</b></a>
+    <a class="updates-hub-card news" href="/novedades/noticias/"><span>Comunicados</span><strong>{officialNews.length}</strong><h2>Noticias oficiales</h2><p>Resumenes en espanol de avisos importantes publicados por el equipo de Duck Survival.</p><b>Consultar noticias -&gt;</b></a>
   </section>
-  <section class="section updates-policy-section"><div class="shell updates-policy"><div><p class="eyebrow">Política editorial</p><h2>Resumimos, enlazamos y damos crédito</h2><p>No copiamos anuncios completos. Cada entrada utiliza redacción propia, conserva el enlace al mensaje oficial y distingue claramente esta wiki independiente de los canales de Duck Survival.</p></div><ul><li>Fuente oficial obligatoria</li><li>Fecha de publicación y verificación</li><li>Imágenes solo con autorización</li><li>Correcciones cuando existan cambios</li></ul></div></section>
+  <section class="section updates-policy-section">
+    <div class="shell updates-policy">
+      <div><p class="eyebrow">Politica editorial</p><h2>Resumimos, enlazamos y damos credito</h2><p>No copiamos anuncios completos. Cada entrada utiliza redaccion propia, conserva el enlace al mensaje oficial y distingue claramente esta wiki independiente de los canales de Duck Survival.</p></div>
+      <ul><li>Fuente oficial obligatoria</li><li>Fecha de publicacion y verificacion</li><li>Imagenes oficiales con credito visible</li><li>Uso informativo y no comercial</li><li>Correcciones cuando existan cambios</li></ul>
+    </div>
+  </section>
 </BaseLayout>

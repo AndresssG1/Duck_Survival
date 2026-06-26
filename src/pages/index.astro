@@ -2,10 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StatusPill from '../components/StatusPill.astro';
 import { gameCodes } from '../data/codes';
-import { characters } from '../data/characters';
-import { skills } from '../data/skills';
-import { buildingCategories } from '../data/buildings';
 import { upcomingAnnouncements, officialNews } from '../data/updates';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 const finderItems = [
   { number: '01', title: 'Códigos activos', description: 'Canjea recompensas comprobadas y revisa su fecha de verificación.', category: 'Respuesta rápida', href: '/codigos/', keywords: 'codigo códigos regalos recompensas canjear gratis' },
@@ -30,7 +29,8 @@ const goals = [
 ];
 
 const recentCodes = gameCodes.filter((item) => item.status === 'active').slice(0, 3);
-const documentedBuildings = buildingCategories.reduce((total, category) => total + category.options.length, 0);
+const featuredEvent = upcomingAnnouncements[0];
+const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cwd(), 'public', cover.replace(/^\//, ''))));
 const latestUpdates = [
   ...upcomingAnnouncements.map((item) => ({ type: 'Próximo evento', title: item.title, date: item.announcedAt, href: '/novedades/proximos-eventos/' })),
   ...officialNews.map((item) => ({ type: item.category, title: item.title, date: item.publishedAt, href: '/novedades/noticias/' })),
@@ -46,7 +46,33 @@ const latestUpdates = [
         <p class="lead">Guías prácticas y datos verificables de Duck Survival, organizados para llegar a una respuesta sin recorrer toda la wiki.</p>
         <div class="actions"><a class="button primary" href="/codigos/">Ver códigos activos</a><a class="button secondary" href="/eventos/desafios/arena/">Guía de Arena</a></div>
       </div>
-      <div class="home-status-panel" aria-label="Estado de la base de conocimiento"><span>Wiki comunitaria · v1</span><strong>{characters.length + skills.length + documentedBuildings}</strong><p>fichas de personajes, habilidades y construcciones disponibles</p><div><b>{characters.length}</b> personajes <b>{skills.length}</b> habilidades <b>{documentedBuildings}</b> construcciones</div></div>
+      {featuredEvent ? (
+        <a class="home-featured-event" href="/novedades/proximos-eventos/" aria-label={`Ver próximo evento: ${featuredEvent.title}`}>
+          <div class="home-featured-event-image">
+            {hasCover(featuredEvent.cover) ? (
+              <img src={featuredEvent.cover} alt={featuredEvent.coverAlt ?? `Portada oficial de ${featuredEvent.title}`} loading="eager" />
+            ) : (
+              <div><span>Próximo evento</span><strong>Imagen pendiente</strong></div>
+            )}
+          </div>
+          <div class="home-featured-event-copy">
+            <span>Próximo evento</span>
+            <h2>{featuredEvent.title}</h2>
+            <p>{featuredEvent.summary}</p>
+            {featuredEvent.coverCredit && <small>{featuredEvent.coverCredit}</small>}
+            <b>Saber más →</b>
+          </div>
+        </a>
+      ) : (
+        <a class="home-featured-event" href="/novedades/">
+          <div class="home-featured-event-copy">
+            <span>Novedades</span>
+            <h2>Eventos y anuncios oficiales</h2>
+            <p>Revisa el tablero de próximos eventos y comunicados importantes de Duck Survival.</p>
+            <b>Ver novedades →</b>
+          </div>
+        </a>
+      )}
     </div>
   </section>
 

@@ -1,5 +1,6 @@
 export type AnnouncementStatus = 'announced' | 'coming-soon' | 'active' | 'ended';
 export type ImagePermissionStatus = 'pending' | 'granted' | 'not-used';
+export type CoverFit = 'contain' | 'cover';
 
 export interface UpcomingAnnouncement {
   slug: string;
@@ -12,6 +13,9 @@ export interface UpcomingAnnouncement {
   sourceUrl: string;
   verifiedAt: string;
   cover?: string;
+  coverAlt?: string;
+  coverCredit?: string;
+  coverFit?: CoverFit;
   imagePermission: ImagePermissionStatus;
 }
 
@@ -25,6 +29,9 @@ export interface OfficialNewsItem {
   sourceUrl: string;
   verifiedAt: string;
   cover?: string;
+  coverAlt?: string;
+  coverCredit?: string;
+  coverFit?: CoverFit;
   imagePermission: ImagePermissionStatus;
 }
 
@@ -39,7 +46,11 @@ export const upcomingAnnouncements: UpcomingAnnouncement[] = [
     highlights: ['Montura: Star Annihilator', 'Arma: Hellscream', 'Artefactos: Galactic Bot y Starcrusher'],
     sourceUrl: 'https://discord.com/channels/1372452853934718976/1372452854727708704/1517831335773868054',
     verifiedAt: '2026-06-21',
-    imagePermission: 'pending',
+    cover: '/images/oficial/eventos/star-annihilator-forge-city.webp',
+    coverAlt: 'Banner oficial del evento Star Annihilator en Forge City',
+    coverCredit: 'Imagen oficial de Duck Survival. Uso informativo no comercial.',
+    coverFit: 'contain',
+    imagePermission: 'granted',
   },
 ];
 
@@ -53,6 +64,10 @@ export const officialNews: OfficialNewsItem[] = [
     keyPoints: ['Corrección urgente del problema', 'Restauración de las cuentas afectadas', 'Compensación mediante el correo del juego', 'Soporte y verificación desde los canales oficiales'],
     sourceUrl: 'https://discord.com/channels/1372452853934718976/1372452854727708704/1517116426773725326',
     verifiedAt: '2026-06-21',
-    imagePermission: 'pending',
+    cover: '/images/oficial/noticias/aviso-baneos-incorrectos-compensacion.webp',
+    coverAlt: 'Imagen oficial del comunicado sobre baneos incorrectos y compensacion',
+    coverCredit: 'Imagen oficial de Duck Survival. Uso informativo no comercial.',
+    coverFit: 'contain',
+    imagePermission: 'granted',
   },
 ];

@@ -2,14 +2,39 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { officialNews } from '../../data/updates';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cwd(), 'public', cover.replace(/^\//, ''))));
 ---
 
-<BaseLayout title="Noticias oficiales" description="Noticias y comunicados oficiales de Duck Survival resumidos en español y enlazados a su publicación original.">
-  <PageHero eyebrow="Información de servicio" title="Noticias oficiales" description="Resúmenes propios de comunicados relevantes. Para instrucciones vigentes y soporte utiliza siempre el mensaje oficial enlazado." />
-  <section class="section shell"><a class="back-link" href="/novedades/">← Volver a Novedades</a><div class="official-news-list">
-    {officialNews.map((item) => <article class="official-news-card">
-      <div class="official-news-date"><time datetime={item.publishedAt}>{item.publishedAt}</time><span>{item.category}</span></div>
-      <div class="official-news-body"><div class="official-cover-slot news-cover">{item.cover ? <img src={item.cover} alt={`Imagen oficial de ${item.title}`} /> : <div><span>Imagen oficial</span><strong>Pendiente de autorización</strong></div>}</div><div><h2>{item.title}</h2><p>{item.summary}</p><ul>{item.keyPoints.map((point) => <li>{point}</li>)}</ul><div class="update-source"><small>Verificado: {item.verifiedAt} · La situación puede cambiar</small><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Leer comunicado oficial →</a></div></div></div>
-    </article>)}
-  </div><div class="notice updates-support-note"><strong>La wiki no gestiona cuentas ni apelaciones</strong><p>Si una noticia afecta tu cuenta, comprueba el anuncio original y contacta únicamente con los canales oficiales de soporte.</p></div></section>
+<BaseLayout title="Noticias oficiales" description="Noticias y comunicados oficiales de Duck Survival resumidos en espanol y enlazados a su publicacion original.">
+  <PageHero eyebrow="Informacion de servicio" title="Noticias oficiales" description="Resumenes propios de comunicados relevantes. Para instrucciones vigentes y soporte utiliza siempre el mensaje oficial enlazado." />
+  <section class="section shell">
+    <a class="back-link" href="/novedades/">Volver a Novedades</a>
+    <div class="official-news-list">
+      {officialNews.map((item) => (
+        <article class="official-news-card">
+          <div class="official-news-date"><time datetime={item.publishedAt}>{item.publishedAt}</time><span>{item.category}</span></div>
+          <div class="official-news-body">
+            <figure class={`official-cover-slot news-cover fit-${item.coverFit ?? 'contain'}`}>
+              {hasCover(item.cover) ? (
+                <img src={item.cover} alt={item.coverAlt ?? `Imagen oficial de ${item.title}`} loading="lazy" />
+              ) : (
+                <div><span>Imagen oficial</span><strong>Pendiente de imagen</strong></div>
+              )}
+              {hasCover(item.cover) && <figcaption>{item.coverCredit ?? 'Imagen oficial de Duck Survival. Uso informativo no comercial.'}</figcaption>}
+            </figure>
+            <div>
+              <h2>{item.title}</h2>
+              <p>{item.summary}</p>
+              <ul>{item.keyPoints.map((point) => <li>{point}</li>)}</ul>
+              <div class="update-source"><small>Verificado: {item.verifiedAt} · La situacion puede cambiar</small><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Leer comunicado oficial -&gt;</a></div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div class="notice updates-support-note"><strong>La wiki no gestiona cuentas ni apelaciones</strong><p>Si una noticia afecta tu cuenta, comprueba el anuncio original y contacta unicamente con los canales oficiales de soporte.</p></div>
+  </section>
 </BaseLayout>
