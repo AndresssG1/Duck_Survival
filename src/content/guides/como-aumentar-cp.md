@@ -3,7 +3,7 @@ title: Cómo aumentar tu CP
 description: Guía comunitaria para identificar las principales fuentes de poder y mejorar CP sin invertir recursos a ciegas.
 eyebrow: Progresión de cuenta
 publishedAt: '2026-06-22'
-updatedAt: '2026-06-22'
+updatedAt: '2026-06-25'
 gameVersion: '1.4.1'
 status: review
 communityCredit:
@@ -39,9 +39,11 @@ También se reporta que las botas proporcionan probabilidad de crítico de forma
 
 ## Coleccionables
 
-Su desbloqueo se sitúa aproximadamente alrededor de los días 18-19 en experiencias comunitarias. Algunas cuentas avanzadas recomiendan acumular tiradas y mejorar la colección de forma equilibrada.
+Los coleccionables son una fuente permanente de estadisticas y bonificaciones de conjunto. Su desbloqueo se reporta alrededor de varios dias de progreso y cerca del Capitulo 30, aunque debes confirmar el requisito exacto en tu cuenta.
 
-Las referencias a 2.500 tiradas o aumentos de más de 50 millones de CP son **casos reportados**, no objetivos obligatorios para una cuenta nueva.
+Como pueden formar parte de Sprint, no conviene gastar brujulas sin revisar calendario o evento activo.
+
+Lee la guia completa de [coleccionables y progreso permanente](/guias/coleccionables/).
 
 <h2 id="titanes">Titanes</h2>
 
@@ -53,6 +55,7 @@ No recomendamos perseguir un Titán únicamente por el CP mostrado: compara cost
 
 - Estrellas de héroes.
 - Niveles de armas y equipamiento.
+- Refinamiento de equipo y gemas.
 - Progreso de capítulos.
 - Construcciones del Departamento de Ingeniería.
 - Bonificaciones permanentes de colección.

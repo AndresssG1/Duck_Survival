@@ -7,6 +7,13 @@ const mechanics = [
   { number: '02', title: 'Ayuda de seguidores', text: 'Los mineros aceleran la producción. El aumento es mayor cuando el seguidor ha completado capítulos más avanzados de la historia principal.' },
   { number: '03', title: 'Saqueo de mineros', text: 'Conseguir mineros de otros jugadores requiere un combate que utiliza directamente la formación configurada para la Arena.' },
 ];
+
+const communityTips = [
+  'Revisa periódicamente si tus mineros siguen siendo rentables.',
+  'Libera trabajadores de baja producción cuando puedas capturar mejores.',
+  'Intenta llenar los espacios con jugadores que generen más recursos por hora.',
+  'Antes de saquear, actualiza tu formación de Arena porque la mina reutiliza esa configuración.',
+];
 ---
 
 <BaseLayout title="Mina de sobrevivientes" description="Cómo funcionan la minería automática, los seguidores y el saqueo de mineros en Duck Survival.">
@@ -20,5 +27,12 @@ const mechanics = [
       <div class="section-heading"><div><p class="eyebrow">Descripción de función</p><h2>Tres mecánicas principales</h2></div><span class="evidence-badge confirmed">Transcrito del juego</span></div>
       <div class="base-rule-grid compact-rules">{mechanics.map((item) => <article><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
     </div>
+  </section>
+  <section class="section shell">
+    <div class="notice">
+      <strong>Consejo comunitario</strong>
+      <p>La mina no se optimiza sola. Si conservas mineros de baja producción durante muchos días, pierdes recursos pasivos que podrían acumularse a largo plazo.</p>
+    </div>
+    <ul class="check-list">{communityTips.map((tip) => <li>{tip}</li>)}</ul>
   </section>
 </BaseLayout>

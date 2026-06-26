@@ -11,7 +11,7 @@ const sections = [
 
 <BaseLayout title="Desafíos" description="Desafío de dificultad, Arena, Camino de Supervivencia, Jefe Mundial y Zona de guerra de Duck Survival.">
   <PageHero eyebrow="Actividad recurrente" title="Desafíos" description="El juego organiza estas modalidades en dos apartados. Aquí documentamos sus desbloqueos, reglas y recompensas sin mezclarlas con los eventos temporales." />
-  <section class="section shell"><a class="back-link" href="/eventos/">← Eventos y desafíos</a><div class="challenge-section-nav">{sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}</div></section>
+  <section class="section shell"><a class="back-link" href="/eventos/">← Eventos y desafíos</a><div class="challenge-section-nav">{sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}<a href="/guias/respuestas-rapidas-desafios/">Respuestas rápidas</a></div></section>
   {sections.map((section) => (
     <section class:list={['section', 'challenge-group-section', { alternate: section.id === 'enemy-cooperation' }]} id={section.id}>
       <div class="shell">

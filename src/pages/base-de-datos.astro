@@ -12,11 +12,13 @@ const databaseSections = [
   { number: '03', title: 'Construcciones', count: documentedBuildings, unit: 'opciones', description: 'Sistemas de la Base, categorías de Ingeniería y efectos por nivel.', href: '/construcciones/', status: 'En expansión' },
   { number: '04', title: 'Gemas', count: '—', unit: 'guía', description: 'Prioridades de crítico, progresión y relación comunitaria con el CP.', href: '/guias/como-aumentar-cp/', status: 'Guía comunitaria' },
   { number: '05', title: 'Armas', count: '6', unit: 'comparadas', description: 'Progresión, funciones y recomendaciones según el tipo de cuenta.', href: '/guias/armas-y-progresion/', status: 'Guía comunitaria' },
-  { number: '06', title: 'Titanes', count: '—', unit: 'en revisión', description: 'Efectos reportados y relación con el CP, todavía pendientes de capturas.', href: '/guias/como-aumentar-cp/#titanes', status: 'Evidencia pendiente' },
+  { number: '06', title: 'Equipamiento', count: '—', unit: 'guía', description: 'Rareza, nivel, atributos, reciclaje y refinamiento de equipo y gemas.', href: '/guias/equipamiento-y-refinamiento/', status: 'Guía comunitaria' },
+  { number: '07', title: 'Coleccionables', count: '—', unit: 'guía', description: 'Búsqueda del Tesoro, brújulas, fragmentos y bonificaciones permanentes.', href: '/guias/coleccionables/', status: 'Guía comunitaria' },
+  { number: '08', title: 'Titanes', count: '—', unit: 'en revisión', description: 'Efectos reportados y relación con el CP, todavía pendientes de capturas.', href: '/guias/como-aumentar-cp/#titanes', status: 'Evidencia pendiente' },
 ];
 ---
 
-<BaseLayout title="Base de datos" description="Personajes, habilidades, construcciones, gemas, armas y Titanes de Duck Survival organizados en un solo catálogo.">
+<BaseLayout title="Base de datos" description="Personajes, habilidades, construcciones, gemas, armas, equipamiento, coleccionables y Titanes de Duck Survival organizados en un solo catálogo.">
   <PageHero eyebrow="Consulta profunda" title="Base de datos" description="Cuando ya sabes qué buscas, entra directamente al catálogo correspondiente y compara sus datos verificados." />
   <section class="section shell database-hub-grid">
     {databaseSections.map((item) => item.href ? (

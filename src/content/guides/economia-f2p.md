@@ -3,7 +3,7 @@ title: Economía F2P y uso de diamantes
 description: Prioridades comunitarias para gastar diamantes, tickets y monedas sin frenar el progreso de la cuenta.
 eyebrow: Gestión de recursos
 publishedAt: '2026-06-22'
-updatedAt: '2026-06-22'
+updatedAt: '2026-06-25'
 gameVersion: '1.4.1'
 status: review
 communityCredit:
@@ -43,6 +43,16 @@ La recomendación comunitaria es evitar gastar diamantes en Banknotes. Antes de 
 ## Tickets
 
 Muchos jugadores guardan tickets para eventos Rush o Sprint. Acumular solo tiene sentido cuando conoces el calendario y puedes alcanzar una recompensa útil; no conviertas un consejo de ahorro en una obligación permanente.
+
+Para cuentas nuevas, la recomendacion comunitaria es no gastar tickets apenas aparecen. Si estas en tus primeros dias y todavia no puedes competir bien, puede ser mejor esperar a un Sprint donde tus recursos acumulados te den una posicion mas realista.
+
+Si son tickets de heroes, revisa tambien la guia de [Sprint de Heroes](/guias/sprint-de-heroes/).
+
+## Consejo para nuevos jugadores
+
+Duck Survival muestra muchas ofertas y paquetes desde temprano. La comunidad suele recomendar paciencia: varias mejoras o recursos que parecen exclusivos pueden volver a aparecer gratis, en eventos o mediante progreso normal.
+
+Antes de gastar, preguntate si la compra resuelve un bloqueo actual o si solo acelera algo que obtendras con tiempo. Esta guia no prohibe gastar; solo evita que una cuenta nueva desperdicie recursos por presion de ofertas temporales.
 
 ## Apocalypse Coins
 

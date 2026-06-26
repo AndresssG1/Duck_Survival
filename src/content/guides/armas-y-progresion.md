@@ -3,7 +3,7 @@ title: Armas y progresión F2P
 description: Comparación comunitaria de armas y rutas de progresión para cuentas F2P o con inversión.
 eyebrow: Equipamiento y meta
 publishedAt: '2026-06-22'
-updatedAt: '2026-06-22'
+updatedAt: '2026-06-25'
 gameVersion: '1.4.1'
 status: review
 communityCredit:
@@ -50,6 +50,8 @@ La comunidad menciona **Gatling Gun o Skyripper → Torrent**. Esta ruta no impl
 - Evita repartir materiales entre armas que no utilizas.
 - Revisa el salto real antes de sustituir una opción desarrollada.
 - Conserva recursos cuando haya eventos de Rush o Sprint confirmados.
+
+Para piezas, atributos y reciclaje, revisa tambien [equipamiento y refinamiento](/guias/equipamiento-y-refinamiento/).
 
 ## Insta-Kill
 

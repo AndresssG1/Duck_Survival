@@ -20,6 +20,7 @@ sources:
 | --- | --- | --- |
 | ¿Puedo mover mi personaje? | No se ha encontrado transferencia entre servidores activos. | Reportado por jugadores |
 | ¿El gremio pasa a otro servidor? | Los gremios se gestionan dentro de cada servidor. | Pendiente de fuente oficial |
+| ¿Dónde reviso o cambio de servidor? | Jugadores reportan que se hace desde el perfil, tocando el identificador de servidor tipo ES-***. | Reportado por jugadores |
 | ¿Puedo cambiar el correo? | No aparece una opción directa; se recomienda abrir un ticket. | Experiencia de soporte |
 | ¿Habrá fusiones? | La comunidad conserva referencias a futuras fusiones, pero falta el anuncio enlazable. | Pendiente de confirmar |
 
@@ -39,6 +40,12 @@ Antes de desinstalar, borrar datos o cambiar de teléfono:
 La recopilación comunitaria no identifica un botón para cambiar el correo directamente. El procedimiento reportado consiste en abrir un ticket y solicitar revisión manual.
 
 Incluye únicamente los datos que pida el soporte oficial. Esta wiki no gestiona cuentas ni puede comprobar identidades.
+
+## Revisar o cambiar servidor
+
+La ruta reportada por jugadores es abrir el **perfil** y tocar el identificador del servidor, mostrado con un formato parecido a **ES-***. Desde esa pantalla deberias poder revisar el servidor actual y ver las opciones disponibles.
+
+Antes de cambiar, toma una captura de tu UID y servidor actual. No hemos verificado una transferencia libre de progreso entre servidores activos, asi que evita asumir que cambiar de servidor conservara todo automaticamente.
 
 ## Nuevos servidores y fusiones
 
