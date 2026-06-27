@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import { officialNews } from '../../data/updates';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -19,7 +20,12 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
           <div class="official-news-body">
             <figure class={`official-cover-slot news-cover fit-${item.coverFit ?? 'contain'}`}>
               {hasCover(item.cover) ? (
-                <img src={item.cover} alt={item.coverAlt ?? `Imagen oficial de ${item.title}`} loading="lazy" />
+                <ResponsiveImage
+                  src={item.cover!}
+                  alt={item.coverAlt ?? `Imagen oficial de ${item.title}`}
+                  loading="lazy"
+                  sizes="(max-width: 800px) calc(100vw - 2.5rem), 250px"
+                />
               ) : (
                 <div><span>Imagen oficial</span><strong>Pendiente de imagen</strong></div>
               )}

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import { upcomingAnnouncements } from '../../data/updates';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -18,7 +19,12 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
         <article class="upcoming-announcement-card">
           <figure class={`official-cover-slot fit-${item.coverFit ?? 'contain'}`}>
             {hasCover(item.cover) ? (
-              <img src={item.cover} alt={item.coverAlt ?? `Portada oficial de ${item.title}`} loading="lazy" />
+              <ResponsiveImage
+                src={item.cover!}
+                alt={item.coverAlt ?? `Portada oficial de ${item.title}`}
+                loading="lazy"
+                sizes="(max-width: 800px) calc(100vw - 2.5rem), 40vw"
+              />
             ) : (
               <div><span>Imagen oficial</span><strong>Pendiente de imagen</strong></div>
             )}

@@ -1,0 +1,45 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  decoding?: 'async' | 'auto' | 'sync';
+  sizes?: string;
+  widths?: number[];
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  loading = 'lazy',
+  fetchpriority,
+  decoding = 'async',
+  sizes = '100vw',
+  widths = [640, 960, 1280],
+} = Astro.props;
+
+const basePath = src.replace(/\.[^/.]+$/, '');
+const publicPath = (path: string) => join(process.cwd(), 'public', path.replace(/^\//, ''));
+const variants = widths
+  .map((width) => ({ width, src: `${basePath}-${width}.webp` }))
+  .filter((variant) => existsSync(publicPath(variant.src)));
+
+const srcset = variants.map((variant) => `${variant.src} ${variant.width}w`).join(', ');
+---
+
+<img
+  src={src}
+  srcset={srcset || undefined}
+  sizes={srcset ? sizes : undefined}
+  alt={alt}
+  class={className}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  decoding={decoding}
+/>
