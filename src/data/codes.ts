@@ -12,6 +12,15 @@ export interface GameCode {
 
 export const gameCodes: GameCode[] = [
   {
+    code: 'Q4uR9m',
+    status: 'active',
+    reward: 'Recompensas del código de regalo',
+    verifiedAt: '2026-06-18',
+    expiresAt: '2026-07-01',
+    sourceUrl: null,
+    isNew: true,
+  },
+  {
     code: 'DuckPick',
     status: 'active',
     reward: 'Recompensas del código de regalo',
