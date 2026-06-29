@@ -7,13 +7,15 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, canonical = Astro.url.pathname } = Astro.props;
+const { title, description, canonical = Astro.url.pathname, structuredData } = Astro.props;
 const siteName = 'Duck Survival Guía';
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 const canonicalUrl = new URL(canonical, Astro.site);
 const socialImageUrl = new URL('/images/social/duck-survival-og.webp', Astro.site);
+const schema = structuredData ? JSON.stringify(structuredData) : null;
 ---
 
 <!doctype html>
@@ -42,6 +44,7 @@ const socialImageUrl = new URL('/images/social/duck-survival-og.webp', Astro.sit
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:image:alt" content="Duck Survival Guía: guías, códigos, héroes y estrategias" />
     <title>{pageTitle}</title>
+    {schema && <script type="application/ld+json" is:inline set:html={schema} />}
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>

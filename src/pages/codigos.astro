@@ -2,49 +2,195 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import StatusPill from '../components/StatusPill.astro';
-import { gameCodes } from '../data/codes';
+import { gameCodes, type CodeStatus } from '../data/codes';
 
-const activeCount = gameCodes.filter((item) => item.status === 'active').length;
-const inactiveCount = gameCodes.filter((item) => item.status === 'expired').length;
-const formatDate = (date: string) => new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
+const statusLabels: Record<CodeStatus, string> = {
+  active: 'Activos',
+  expired: 'Inactivos',
+  unverified: 'Por verificar',
+};
+
+const statusOrder: CodeStatus[] = ['active', 'expired', 'unverified'];
+const statusCounts = statusOrder.reduce(
+  (counts, status) => ({ ...counts, [status]: gameCodes.filter((item) => item.status === status).length }),
+  {} as Record<CodeStatus, number>,
+);
+
+const verifiedDates = gameCodes
+  .map((item) => item.verifiedAt)
+  .filter((date): date is string => Boolean(date))
+  .sort((a, b) => b.localeCompare(a));
+
+const latestVerifiedAt = verifiedDates[0] ?? null;
+const knownExpiryCount = gameCodes.filter((item) => item.expiresAt).length;
+
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(
+    new Date(`${date}T00:00:00Z`),
+  );
+const getDateLabel = (item: (typeof gameCodes)[number]) => {
+  if (item.expiresAt) return `Válido hasta el ${formatDate(item.expiresAt)}`;
+  if (item.verifiedAt) return `Verificado el ${formatDate(item.verifiedAt)}`;
+  return 'Pendiente de verificar';
+};
+
+const faqItems = [
+  {
+    question: '¿Dónde se canjean los códigos de Duck Survival?',
+    answer:
+      'Entra al juego, toca el avatar del perfil del pato en la esquina superior izquierda y abre el botón Código de regalo.',
+  },
+  {
+    question: '¿Los códigos se pueden usar más de una vez?',
+    answer: 'No. La wiki los marca como comprobados, pero cada código normalmente se canjea una sola vez por cuenta.',
+  },
+  {
+    question: '¿Por qué un código activo puede fallar?',
+    answer:
+      'Puede haber expirado sin aviso, ya haber sido usado en esa cuenta o requerir que se escriba respetando mayúsculas y minúsculas.',
+  },
+];
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Códigos de Duck Survival',
+    description: 'Códigos activos de Duck Survival, estado, caducidad y fecha de verificación.',
+    url: new URL('/codigos/', Astro.site).toString(),
+    inLanguage: 'es',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  },
+];
 ---
-<BaseLayout title="Códigos" description="Códigos activos de Duck Survival, estado, caducidad y fecha de verificación.">
-  <PageHero eyebrow="Recompensas" title="Códigos de Duck Survival" description="Lista comprobada manualmente y actualizada regularmente con códigos activos e inactivos." />
-  <section class="section shell narrow">
-    <div class="notice"><strong>Actualización regular</strong><p>Estos códigos fueron canjeados y comprobados manualmente el 18 de junio de 2026. Pueden utilizarse una sola vez por cuenta y dejar de funcionar sin aviso.</p></div>
-    <div class="code-filters" aria-label="Filtrar códigos">
-      <button type="button" data-code-filter="all" aria-pressed="true">Todos <span>{gameCodes.length}</span></button>
-      <button type="button" data-code-filter="active" aria-pressed="false">Activos <span>{activeCount}</span></button>
-      <button type="button" data-code-filter="expired" aria-pressed="false">Inactivos <span>{inactiveCount}</span></button>
+
+<BaseLayout
+  title="Códigos de Duck Survival"
+  description="Códigos activos de Duck Survival en español, con estado, caducidad y fecha de verificación."
+  canonical="/codigos/"
+  structuredData={structuredData}
+>
+  <PageHero
+    eyebrow="Recompensas"
+    title="Códigos de Duck Survival"
+    description="Lista comprobada manualmente y actualizada regularmente con códigos activos, caducidad conocida y pasos de canje."
+  />
+
+  <section class="section shell codes-page-layout">
+    <div class="codes-summary-panel">
+      <div>
+        <p class="eyebrow">Estado actual</p>
+        <h2>{statusCounts.active} códigos activos</h2>
+        <p>
+          {latestVerifiedAt
+            ? `Última verificación registrada: ${formatDate(latestVerifiedAt)}.`
+            : 'La lista todavía no tiene una fecha de verificación registrada.'}
+        </p>
+      </div>
+      <div class="codes-summary-stats" aria-label="Resumen de códigos">
+        <article><strong>{gameCodes.length}</strong><span>Total</span></article>
+        <article><strong>{statusCounts.active}</strong><span>Activos</span></article>
+        <article><strong>{knownExpiryCount}</strong><span>Con caducidad</span></article>
+      </div>
     </div>
-    <div class="codes-list full" id="codes-list">
+
+    <div class="notice codes-warning">
+      <strong>Actualización regular</strong>
+      <p>
+        Estos códigos fueron comprobados manualmente por la comunidad. Pueden utilizarse una sola vez por cuenta y dejar de funcionar sin aviso.
+      </p>
+    </div>
+
+    <div class="code-filters" aria-label="Filtrar códigos">
+      <button type="button" data-code-filter="all" aria-pressed="true" aria-controls="codes-list">
+        Todos <span>{gameCodes.length}</span>
+      </button>
+      {statusOrder.map((status) => (
+        statusCounts[status] > 0 && (
+          <button type="button" data-code-filter={status} aria-pressed="false" aria-controls="codes-list">
+            {statusLabels[status]} <span>{statusCounts[status]}</span>
+          </button>
+        )
+      ))}
+    </div>
+
+    <div class="codes-list full codes-card-list" id="codes-list">
       {gameCodes.map((item) => (
-        <div class="code-row" data-code-status={item.status}>
-          <div>
-            <div class="code-name"><code>{item.code}</code>{item.isNew && <span>Nuevo</span>}</div>
-            <small>{item.reward}</small>
-            <small class="code-date">{item.expiresAt ? `Válido hasta el ${formatDate(item.expiresAt)}` : `Verificado el ${formatDate(item.verifiedAt!)}`}</small>
+        <article class="code-row code-card" data-code-status={item.status}>
+          <div class="code-main">
+            <div class="code-name">
+              <code>{item.code}</code>
+              {item.isNew && <span>Nuevo</span>}
+            </div>
+            <p>{item.reward}</p>
+            <small class="code-date">{getDateLabel(item)}</small>
+            {item.sourceUrl && (
+              <a class="code-source" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+                Ver fuente oficial
+              </a>
+            )}
           </div>
-          <StatusPill status={item.status} />
-        </div>
+          <div class="code-actions">
+            <StatusPill status={item.status} />
+            <button class="copy-code-button" type="button" data-copy-code={item.code} aria-label={`Copiar código ${item.code}`}>
+              Copiar
+            </button>
+          </div>
+        </article>
       ))}
       <p class="codes-empty" id="codes-empty" hidden>No hay códigos con este estado.</p>
     </div>
-    <section class="redeem-steps">
-      <p class="eyebrow">Paso a paso</p>
-      <h2>Cómo canjear códigos</h2>
-      <ol>
-        <li>Abre Duck Survival.</li>
-        <li>Toca el avatar del perfil del pato en la esquina superior izquierda.</li>
-        <li>Pulsa el botón <strong>Código de regalo</strong>.</li>
-        <li>Escribe el código respetando mayúsculas y minúsculas, y confirma el canje.</li>
-      </ol>
+
+    <section class="redeem-steps codes-help-grid">
+      <div>
+        <p class="eyebrow">Paso a paso</p>
+        <h2>Cómo canjear códigos</h2>
+        <ol>
+          <li>Abre Duck Survival.</li>
+          <li>Toca el avatar del perfil del pato en la esquina superior izquierda.</li>
+          <li>Pulsa el botón <strong>Código de regalo</strong>.</li>
+          <li>Escribe el código respetando mayúsculas y minúsculas, y confirma el canje.</li>
+        </ol>
+      </div>
+      <aside class="codes-related-card">
+        <p class="eyebrow">Después de canjear</p>
+        <h2>Usa mejor tus recursos</h2>
+        <p>Si recibes recompensas, revisa primero las guías de progreso antes de gastar materiales o diamantes.</p>
+        <a class="text-link" href="/guias/economia-f2p/">Ver economía F2P -&gt;</a>
+        <a class="text-link" href="/guias/principiantes/">Guía para principiantes -&gt;</a>
+      </aside>
+    </section>
+
+    <section class="codes-faq">
+      <p class="eyebrow">Dudas rápidas</p>
+      <h2>Preguntas frecuentes</h2>
+      <div>
+        {faqItems.map((item) => (
+          <details>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
     </section>
   </section>
+
   <script>
     const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-code-filter]');
     const codeRows = document.querySelectorAll<HTMLElement>('[data-code-status]');
     const emptyMessage = document.querySelector<HTMLElement>('#codes-empty');
+    const copyButtons = document.querySelectorAll<HTMLButtonElement>('[data-copy-code]');
 
     filterButtons.forEach((button) => {
       button.addEventListener('click', () => {
@@ -58,6 +204,18 @@ const formatDate = (date: string) => new Intl.DateTimeFormat('es', { day: 'numer
           if (show) visible += 1;
         });
         if (emptyMessage) emptyMessage.hidden = visible !== 0;
+      });
+    });
+
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.copyCode;
+        if (!code || !navigator.clipboard) return;
+        await navigator.clipboard.writeText(code);
+        button.textContent = 'Copiado';
+        window.setTimeout(() => {
+          button.textContent = 'Copiar';
+        }, 1400);
       });
     });
   </script>
