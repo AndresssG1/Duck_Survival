@@ -15,7 +15,7 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
     <a class="back-link" href="/novedades/">Volver a Novedades</a>
     <div class="official-news-list">
       {officialNews.map((item) => (
-        <article class="official-news-card">
+        <article class={`official-news-card ${item.keyPoints.length > 6 ? 'is-large' : ''}`}>
           <div class="official-news-date"><time datetime={item.publishedAt}>{item.publishedAt}</time><span>{item.category}</span></div>
           <div class="official-news-body">
             <figure class={`official-cover-slot news-cover fit-${item.coverFit ?? 'contain'}`}>
@@ -24,7 +24,7 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
                   src={item.cover!}
                   alt={item.coverAlt ?? `Imagen oficial de ${item.title}`}
                   loading="lazy"
-                  sizes="(max-width: 800px) calc(100vw - 2.5rem), 250px"
+                  sizes={item.keyPoints.length > 6 ? '(max-width: 800px) calc(100vw - 2.5rem), 44vw' : '(max-width: 800px) calc(100vw - 2.5rem), 250px'}
                 />
               ) : (
                 <div><span>Imagen oficial</span><strong>Pendiente de imagen</strong></div>
@@ -34,7 +34,7 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
             <div>
               <h2>{item.title}</h2>
               <p>{item.summary}</p>
-              <ul>{item.keyPoints.map((point) => <li>{point}</li>)}</ul>
+              <ol class="news-points">{item.keyPoints.map((point, index) => <li><span>{String(index + 1).padStart(2, '0')}</span>{point}</li>)}</ol>
               <div class="update-source">
                 <small>Verificado: {item.verifiedAt} · La situacion puede cambiar</small>
                 {item.sourceUrl ? (
