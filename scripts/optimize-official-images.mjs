@@ -9,7 +9,7 @@ const roots = [
 ];
 const widths = [640, 960, 1280];
 const validExtensions = new Set(['.webp', '.png', '.jpg', '.jpeg']);
-const generatedPattern = /-\d+$/;
+const generatedPattern = new RegExp(`-(${widths.join('|')})$`);
 
 async function listImages(root) {
   const entries = await readdir(root, { withFileTypes: true });
