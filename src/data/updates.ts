@@ -26,7 +26,7 @@ export interface OfficialNewsItem {
   category: string;
   publishedAt: string;
   keyPoints: string[];
-  sourceUrl: string;
+  sourceUrl: string | null;
   verifiedAt: string;
   cover?: string;
   coverAlt?: string;
@@ -71,6 +71,34 @@ export const upcomingAnnouncements: UpcomingAnnouncement[] = [
 ];
 
 export const officialNews: OfficialNewsItem[] = [
+  {
+    slug: 'mantenimiento-actualizacion-30-junio-2026',
+    title: 'Mantenimiento y actualización de versión',
+    summary: 'El equipo oficial anunció mantenimiento del servidor entre el 30 de junio y el 1 de julio, junto con una actualización grande que incorpora eventos, optimizaciones de PvP, Arena de gremio, gemas, Desafío extremo y nuevos sistemas de recompensas.',
+    category: 'Actualización de versión',
+    publishedAt: '2026-06-30',
+    keyPoints: [
+      'Mantenimiento: 30 de junio, 22:00-00:00 (UTC-4) / 1 de julio, 04:00-06:00 (UTC+2).',
+      'El evento Ataque del Gran Dragón comenzará el 3 de julio con el nuevo Titán mítico Alas de la Extinción.',
+      'Ciudad Ígnea comenzará gradualmente después del 4 de julio para servidores con 38 días abiertos.',
+      'Expedición Congelada comenzará el 6 de julio para servidores con 15 días abiertos y fase 20 superada.',
+      'Tesoro de Apocalipsis hará permanentes las monedas de intercambio de Apocalipsis en eventos recibidos desde el día 28 del servidor.',
+      'Arena de gremio cambia su emparejamiento a Grupo prioritario y Grupo regular según fuerza total.',
+      'Los combates PvP automáticos retrasarán 5 segundos el lanzamiento de habilidades al inicio.',
+      'El atributo de gemas Aumento de daño en la tercera noche pasa a Aumento de daño en la última noche.',
+      'Desafío extremo ajusta armas dobles, habilidades despertadas y recompensas acumulativas después de 310 estrellas.',
+      'Exploración del Manicomio aumenta monedas iniciales en ciertos niveles y añade artículos a la tienda misteriosa.',
+      'Se añade un nuevo registro diario al Centro de beneficios.',
+      'Se corrige el problema del Espíritu Heroico de Rugido Infernal que bloqueaba la barra de PV.',
+    ],
+    sourceUrl: null,
+    verifiedAt: '2026-06-30',
+    cover: '/images/oficial/noticias/mantenimiento-actualizacion-30-junio-2026.webp',
+    coverAlt: 'Portada oficial del aviso de mantenimiento y actualización de versión del 30 de junio de 2026',
+    coverCredit: 'Imagen oficial de Duck Survival. Uso informativo no comercial.',
+    coverFit: 'contain',
+    imagePermission: 'granted',
+  },
   {
     slug: 'aviso-baneos-incorrectos-compensacion',
     title: 'Aviso sobre baneos incorrectos y compensación',

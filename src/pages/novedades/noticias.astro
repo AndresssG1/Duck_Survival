@@ -35,7 +35,14 @@ const hasCover = (cover?: string) => Boolean(cover && existsSync(join(process.cw
               <h2>{item.title}</h2>
               <p>{item.summary}</p>
               <ul>{item.keyPoints.map((point) => <li>{point}</li>)}</ul>
-              <div class="update-source"><small>Verificado: {item.verifiedAt} · La situacion puede cambiar</small><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Leer comunicado oficial -&gt;</a></div>
+              <div class="update-source">
+                <small>Verificado: {item.verifiedAt} · La situacion puede cambiar</small>
+                {item.sourceUrl ? (
+                  <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Leer comunicado oficial -&gt;</a>
+                ) : (
+                  <span class="update-source-pending">Fuente pendiente</span>
+                )}
+              </div>
             </div>
           </div>
         </article>
