@@ -13,7 +13,7 @@ export interface GameCode {
 export const gameCodes: GameCode[] = [
   {
     code: 'Q4uR9m',
-    status: 'active',
+    status: 'expired',
     reward: 'Recompensas del código de regalo',
     verifiedAt: '2026-06-18',
     expiresAt: '2026-07-01',
@@ -22,7 +22,7 @@ export const gameCodes: GameCode[] = [
   },
   {
     code: 'DuckPick',
-    status: 'active',
+    status: 'expired',
     reward: 'Recompensas del código de regalo',
     verifiedAt: '2026-06-18',
     expiresAt: '2026-07-01',
@@ -31,7 +31,7 @@ export const gameCodes: GameCode[] = [
   },
   {
     code: 'D7kP2x',
-    status: 'active',
+    status: 'expired',
     reward: 'Recompensas del código de regalo por el día del padre',
     verifiedAt: '2026-06-21',
     expiresAt: '2026-07-01',
