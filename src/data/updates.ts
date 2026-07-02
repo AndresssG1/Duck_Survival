@@ -37,6 +37,22 @@ export interface OfficialNewsItem {
 
 export const upcomingAnnouncements: UpcomingAnnouncement[] = [
   {
+    slug: 'dragon-assault-regorn',
+    title: 'Dragon Assault: Regorn',
+    summary: ' El rugido ardiente desgarra el cielo, ¡la furia del dragón es imparable!. El evento presenta tres Adornos de Espalda, un Titán y un nuevo aspecto.',
+    status: 'announced',
+    announcedAt: '2026-07-02',
+    timing: '3 de julio - 9 de julio (servidores con 30 días abiertos)',
+    highlights: ['「Alas de Dragón de Fuego」「Armadura de Nanotec」「Aura del Dios del Mar,」', 'Alas de la Extinción', 'Nuevo aspecto: Héroe Cazador de Dragones - Sigurd'],
+    sourceUrl: 'https://discord.com/channels/1372452853934718976/1372452854727708704/1522180318327603220',
+    verifiedAt: '2026-06-26',
+    cover: '/images/oficial/eventos/dragon-assault-regorn.webp',
+    coverAlt: 'Banner oficial del evento Dragon Assault: Regorn',
+    coverCredit: 'Imagen oficial de Duck Survival. Uso informativo no comercial.',
+    coverFit: 'contain',
+    imagePermission: 'granted',
+  },
+  {
     slug: 'hall-of-heroes',
     title: 'Hall of Heroes',
     summary: 'La luz sagrada ilumina la esperanza y las garras de acero desgarran la oscuridad. El evento presenta dos nuevos héroes míticos y recompensas ocultas por descubrir.',
